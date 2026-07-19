@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zeezenia Market, Farm & Weekend Cafe</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Explore Zeezenia Market, Farm & Weekend Cafe in Gainesville, FL. Rebuilt with community love after the 2022 fire. Discover our Halal butcher, fresh baklawa, Bedouin student lounge, blueberry fields, and basketball court.">
+  <meta name="keywords" content="Zeezenia Market, Zeezenia Farm, Halal Butcher Gainesville, Middle Eastern grocery, UF student study space, Gainesville weekend cafe, Bedouin lounge, organic blueberries">
+  <meta name="author" content="Zeezenia Market">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            olive: {
+              50: '#f6f8f6',
+              100: '#ebf1ec',
+              200: '#d7e2d9',
+              300: '#b7cab9',
+              400: '#8fad93',
+              500: '#698e6d',
+              600: '#517255',
+              700: '#415b45',
+              800: '#2c5234', // Primary Deep Olive Green
+              900: '#1f3824',
+              950: '#112115',
+            },
+            terracotta: {
+              50: '#fdf7f4',
+              100: '#fbece5',
+              200: '#f7d8ca',
+              300: '#f1bda6',
+              400: '#e59775',
+              500: '#c05621', // Accent Terracotta
+              600: '#a74618',
+              700: '#8a3811',
+              800: '#6d2e11',
+              900: '#562510',
+            },
+            cream: {
+              50: '#fdfbf7', // Base Background Cream
+              100: '#faf6ee', // Warm Accent Cream
+              200: '#f3ebd8',
+              300: '#e7d6b5',
+              400: '#d5bd91',
+            },
+            charcoal: {
+              700: '#44403c',
+              800: '#292524',
+              900: '#1c1917', // Text Primary
+            }
+          },
+          fontFamily: {
+            sans: ['Outfit', 'Plus Jakarta Sans', 'sans-serif'],
+          },
+          animation: {
+            'fade-in-up': 'fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            'fade-in': 'fadeIn 0.5s ease-out forwards',
+            'scale-in': 'scaleIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+          },
+          keyframes: {
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(24px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            scaleIn: {
+              '0%': { opacity: '0', transform: 'scale(0.97)' },
+              '100%': { opacity: '1', transform: 'scale(1)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom styling scrollbar matching the Mediterranean design system */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #fdfbf7;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2c5234;
+      border-radius: 9999px;
+      border: 2px solid #fdfbf7;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #c05621;
+    }
+
+    /* Subtle background noise/grid texture for dynamic premium Squarespace feel */
+    .bg-grid-texture {
+      background-size: 30px 30px;
+      background-image: 
+        linear-gradient(to right, rgba(44, 82, 52, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(44, 82, 52, 0.02) 1px, transparent 1px);
+    }
+    
+    /* Smooth shadow values */
+    .shadow-soft {
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.02);
+    }
+    .shadow-card {
+      box-shadow: 0 10px 40px -10px rgba(44, 82, 52, 0.08), 0 1px 3px rgba(0, 0, 0, 0.02);
+    }
+    .shadow-card-hover {
+      box-shadow: 0 20px 50px -12px rgba(192, 86, 33, 0.12), 0 1px 5px rgba(0, 0, 0, 0.03);
+    }
+  </style>
+</head>
+<body class="bg-cream-50 text-charcoal-900 font-sans antialiased overflow-x-hidden selection:bg-terracotta-200 selection:text-terracotta-900 bg-grid-texture">
+
+  <!-- ==================== STICKY HEADER ==================== -->
+  <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-transparent bg-transparent py-4">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+      
+      <!-- Brand Logo / Identity -->
+      <a href="#home" class="flex flex-col group focus:outline-none">
+        <span class="text-xl md:text-2xl font-extrabold tracking-wider text-olive-800 transition-colors duration-300 group-hover:text-terracotta-500">
+          ZEEZENIA
+        </span>
+        <span class="text-[9px] tracking-[0.25em] font-bold text-olive-600 transition-colors duration-300 group-hover:text-olive-700 uppercase -mt-1">
+          Market, Farm & Cafe
+        </span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden lg:flex items-center space-x-8 font-medium text-sm text-charcoal-800">
+        <a href="#home" class="hover:text-terracotta-500 transition-colors py-2 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-terracotta-500 after:transition-all hover:after:w-full">Home</a>
+        <a href="#story" class="hover:text-terracotta-500 transition-colors py-2 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-terracotta-500 after:transition-all hover:after:w-full">Our Story</a>
+        <a href="#expansion" class="hover:text-terracotta-500 transition-colors py-2 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-terracotta-500 after:transition-all hover:after:w-full">Experience</a>
+        <a href="#pillars" class="hover:text-terracotta-500 transition-colors py-2 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-terracotta-500 after:transition-all hover:after:w-full">Pillars</a>
+        <a href="#hours-location" class="hover:text-terracotta-500 transition-colors py-2 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-terracotta-500 after:transition-all hover:after:w-full">Hours & Location</a>
+      </nav>
+
+      <!-- Action Buttons & Hamburguer -->
+      <div class="flex items-center space-x-4">
+        <!-- CTA: Claim Student Discount -->
+        <button id="header-cta" class="bg-terracotta-500 text-white font-semibold text-xs md:text-sm px-5 py-2.5 rounded-full hover:bg-terracotta-600 active:scale-95 transition-all duration-200 shadow-soft focus:outline-none focus:ring-2 focus:ring-terracotta-500 focus:ring-offset-2">
+          Claim Student Discount
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" class="lg:hidden text-olive-800 hover:text-terracotta-500 focus:outline-none p-2 rounded-md" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle Navigation Menu">
+          <svg class="h-6 w-6 stroke-current" fill="none" viewBox="0 0 24 24">
+            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Navigation Panel (Slide-down) -->
+    <div id="mobile-menu" class="hidden lg:hidden w-full bg-cream-50/95 backdrop-blur-lg border-b border-olive-800/10 px-6 py-6 absolute top-full left-0 transition-all duration-300">
+      <nav class="flex flex-col space-y-4 font-semibold text-base text-charcoal-800">
+        <a href="#home" class="mobile-nav-link hover:text-terracotta-500 transition-colors py-1">Home</a>
+        <a href="#story" class="mobile-nav-link hover:text-terracotta-500 transition-colors py-1">Our Story</a>
+        <a href="#expansion" class="mobile-nav-link hover:text-terracotta-500 transition-colors py-1">Experience</a>
+        <a href="#pillars" class="mobile-nav-link hover:text-terracotta-500 transition-colors py-1">Pillars</a>
+        <a href="#hours-location" class="mobile-nav-link hover:text-terracotta-500 transition-colors py-1">Hours & Location</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section id="home" class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden">
+    <!-- Optimized LCP Background Image -->
+    <img src="./DSC_0023.JPG" alt="Zeezenia Market physical entrance sign and beautiful rustic exterior storefront" class="absolute inset-0 w-full h-full object-cover object-[25%_center] md:object-center scale-100" fetchpriority="high" loading="eager" decoding="async">
+    
+    <!-- Dark Protective Overlay -->
+    <div class="absolute inset-0 bg-black/60 z-10"></div>
+    
+    <!-- Main Content Container -->
+    <div class="relative z-20 max-w-7xl mx-auto px-6 md:px-12 py-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+      
+      <!-- Headline & Introduction -->
+      <div class="lg:col-span-7 text-white text-center lg:text-left animate-fade-in-up">
+        <span class="inline-block bg-terracotta-500/20 border border-terracotta-500/30 text-terracotta-300 text-xs tracking-[0.25em] font-extrabold uppercase px-4 py-1.5 rounded-full mb-6">
+          Gainesville's Reborn Gem
+        </span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
+          Authentic Flavors.<br>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-terracotta-300 to-cream-200">A Brand New Destination.</span>
+        </h1>
+        <p class="text-base md:text-lg text-cream-100/90 font-light max-w-xl mx-auto lg:mx-0 leading-relaxed mb-8">
+          Welcome to the new Zeezenia. Discover 100% Halal meats, fresh artisan baking, and Levant spices, newly expanded into a vibrant open-air farm and weekend cafe built for students and families alike.
+        </p>
+        <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+          <a href="#story" class="bg-olive-800 hover:bg-olive-900 border border-olive-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-all active:scale-95 duration-200 text-sm">
+            Read Our Story
+          </a>
+          <a href="#hours-location" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-6 py-3 rounded-full backdrop-blur-sm transition-all active:scale-95 duration-200 text-sm">
+            Find Us
+          </a>
+        </div>
+      </div>
+
+      <!-- Lead Capture Card: August UF Student Welcome Campaign -->
+      <div class="lg:col-span-5 w-full max-w-md mx-auto animate-scale-in z-20">
+        <div class="bg-cream-50/95 backdrop-blur-md p-6 md:p-8 rounded-3xl shadow-2xl border border-white/30 text-charcoal-900">
+          <div class="text-center mb-6">
+            <span class="text-[10px] tracking-widest font-extrabold text-terracotta-500 uppercase">
+              Student Campaign 2026
+            </span>
+            <h2 class="text-xl md:text-2xl font-extrabold text-olive-800 mt-1">
+              August UF Welcome
+            </h2>
+            <p class="text-xs text-charcoal-700 mt-2 font-light">
+              Join the student welcome list below to secure your 15% VIP discount & a free Turkish coffee!
+            </p>
+          </div>
+
+          <!-- Campaign Input Form -->
+          <form id="welcome-campaign-form" class="space-y-4" novalidate>
+            <!-- Email Field -->
+            <div>
+              <label for="campaign-email" class="block text-xs font-bold text-olive-800 uppercase tracking-wider mb-1.5">
+                University or Personal Email
+              </label>
+              <input type="email" id="campaign-email" name="email" placeholder="e.g. gator@ufl.edu" required
+                class="w-full px-4 py-3 rounded-xl border border-cream-300 bg-white/50 text-charcoal-900 placeholder-stone-400 text-sm focus:outline-none focus:ring-2 focus:ring-olive-800 focus:border-transparent transition-all">
+              <span id="campaign-email-error" class="hidden text-xs text-terracotta-600 font-semibold mt-1"></span>
+            </div>
+
+            <!-- Checkbox for Segment identification -->
+            <div class="flex items-start">
+              <input type="checkbox" id="campaign-affiliation" name="affiliation"
+                class="mt-1 h-4 w-4 rounded border-cream-300 text-olive-800 focus:ring-olive-800">
+              <label for="campaign-affiliation" class="ml-2.5 text-xs text-charcoal-800 font-medium select-none">
+                I am a current UF, Santa Fe College student, or local resident.
+              </label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" id="campaign-submit"
+              class="w-full bg-olive-800 text-white font-bold text-sm py-3 px-6 rounded-xl hover:bg-olive-900 transition-colors shadow shadow-olive-900/10 focus:outline-none focus:ring-2 focus:ring-olive-800 focus:ring-offset-2">
+              Secure My Welcome Discount
+            </button>
+          </form>
+
+          <!-- Success State Display (Hidden by default) -->
+          <div id="campaign-success-box" class="hidden text-center py-6 space-y-4">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-olive-100 text-olive-800">
+              <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-olive-800">You are Registered!</h3>
+              <p class="text-xs text-charcoal-700 mt-1">
+                We've saved your details. Check your mailbox, or present the ticket coupon code below at the register:
+              </p>
+              <div class="bg-olive-100/70 border border-dashed border-olive-400 rounded-xl py-3 px-4 mt-3 select-all">
+                <span class="text-xs font-semibold uppercase text-olive-800 tracking-widest block">Coupon Voucher Code</span>
+                <span id="campaign-voucher-code" class="text-lg font-mono font-black text-olive-950 tracking-wider"></span>
+              </div>
+              <p class="text-[10px] text-stone-500 mt-2">
+                *Present this code or student email at checkout for 15% off + a free coffee. Valid thru Aug 31.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== THE HERITAGE & FAMILY STORY SECTION ==================== -->
+  <section id="story" class="py-24 px-6 md:px-12 max-w-7xl mx-auto border-t border-cream-200">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-xs md:text-sm font-extrabold text-terracotta-500 tracking-[0.2em] uppercase">
+        Heritage & Sourcing
+      </span>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-olive-800 tracking-tight mt-2">
+        Rooted in Sourcing, Grown in Gainesville
+      </h2>
+      <p class="text-stone-600 mt-4 leading-relaxed font-light">
+        Zeezenia is founded on a simple promise: bringing authentic Mediterranean flavours and warm family hospitality straight to your table.
+      </p>
+    </div>
+
+    <!-- Story Grid Layout -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Card 1: Family-Run Hospitality -->
+      <div class="bg-white rounded-3xl p-8 border border-cream-200/50 shadow-soft hover:shadow-card hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-terracotta-50 flex items-center justify-center text-terracotta-500 mb-6">
+            <svg class="w-6 h-6 fill-none stroke-current" fill="none" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-charcoal-900 mb-3">Family-Run Hospitality</h3>
+          <p class="text-sm leading-relaxed text-stone-600 font-light">
+            At Zeezenia, Fawzy and Zaineb treat every customer like an honored guest in their own home. Whether you are a student stopping in for coffee or a resident shopping for the weekend, you will find personal warmth and genuine Mediterranean hospitality.
+          </p>
+        </div>
+        <div class="border-t border-cream-100 pt-4 mt-6">
+          <span class="text-xs font-semibold text-terracotta-500 uppercase tracking-widest">
+            Fawzy & Zaineb's Promise
+          </span>
+        </div>
+      </div>
+
+      <!-- Card 2: Uncompromising Quality -->
+      <div class="bg-white rounded-3xl p-8 border border-cream-200/50 shadow-soft hover:shadow-card hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-olive-50 flex items-center justify-center text-olive-800 mb-6">
+            <svg class="w-6 h-6 fill-none stroke-current" fill="none" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-charcoal-900 mb-3">Uncompromising Quality</h3>
+          <p class="text-sm leading-relaxed text-stone-600 font-light">
+            We are dedicated to sourcing only the finest goods. From our strictly <strong class="font-bold text-olive-800">100% Halal certified</strong> meats prepared fresh by our butcher, to exotic spices, specialty sweets, and olive oils imported directly from the heart of the Levant.
+          </p>
+        </div>
+        <div class="border-t border-cream-100 pt-4 mt-6">
+          <span class="text-xs font-semibold text-olive-800 uppercase tracking-widest">
+            100% Halal & Sourcing
+          </span>
+        </div>
+      </div>
+
+      <!-- Card 3: Zaineb's Expansion -->
+      <div class="bg-white rounded-3xl p-8 border border-cream-200/50 shadow-soft hover:shadow-card hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-cream-100 flex items-center justify-center text-olive-950 mb-6">
+            <svg class="w-6 h-6 fill-none stroke-current" fill="none" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-charcoal-900 mb-3">Zaineb's Expansion</h3>
+          <p class="text-sm leading-relaxed text-stone-600 font-light">
+            Under Zaineb's visionary leadership, Zeezenia has blossomed. She designed our supermarket expansion to include a tranquil seating area, a family-friendly recreation zone, and a weekend farm-to-table cafe that bridges regional traditions with Gainesville life.
+          </p>
+        </div>
+        <div class="border-t border-cream-100 pt-4 mt-6">
+          <span class="text-xs font-semibold text-olive-900 uppercase tracking-widest">
+            A Weekend Destination
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Quote callout box -->
+    <div class="mt-16 bg-cream-100 border-l-4 border-terracotta-500 rounded-r-3xl p-8 md:p-10 shadow-soft">
+      <figure class="max-w-4xl mx-auto">
+        <blockquote class="text-lg md:text-xl italic text-charcoal-900 font-light leading-relaxed">
+          "Food is a universal language that breaks boundaries. Our goal was to create a warm, authentic space where anyone in Gainesville can walk in, share Mediterranean coffee, learn about our heritage, and feel at home."
+        </blockquote>
+        <figcaption class="text-sm font-semibold text-olive-800 uppercase tracking-wider mt-4">
+          — Fawzy & Zaineb
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+
+  <!-- ==================== THE EXPANSION GRID SECTION ==================== -->
+  <section id="expansion" class="py-24 bg-cream-100/50 border-t border-b border-cream-200/60">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      
+      <div class="text-center max-w-3xl mx-auto mb-20">
+        <span class="text-xs md:text-sm font-extrabold text-olive-800 tracking-[0.2em] uppercase">
+          New Horizons
+        </span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-charcoal-900 tracking-tight mt-2">
+          Experience Zeezenia's New Spaces
+        </h2>
+        <p class="text-stone-600 mt-4 leading-relaxed font-light">
+          We expanded our traditional market into a lively agricultural escape. Explore our newly redesigned zones crafted for relaxation, community gathering, and fresh eating.
+        </p>
+      </div>
+
+      <!-- Alternating Grid Stack -->
+      <div class="space-y-24">
+        
+        <!-- Card 1: Bedouin Lounge (Image Right, Text Left on desktop) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+          <!-- Text column -->
+          <div class="lg:col-span-6 space-y-6 order-2 lg:order-1">
+            <span class="text-xs font-bold text-terracotta-500 uppercase tracking-widest bg-terracotta-100/60 px-3.5 py-1 rounded-full">
+              Authentic Hospitality
+            </span>
+            <h3 class="text-2xl md:text-3xl font-extrabold text-olive-800 leading-tight">
+              The Outdoor Bedouin Lounge & Study Retreat
+            </h3>
+            <p class="text-stone-600 font-light leading-relaxed">
+              Step away from crowded campus libraries. Zaineb designed our custom Bedouin lounge using authentic Middle Eastern furnishings and warm, rustic textures. It's an outdoor sanctuary created for students, local remote workers, and friends.
+            </p>
+            <ul class="space-y-2 text-stone-700 font-medium text-sm">
+              <li class="flex items-center">
+                <span class="w-2 h-2 rounded-full bg-terracotta-500 mr-2.5"></span>
+                Perfect workspace with high-speed customer Wi-Fi & outdoor power hubs.
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 rounded-full bg-terracotta-500 mr-2.5"></span>
+                Fresh mint tea pots, authentic Turkish cardamon coffee, and warm baklawa served.
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 rounded-full bg-terracotta-500 mr-2.5"></span>
+                Comfortable outdoor seating shaded by beautiful green foliage.
+              </li>
+            </ul>
+            <div class="pt-4">
+              <button onclick="document.getElementById('header-cta').click()" class="bg-olive-800 text-white hover:bg-olive-900 font-semibold px-6 py-2.5 rounded-full text-sm transition shadow shadow-olive-950/15">
+                Join the Welcome Campaign
+              </button>
+            </div>
+          </div>
+          <!-- Image column -->
+          <div class="lg:col-span-6 order-1 lg:order-2">
+            <div class="overflow-hidden rounded-3xl shadow-card border border-cream-200 group">
+              <img src="./DSC_0019.JPG" alt="Bedouin seating with fresh mint tea and student friendly study spaces" 
+                class="w-full h-80 md:h-[450px] object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" 
+                loading="lazy" decoding="async">
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Potted Blueberry Field (Image Left, Text Right on desktop) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+          <!-- Image column -->
+          <div class="lg:col-span-6">
+            <div class="overflow-hidden rounded-3xl shadow-card border border-cream-200 group">
+              <img src="./DSC_0025.JPG" alt="Potted blueberry cultivation fields displaying sustainable farming practices" 
+                class="w-full h-80 md:h-[450px] object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" 
+                loading="lazy" decoding="async">
+            </div>
+          </div>
+          <!-- Text column -->
+          <div class="lg:col-span-6 space-y-6">
+            <span class="text-xs font-bold text-olive-800 uppercase tracking-widest bg-olive-100/80 px-3.5 py-1 rounded-full">
+              Sustainable Agriculture
+            </span>
+            <h3 class="text-2xl md:text-3xl font-extrabold text-olive-800 leading-tight">
+              Our Potted Blueberry Cultivation Field
+            </h3>
+            <p class="text-stone-600 font-light leading-relaxed">
+              We bring the farm straight to your table. The new agricultural footprint features a precision potted blueberry field where we raise sweet, nutritious blueberries. Walk our beautiful farming lanes and enjoy seasonal community picking events.
+            </p>
+            <ul class="space-y-2 text-stone-700 font-medium text-sm">
+              <li class="flex items-center">
+                <span class="w-2 h-2 rounded-full bg-olive-800 mr-2.5"></span>
+                Innovative potted crop system optimized for water conservation and soil purity.
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 rounded-full bg-olive-800 mr-2.5"></span>
+                Fresh organic blueberries incorporated directly into our cafe bakery items.
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 rounded-full bg-olive-800 mr-2.5"></span>
+                Educational weekend walkthroughs for local school kids and university groups.
+              </li>
+            </ul>
+            <div class="pt-4">
+              <a href="#hours-location" class="inline-flex items-center text-terracotta-500 hover:text-terracotta-600 font-bold text-sm group">
+                Check Seasonal Harvest Times
+                <svg class="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Recreation Section (Image Right, Text Left on desktop) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+          <!-- Text column -->
+          <div class="lg:col-span-6 space-y-6 order-2 lg:order-1">
+            <span class="text-xs font-bold text-terracotta-500 uppercase tracking-widest bg-terracotta-100/60 px-3.5 py-1 rounded-full">
+              Family & Play
+            </span>
+            <h3 class="text-2xl md:text-3xl font-extrabold text-olive-800 leading-tight">
+              Family-Friendly Outdoor Basketball Court
+            </h3>
+            <p class="text-stone-600 font-light leading-relaxed">
+              We want Zeezenia to be a true community gathering spot where youth, families, and neighbors meet up. Our brand new outdoor half-court basketball area is free and accessible for customers, creating a lively weekend playground.
+            </p>
+            <ul class="space-y-2 text-stone-700 font-medium text-sm">
+              <li class="flex items-center">
+                <span class="w-2 h-2 rounded-full bg-terracotta-500 mr-2.5"></span>
+                Freshly painted court open during standard market operating hours.
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 rounded-full bg-terracotta-500 mr-2.5"></span>
+                Seating benches available for parents to relax while kids play.
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 rounded-full bg-terracotta-500 mr-2.5"></span>
+                Grab a refreshing drink or smoothie at the cafe and watch the action.
+              </li>
+            </ul>
+            <div class="pt-4">
+              <a href="#hours-location" class="inline-flex items-center text-olive-800 hover:text-olive-950 font-bold text-sm group">
+                Plan Your Weekend Visit
+                <svg class="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <!-- Image column -->
+          <div class="lg:col-span-6 order-1 lg:order-2">
+            <div class="overflow-hidden rounded-3xl shadow-card border border-cream-200 group">
+              <img src="./DSC_0026.JPG" alt="Outdoor basketball court for community and family recreation at Zeezenia Farm" 
+                class="w-full h-80 md:h-[450px] object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" 
+                loading="lazy" decoding="async">
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== CORE BUSINESS PILLARS ==================== -->
+  <section id="pillars" class="py-24 bg-olive-800 text-cream-50 relative overflow-hidden">
+    <!-- Earthy pattern background for content layer -->
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-olive-700/80 via-olive-800 to-olive-950 opacity-90 z-10"></div>
+    
+    <div class="relative z-20 max-w-7xl mx-auto px-6 md:px-12">
+      
+      <div class="text-center max-w-3xl mx-auto mb-20">
+        <span class="text-xs md:text-sm font-extrabold text-terracotta-300 tracking-[0.25em] uppercase">
+          The Pillars of Zeezenia
+        </span>
+        <h2 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight mt-2">
+          Quality You Can Taste
+        </h2>
+        <p class="text-cream-100/80 mt-4 leading-relaxed font-light">
+          Behind our farm and seating lounge lies the high quality Middle Eastern grocery core Gainesville has trusted for over 14 years.
+        </p>
+      </div>
+
+      <!-- Pillars Columns -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+        
+        <!-- Pillar 1 -->
+        <div class="bg-olive-900/40 border border-olive-700/50 rounded-3xl p-8 hover:bg-olive-900/60 transition-all duration-300 flex flex-col justify-between">
+          <div class="space-y-6">
+            <div class="w-14 h-14 rounded-2xl bg-terracotta-500/20 text-terracotta-300 flex items-center justify-center border border-terracotta-500/30">
+              <!-- Butcher Cleaver styled SVG -->
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-white">In-House Halal Butcher</h3>
+            <p class="text-sm leading-relaxed text-cream-100/80 font-light">
+              Premium grade, 100% hand-slaughtered Halal meats. From pasture-raised lamb, goat, and beef, to house-spiced chicken shawarma. Prepared daily in a pristine facility by professional butchers to match strict dietary requirements.
+            </p>
+          </div>
+          <div class="mt-8 border-t border-olive-700/60 pt-4">
+            <span class="text-xs font-bold text-terracotta-300 uppercase tracking-widest">Lamb, Beef, Chicken, Goat</span>
+          </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="bg-olive-900/40 border border-olive-700/50 rounded-3xl p-8 hover:bg-olive-900/60 transition-all duration-300 flex flex-col justify-between">
+          <div class="space-y-6">
+            <div class="w-14 h-14 rounded-2xl bg-terracotta-500/20 text-terracotta-300 flex items-center justify-center border border-terracotta-500/30">
+              <!-- Bakery themed SVG -->
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-white">Fresh Bakery & Baklawa</h3>
+            <p class="text-sm leading-relaxed text-cream-100/80 font-light">
+              Indulge in our famous signature Pistachio Baklawa—layers of paper-thin filo dough, pure sweet butter, and rich roasted premium pistachios, drizzled with homemade orange blossom syrup. Baked fresh daily alongside pitas and traditional pastries.
+            </p>
+          </div>
+          <div class="mt-8 border-t border-olive-700/60 pt-4">
+            <span class="text-xs font-bold text-terracotta-300 uppercase tracking-widest">Pistachio Baklawa & Flatbreads</span>
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="bg-olive-900/40 border border-olive-700/50 rounded-3xl p-8 hover:bg-olive-900/60 transition-all duration-300 flex flex-col justify-between">
+          <div class="space-y-6">
+            <div class="w-14 h-14 rounded-2xl bg-terracotta-500/20 text-terracotta-300 flex items-center justify-center border border-terracotta-500/30">
+              <!-- Globe Spice themed SVG -->
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2h2a2.5 2.5 0 002.5-2.5V8a2 2 0 00-2-2h-1.5a2 2 0 01-2-2V2.5m-5 16.105L12 18.06"/>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-white">Levant & Spice Imports</h3>
+            <p class="text-sm leading-relaxed text-cream-100/80 font-light">
+              Find premium Middle Eastern and Mediterranean imports. Fill your pantry with high-quality olive oils, tangy sumac, traditional za'atar blends, tahini, pomegranate molasses, and authentic regional Turkish and cardamom coffee grains.
+            </p>
+          </div>
+          <div class="mt-8 border-t border-olive-700/60 pt-4">
+            <span class="text-xs font-bold text-terracotta-300 uppercase tracking-widest">Spices, Oils & Specialty Grains</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick map/navigation redirection banner inside dark block -->
+      <div class="mt-16 bg-olive-900/60 border border-olive-700 rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between">
+        <div class="mb-4 md:mb-0 text-center md:text-left">
+          <h4 class="text-lg font-bold text-white">Need premium halal meat or spices today?</h4>
+          <p class="text-xs text-cream-100/80 mt-1 font-light">Visit our NW 13th Street storefront location in the heart of Gainesville.</p>
+        </div>
+        <a href="https://maps.google.com/?q=2325+NW+13th+St,+Gainesville,+FL+32609" target="_blank" rel="noopener noreferrer" 
+          class="bg-terracotta-500 hover:bg-terracotta-600 text-white font-bold text-xs md:text-sm px-6 py-3 rounded-full flex items-center shadow transition-all active:scale-95 duration-200">
+          Get Driving Directions
+          <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== INTERACTIVE DATA-CAPTURE FOOTER ==================== -->
+  <footer id="hours-location" class="bg-charcoal-900 text-stone-300 pt-20 pb-8 border-t border-stone-800">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 pb-16 border-b border-stone-800">
+      
+      <!-- Column 1: Brand & Contact -->
+      <div class="lg:col-span-4 space-y-6">
+        <div>
+          <span class="text-2xl font-extrabold tracking-wider text-white">ZEEZENIA</span>
+          <span class="block text-[10px] tracking-[0.25em] font-bold text-terracotta-400 uppercase -mt-0.5">Market, Farm & Cafe</span>
+        </div>
+        <p class="text-sm font-light text-stone-400 leading-relaxed">
+          Gainesville’s premier international market, reimagined. Rebuilt after our June 2022 fire with the love of our Gainesville neighbors and UF community members.
+        </p>
+        <div class="space-y-3 text-sm font-medium">
+          <a href="https://maps.google.com/?q=2325+NW+13th+St,+Gainesville,+FL+32609" target="_blank" rel="noopener noreferrer" class="flex items-start hover:text-white transition-colors">
+            <svg class="w-5 h-5 mr-3 text-terracotta-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+            </svg>
+            <span>2325 NW 13th St,<br>Gainesville, FL 32609</span>
+          </a>
+          <a href="tel:13523785000" class="flex items-center hover:text-white transition-colors">
+            <svg class="w-5 h-5 mr-3 text-terracotta-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+            </svg>
+            <span>(352) 378-5000</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Column 2: Hours of Operation -->
+      <div class="lg:col-span-4 space-y-6">
+        <h3 class="text-lg font-bold text-white">Hours of Operation</h3>
+        <div class="space-y-4 text-sm font-light">
+          
+          <!-- Market & Butcher Hours -->
+          <div class="bg-stone-800/40 p-4 rounded-2xl border border-stone-800">
+            <span class="block text-xs font-bold text-terracotta-400 uppercase tracking-widest mb-1.5">
+              Market & Butcher Shop
+            </span>
+            <div class="flex justify-between items-center text-stone-200">
+              <span>Monday – Sunday</span>
+              <span class="font-semibold text-right">9:00 AM – 9:00 PM</span>
+            </div>
+            <span class="block text-[10px] text-stone-400 mt-1 italic">
+              *Fresh Halal cuts prepared throughout the day.
+            </span>
+          </div>
+
+          <!-- Weekend Cafe & Farm Hours -->
+          <div class="bg-olive-950/40 p-4 rounded-2xl border border-olive-900/40">
+            <span class="block text-xs font-bold text-olive-400 uppercase tracking-widest mb-1.5">
+              Weekend Cafe & Farm
+            </span>
+            <div class="flex justify-between items-center text-stone-200">
+              <span>Friday – Sunday</span>
+              <span class="font-semibold text-right text-olive-200">10:00 AM – 8:00 PM</span>
+            </div>
+            <div class="flex justify-between items-center text-stone-400 text-xs mt-1">
+              <span>Monday – Thursday</span>
+              <span class="text-right">Closed (Farm Walkthrough Open)</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Column 3: Referral Capture Tool -->
+      <div class="lg:col-span-4 space-y-6">
+        <h3 class="text-lg font-bold text-white">Word-of-Mouth Referral</h3>
+        <p class="text-sm font-light text-stone-400">
+          Share your love for Zeezenia with a friend. Generate your link, share it, and unlock a <strong class="text-terracotta-400 font-semibold">free piece of Pistachio Baklawa</strong> at checkout!
+        </p>
+
+        <!-- Referral Widget Box -->
+        <div class="bg-stone-800/80 p-5 rounded-2xl border border-stone-700/60 space-y-4">
+          <div class="space-y-2">
+            <label for="referral-email-input" class="block text-[10px] font-bold text-terracotta-400 uppercase tracking-wider">
+              Enter Your Email to Generate Link
+            </label>
+            <div class="flex space-x-2">
+              <input type="email" id="referral-email-input" placeholder="e.g. yourname@gmail.com" required
+                class="flex-1 bg-stone-900 border border-stone-700 text-white placeholder-stone-500 text-xs rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-terracotta-500">
+              <button id="generate-ref-btn" 
+                class="bg-terracotta-500 hover:bg-terracotta-600 active:scale-95 text-white text-xs font-bold px-4 py-2 rounded-xl transition duration-150">
+                Generate
+              </button>
+            </div>
+            <span id="referral-error" class="hidden text-[11px] text-terracotta-400 font-medium"></span>
+          </div>
+
+          <!-- Generated Link Copy Action -->
+          <div id="referral-result-box" class="hidden space-y-2 pt-2 border-t border-stone-700/50">
+            <span class="block text-[9px] font-semibold text-stone-400 uppercase">Your Referral URL</span>
+            <div class="flex items-center bg-stone-900 border border-stone-700 rounded-xl p-1.5 overflow-hidden">
+              <input type="text" id="referral-link-field" readonly 
+                class="bg-transparent text-stone-200 text-xs px-2 py-1 w-full focus:outline-none select-all font-mono">
+              <button id="copy-ref-btn" 
+                class="bg-olive-800 hover:bg-olive-900 text-white font-bold text-[10px] uppercase tracking-wider py-1.5 px-3 rounded-lg transition duration-150">
+                Copy
+              </button>
+            </div>
+            <div class="flex items-center justify-between text-[10px] text-stone-400 pt-1">
+              <span>Referrals logged: <strong id="referral-count" class="text-terracotta-400">0</strong></span>
+              <span id="copy-feedback-msg" class="text-olive-400 hidden font-bold">Copied to clipboard!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Copyright & Disclaimer -->
+    <div class="max-w-7xl mx-auto px-6 md:px-12 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-stone-500 font-light space-y-4 md:space-y-0">
+      <p>&copy; 2026 Zeezenia Market, Farm & Weekend Cafe. All rights reserved.</p>
+      <div class="flex flex-wrap items-center gap-6 justify-center md:justify-end">
+        <a href="#home" class="hover:text-stone-300">Privacy Policy</a>
+        <a href="#home" class="hover:text-stone-300">Terms of Service</a>
+        <a href="#hours-location" class="hover:text-stone-300">Contact Us</a>
+        <button id="reset-demo-btn" class="opacity-30 hover:opacity-100 text-stone-500 hover:text-terracotta-400 transition-all font-semibold select-none focus:outline-none ml-2">
+          Reset Demo Data
+        </button>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ==================== STUDENT DISCOUNT MODAL ==================== -->
+  <div id="discount-modal" class="fixed inset-0 z-[100] flex items-center justify-center hidden" aria-modal="true" role="dialog">
+    <!-- Modal Backdrop -->
+    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300" id="modal-backdrop"></div>
+    
+    <!-- Modal Window -->
+    <div class="relative bg-cream-50 w-full max-w-lg mx-4 rounded-3xl overflow-hidden shadow-2xl border border-cream-200 z-10 animate-scale-in">
+      
+      <!-- Close Button -->
+      <button id="close-modal-btn" class="absolute top-4 right-4 text-stone-500 hover:text-stone-800 focus:outline-none p-2 rounded-full hover:bg-stone-200/50 transition duration-150" aria-label="Close Modal">
+        <svg class="w-5 h-5 stroke-current" fill="none" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <!-- Modal Content Header -->
+      <div class="bg-olive-800 text-white p-6 md:p-8">
+        <span class="text-[10px] tracking-widest font-extrabold text-terracotta-300 uppercase block mb-1">
+          Exclusive Gator & Saint Campaign
+        </span>
+        <h3 class="text-2xl font-extrabold leading-tight">
+          Claim Student Discount
+        </h3>
+        <p class="text-xs text-cream-100/90 font-light mt-1.5">
+          Show your valid student email domain (.edu) to receive 15% off groceries and bakery treats.
+        </p>
+      </div>
+
+      <!-- Modal Body (Claim Form) -->
+      <div id="modal-form-box" class="p-6 md:p-8 space-y-6">
+        <form id="modal-discount-form" class="space-y-4" novalidate>
+          
+          <!-- Student Name -->
+          <div>
+            <label for="student-name" class="block text-xs font-bold text-olive-800 uppercase tracking-wider mb-1.5">
+              Full Name
+            </label>
+            <input type="text" id="student-name" name="fullname" placeholder="e.g. Alberta Gator" required
+              class="w-full px-4 py-3 rounded-xl border border-cream-300 bg-white text-charcoal-900 placeholder-stone-400 text-sm focus:outline-none focus:ring-2 focus:ring-olive-800 transition-all">
+            <span id="student-name-error" class="hidden text-xs text-terracotta-600 font-semibold mt-1"></span>
+          </div>
+
+          <!-- Student Email -->
+          <div>
+            <label for="student-email" class="block text-xs font-bold text-olive-800 uppercase tracking-wider mb-1.5">
+              University Email Address
+            </label>
+            <input type="email" id="student-email" name="studentemail" placeholder="e.g. alberta@ufl.edu or student@sfcollege.edu" required
+              class="w-full px-4 py-3 rounded-xl border border-cream-300 bg-white text-charcoal-900 placeholder-stone-400 text-sm focus:outline-none focus:ring-2 focus:ring-olive-800 transition-all">
+            <span id="student-email-error" class="hidden text-xs text-terracotta-600 font-semibold mt-1"></span>
+          </div>
+
+          <!-- Academic Affiliation -->
+          <div>
+            <label for="student-college" class="block text-xs font-bold text-olive-800 uppercase tracking-wider mb-1.5">
+              University Affiliation
+            </label>
+            <select id="student-college" name="college" class="w-full px-4 py-3 rounded-xl border border-cream-300 bg-white text-charcoal-900 text-sm focus:outline-none focus:ring-2 focus:ring-olive-800 transition-all">
+              <option value="ufl">University of Florida (UF)</option>
+              <option value="sf">Santa Fe College (SF)</option>
+              <option value="other">Other / Local Student</option>
+            </select>
+          </div>
+
+          <!-- Submit claim -->
+          <button type="submit" 
+            class="w-full bg-terracotta-500 text-white font-bold text-sm py-3 px-6 rounded-xl hover:bg-terracotta-600 transition-colors shadow focus:outline-none focus:ring-2 focus:ring-terracotta-500 focus:ring-offset-2">
+            Generate My Discount Card
+          </button>
+        </form>
+      </div>
+
+      <!-- Modal Card Result (Voucher Ticket Output - Hidden by default) -->
+      <div id="modal-card-box" class="p-6 md:p-8 hidden space-y-6">
+        <div class="text-center">
+          <span class="text-xs font-bold text-olive-800 uppercase tracking-widest">Your Digital Voucher Card</span>
+        </div>
+        
+        <!-- Virtual Wallet Card -->
+        <div class="bg-gradient-to-br from-olive-800 to-olive-950 rounded-3xl p-6 text-white border border-olive-700/60 shadow-xl relative overflow-hidden">
+          <!-- Background decoration -->
+          <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-terracotta-500/10 rounded-full blur-2xl"></div>
+          <div class="absolute -left-10 -top-10 w-40 h-40 bg-cream-300/5 rounded-full blur-2xl"></div>
+
+          <!-- Card Header -->
+          <div class="flex justify-between items-start border-b border-white/10 pb-4 mb-4">
+            <div>
+              <span class="text-xs font-black tracking-widest text-terracotta-300 uppercase">Zeezenia VIP Student Pass</span>
+              <span id="card-college-label" class="block text-[9px] tracking-wider text-cream-100 font-bold uppercase mt-0.5">University of Florida</span>
+            </div>
+            <div class="text-right">
+              <span class="text-2xl font-black text-white">15%</span>
+              <span class="block text-[8px] text-cream-200 tracking-wider -mt-1 font-bold">OFF Groceries</span>
+            </div>
+          </div>
+
+          <!-- Card Details -->
+          <div class="space-y-3">
+            <div>
+              <span class="text-[9px] text-cream-200 uppercase tracking-wider block">Pass Holder</span>
+              <span id="card-holder-name" class="text-sm font-semibold tracking-wide"></span>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <span class="text-[9px] text-cream-200 uppercase tracking-wider block">Verification Email</span>
+                <span id="card-holder-email" class="text-xs font-mono font-medium truncate block"></span>
+              </div>
+              <div>
+                <span class="text-[9px] text-cream-200 uppercase tracking-wider block">Bonus Perks</span>
+                <span class="text-xs font-semibold text-terracotta-300">Free Turkish Coffee</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Barcode Area -->
+          <div class="bg-white p-3 rounded-2xl mt-5 border border-stone-200/20">
+            <!-- Simulated Barcode Lines -->
+            <div class="flex items-center justify-between space-x-0.5 h-10 bg-white select-none">
+              <div class="w-1.5 bg-black h-full"></div>
+              <div class="w-0.5 bg-black h-full"></div>
+              <div class="w-1 bg-black h-full"></div>
+              <div class="w-2.5 bg-black h-full"></div>
+              <div class="w-0.5 bg-black h-full"></div>
+              <div class="w-1.5 bg-black h-full"></div>
+              <div class="w-1 bg-black h-full"></div>
+              <div class="w-0.5 bg-black h-full"></div>
+              <div class="w-2 bg-black h-full"></div>
+              <div class="w-1.5 bg-black h-full"></div>
+              <div class="w-0.5 bg-black h-full"></div>
+              <div class="w-3 bg-black h-full"></div>
+              <div class="w-1 bg-black h-full"></div>
+              <div class="w-1.5 bg-black h-full"></div>
+              <div class="w-0.5 bg-black h-full"></div>
+              <div class="w-2 bg-black h-full"></div>
+              <div class="w-0.5 bg-black h-full"></div>
+              <div class="w-1.5 bg-black h-full"></div>
+              <div class="w-1 bg-black h-full"></div>
+              <div class="w-3 bg-black h-full"></div>
+            </div>
+            <div class="text-center font-mono text-[9px] text-stone-900 tracking-widest mt-1.5" id="card-pass-code"></div>
+          </div>
+        </div>
+
+        <div class="flex space-x-3">
+          <button id="download-pass-btn" 
+            class="flex-1 bg-olive-800 text-white font-bold text-xs py-3 px-4 rounded-xl hover:bg-olive-900 transition duration-150 flex items-center justify-center">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+            </svg>
+            Screenshot Voucher Pass
+          </button>
+          <button id="reset-modal-btn" class="bg-stone-200 hover:bg-stone-300 text-stone-800 font-bold text-xs py-3 px-4 rounded-xl transition duration-150">
+            Generate New
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ==================== CORE INTERACTION JAVASCRIPT ==================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // --- STICKY HEADER SCROLL EFFECT ---
+      const header = document.getElementById('main-header');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          header.classList.remove('bg-transparent', 'py-4', 'border-transparent');
+          header.classList.add('bg-cream-50/90', 'backdrop-blur-md', 'py-3', 'shadow-soft', 'border-olive-800/10');
+        } else {
+          header.classList.remove('bg-cream-50/90', 'backdrop-blur-md', 'py-3', 'shadow-soft', 'border-olive-800/10');
+          header.classList.add('bg-transparent', 'py-4', 'border-transparent');
+        }
+      });
+
+
+      // --- MOBILE MENU TOGGLE ---
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIcon = document.getElementById('menu-icon');
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+      function toggleMobileMenu() {
+        const isOpen = mobileMenu.classList.contains('hidden');
+        if (isOpen) {
+          mobileMenu.classList.remove('hidden');
+          mobileMenuBtn.setAttribute('aria-expanded', 'true');
+          // Switch to "Close" icon (X)
+          menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+        } else {
+          mobileMenu.classList.add('hidden');
+          mobileMenuBtn.setAttribute('aria-expanded', 'false');
+          // Switch back to "Hamburger" icon
+          menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+        }
+      }
+
+      mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+
+      // Close mobile menu when clicking nav links
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          mobileMenuBtn.setAttribute('aria-expanded', 'false');
+          menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+        });
+      });
+
+
+      // --- HERO LEAD CAPTURE FORM (WELCOME CAMPAIGN) ---
+      const welcomeForm = document.getElementById('welcome-campaign-form');
+      const welcomeEmail = document.getElementById('campaign-email');
+      const welcomeEmailError = document.getElementById('campaign-email-error');
+      const welcomeSuccessBox = document.getElementById('campaign-success-box');
+      const welcomeVoucherCode = document.getElementById('campaign-voucher-code');
+
+      // Check if welcome discount is already claimed in localStorage
+      const cachedVoucher = localStorage.getItem('zeezenia_welcome_voucher');
+      if (cachedVoucher) {
+        welcomeForm.classList.add('hidden');
+        welcomeSuccessBox.classList.remove('hidden');
+        welcomeVoucherCode.textContent = cachedVoucher;
+      }
+
+      welcomeForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const emailVal = welcomeEmail.value.trim();
+        
+        // Basic Email validation Regex
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        if (!emailVal) {
+          welcomeEmailError.textContent = 'Please enter an email address.';
+          welcomeEmailError.classList.remove('hidden');
+          welcomeEmail.classList.add('border-terracotta-500');
+          return;
+        } else if (!emailRegex.test(emailVal)) {
+          welcomeEmailError.textContent = 'Please enter a valid email address.';
+          welcomeEmailError.classList.remove('hidden');
+          welcomeEmail.classList.add('border-terracotta-500');
+          return;
+        } else {
+          welcomeEmailError.classList.add('hidden');
+          welcomeEmail.classList.remove('border-terracotta-500');
+        }
+
+        // Get submit button and apply loading state
+        const submitBtn = document.getElementById('campaign-submit');
+        const originalBtnText = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `
+          <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline-block" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          Loading...
+        `;
+
+        setTimeout(() => {
+          // Generate unique code based on email domain
+          let voucherType = "ZEE-COMM-10";
+          if (emailVal.toLowerCase().endsWith('.edu') || emailVal.toLowerCase().includes('ufl.edu') || emailVal.toLowerCase().includes('sfcollege.edu')) {
+            voucherType = "ZEE-STUDENT-15";
+          }
+          
+          const randomHex = Math.floor(100000 + Math.random() * 900000).toString(16).toUpperCase();
+          const generatedCode = `${voucherType}-${randomHex}`;
+
+          // Save state to simulate server database log
+          localStorage.setItem('zeezenia_welcome_email', emailVal);
+          localStorage.setItem('zeezenia_welcome_voucher', generatedCode);
+
+          // Restore button state
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnText;
+
+          // Success transition animation
+          welcomeForm.classList.add('hidden');
+          welcomeSuccessBox.classList.remove('hidden');
+          welcomeVoucherCode.textContent = generatedCode;
+        }, 1000);
+      });
+
+
+      // --- STUDENT DISCOUNT CAMPAIGN MODAL ---
+      const discountModal = document.getElementById('discount-modal');
+      const headerCta = document.getElementById('header-cta');
+      const closeModalBtn = document.getElementById('close-modal-btn');
+      const modalBackdrop = document.getElementById('modal-backdrop');
+      const modalFormBox = document.getElementById('modal-form-box');
+      const modalCardBox = document.getElementById('modal-card-box');
+      const modalForm = document.getElementById('modal-discount-form');
+
+      // Modal Input Fields
+      const studentName = document.getElementById('student-name');
+      const studentEmail = document.getElementById('student-email');
+      const studentCollege = document.getElementById('student-college');
+
+      // Modal Error Fields
+      const studentNameError = document.getElementById('student-name-error');
+      const studentEmailError = document.getElementById('student-email-error');
+
+      // Modal Card Result Target Nodes
+      const cardCollegeLabel = document.getElementById('card-college-label');
+      const cardHolderName = document.getElementById('card-holder-name');
+      const cardHolderEmail = document.getElementById('card-holder-email');
+      const cardPassCode = document.getElementById('card-pass-code');
+
+      // Focus Trap Elements inside Modal
+      const focusableElementsString = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+
+      function trapFocus(e) {
+        if (e.key !== 'Tab') return;
+
+        // Get all focusable elements inside the modal
+        const allFocusable = Array.from(discountModal.querySelectorAll(focusableElementsString));
+        // Filter out elements that are currently hidden (Tailwind 'hidden')
+        const visibleFocusable = allFocusable.filter(el => el.offsetParent !== null);
+        
+        if (visibleFocusable.length === 0) return;
+
+        const firstFocusableElement = visibleFocusable[0];
+        const lastFocusableElement = visibleFocusable[visibleFocusable.length - 1];
+
+        if (e.shiftKey) { // Shift + Tab
+          if (document.activeElement === firstFocusableElement) {
+            lastFocusableElement.focus();
+            e.preventDefault();
+          }
+        } else { // Tab
+          if (document.activeElement === lastFocusableElement) {
+            firstFocusableElement.focus();
+            e.preventDefault();
+          }
+        }
+      }
+
+      function handleKeydown(e) {
+        if (e.key === 'Escape') {
+          closeModal();
+          return;
+        }
+        if (e.key === 'Tab') {
+          trapFocus(e);
+        }
+      }
+
+      function openModal() {
+        discountModal.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+        document.addEventListener('keydown', handleKeydown);
+
+        // Check if user already generated a student pass
+        const savedPass = localStorage.getItem('zeezenia_student_pass');
+        if (savedPass) {
+          const passData = JSON.parse(savedPass);
+          renderPassData(passData);
+        } else {
+          modalFormBox.classList.remove('hidden');
+          modalCardBox.classList.add('hidden');
+        }
+
+        // Set initial focus to the first focusable element
+        const allFocusable = Array.from(discountModal.querySelectorAll(focusableElementsString));
+        const visibleFocusable = allFocusable.filter(el => el.offsetParent !== null);
+        if (visibleFocusable.length > 0) {
+          setTimeout(() => {
+            visibleFocusable[0].focus();
+          }, 50);
+        }
+      }
+
+      function closeModal() {
+        discountModal.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+        document.removeEventListener('keydown', handleKeydown);
+      }
+
+      headerCta.addEventListener('click', openModal);
+      closeModalBtn.addEventListener('click', closeModal);
+      modalBackdrop.addEventListener('click', closeModal);
+
+      // Render the digital pass content
+      function renderPassData(data) {
+        cardHolderName.textContent = data.fullname;
+        cardHolderEmail.textContent = data.email;
+        cardPassCode.textContent = `*${data.code}*`;
+
+        if (data.college === 'ufl') {
+          cardCollegeLabel.textContent = 'University of Florida (UF)';
+        } else if (data.college === 'sf') {
+          cardCollegeLabel.textContent = 'Santa Fe College (SF)';
+        } else {
+          cardCollegeLabel.textContent = 'Active Local Student';
+        }
+
+        modalFormBox.classList.add('hidden');
+        modalCardBox.classList.remove('hidden');
+      }
+
+      // Handle Modal form submit
+      modalForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const nameVal = studentName.value.trim();
+        const emailVal = studentEmail.value.trim();
+        const collegeVal = studentCollege.value;
+
+        let hasError = false;
+
+        // Name verification
+        if (!nameVal) {
+          studentNameError.textContent = 'Please enter your full name.';
+          studentNameError.classList.remove('hidden');
+          studentName.classList.add('border-terracotta-500');
+          hasError = true;
+        } else {
+          studentNameError.classList.add('hidden');
+          studentName.classList.remove('border-terracotta-500');
+        }
+
+        // Student email verification
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailVal) {
+          studentEmailError.textContent = 'Please enter your student email.';
+          studentEmailError.classList.remove('hidden');
+          studentEmail.classList.add('border-terracotta-500');
+          hasError = true;
+        } else if (!emailRegex.test(emailVal)) {
+          studentEmailError.textContent = 'Please enter a valid email address.';
+          studentEmailError.classList.remove('hidden');
+          studentEmail.classList.add('border-terracotta-500');
+          hasError = true;
+        } else if (!emailVal.toLowerCase().endsWith('.edu')) {
+          studentEmailError.textContent = 'A valid university email ending with .edu is required.';
+          studentEmailError.classList.remove('hidden');
+          studentEmail.classList.add('border-terracotta-500');
+          hasError = true;
+        } else {
+          studentEmailError.classList.add('hidden');
+          studentEmail.classList.remove('border-terracotta-500');
+        }
+
+        if (hasError) return;
+
+        // Generate unique student barcode content
+        const codeSuffix = Math.floor(1000 + Math.random() * 9000);
+        const passCode = `UF-ZEE-${collegeVal.toUpperCase()}-${codeSuffix}`;
+
+        const passDetails = {
+          fullname: nameVal,
+          email: emailVal,
+          college: collegeVal,
+          code: passCode
+        };
+
+        // Cache details in LocalStorage
+        localStorage.setItem('zeezenia_student_pass', JSON.stringify(passDetails));
+        renderPassData(passDetails);
+      });
+
+      // Reset Student Voucher
+      document.getElementById('reset-modal-btn').addEventListener('click', () => {
+        localStorage.removeItem('zeezenia_student_pass');
+        modalForm.reset();
+        modalCardBox.classList.add('hidden');
+        modalFormBox.classList.remove('hidden');
+      });
+
+      // Mock print/download screenshot utility feedback
+      document.getElementById('download-pass-btn').addEventListener('click', () => {
+        alert('Pass downloaded! Present this code at the register for 15% off and your free Turkish coffee.');
+      });
+
+
+      // --- REFERRAL LINK TOOL GENERATOR ---
+      const refEmailInput = document.getElementById('referral-email-input');
+      const generateRefBtn = document.getElementById('generate-ref-btn');
+      const refError = document.getElementById('referral-error');
+      const refResultBox = document.getElementById('referral-result-box');
+      const refLinkField = document.getElementById('referral-link-field');
+      const copyRefBtn = document.getElementById('copy-ref-btn');
+      const copyFeedbackMsg = document.getElementById('copy-feedback-msg');
+      const referralCountNode = document.getElementById('referral-count');
+
+      // Initialize counter & check caching
+      let referralCount = parseInt(localStorage.getItem('zeezenia_referral_count') || '0', 10);
+      referralCountNode.textContent = referralCount;
+
+      const cachedRefUrl = localStorage.getItem('zeezenia_referral_url');
+      if (cachedRefUrl) {
+        refEmailInput.classList.add('hidden');
+        generateRefBtn.classList.add('hidden');
+        document.querySelector('[for="referral-email-input"]').textContent = "Your active referral channel is live:";
+        
+        refResultBox.classList.remove('hidden');
+        refLinkField.value = cachedRefUrl;
+      }
+
+      generateRefBtn.addEventListener('click', () => {
+        const emailVal = refEmailInput.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailVal || !emailRegex.test(emailVal)) {
+          refError.textContent = 'Please enter a valid email address.';
+          refError.classList.remove('hidden');
+          return;
+        }
+
+        refError.classList.add('hidden');
+
+        // Build mock tracking referral link
+        const cleanEmailSeed = btoa(emailVal).replace(/=/g, "").substring(0, 10).toLowerCase();
+        const baseLocation = window.location.origin + window.location.pathname;
+        const generatedRefUrl = `${baseLocation}?ref=${cleanEmailSeed}`;
+
+        // Save
+        localStorage.setItem('zeezenia_referral_email', emailVal);
+        localStorage.setItem('zeezenia_referral_url', generatedRefUrl);
+
+        // Smooth transition display
+        refEmailInput.classList.add('hidden');
+        generateRefBtn.classList.add('hidden');
+        document.querySelector('[for="referral-email-input"]').textContent = "Your active referral channel is live:";
+
+        refResultBox.classList.remove('hidden');
+        refLinkField.value = generatedRefUrl;
+      });
+
+      // Copy Link function
+      copyRefBtn.addEventListener('click', () => {
+        refLinkField.select();
+        refLinkField.setSelectionRange(0, 99999); // Mobile compatibility
+
+        navigator.clipboard.writeText(refLinkField.value)
+          .then(() => {
+            copyFeedbackMsg.classList.remove('hidden');
+            copyRefBtn.textContent = 'Copied!';
+            copyRefBtn.classList.remove('bg-olive-800');
+            copyRefBtn.classList.add('bg-terracotta-500');
+
+            // Log mock referral conversion on first copy action for testing
+            if (referralCount === 0) {
+              referralCount = 1;
+              localStorage.setItem('zeezenia_referral_count', '1');
+              referralCountNode.textContent = '1';
+            }
+
+            setTimeout(() => {
+              copyFeedbackMsg.classList.add('hidden');
+              copyRefBtn.textContent = 'Copy';
+              copyRefBtn.classList.remove('bg-terracotta-500');
+              copyRefBtn.classList.add('bg-olive-800');
+            }, 3000);
+          })
+          .catch(() => {
+            alert('Clipboard copy failed. Please highlight the text field and copy manually.');
+          });
+      });
+
+      // --- DEMO RESET BUTTON ---
+      const resetDemoBtn = document.getElementById('reset-demo-btn');
+      if (resetDemoBtn) {
+        resetDemoBtn.addEventListener('click', () => {
+          localStorage.clear();
+          window.location.reload();
+        });
+      }
+
+    });
+  </script>
+</body>
+</html>
