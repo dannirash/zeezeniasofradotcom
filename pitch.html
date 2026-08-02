@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zeezenia · Tech Pitch & Publishing Roadmap</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            olive:      { 50:'#f6f8f6',100:'#ebf1ec',200:'#d7e2d9',800:'#2c5234',900:'#1f3824',950:'#112115' },
+            terracotta: { 50:'#fdf7f4',100:'#fbece5',200:'#f7d8ca',300:'#f1bda6',500:'#c05621',600:'#a74618' },
+            cream:      { 50:'#fdfbf7',100:'#faf6ee',200:'#f3ebd8',300:'#e7d6b5' },
+            charcoal:   { 700:'#44403c',800:'#292524',900:'#1c1917' }
+          },
+          fontFamily: { sans:['Outfit','sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background:#f5f2ec; }
+    .card { background:#fff; border:1px solid #e7d6b5; border-radius:1.25rem; padding:1.75rem; transition:box-shadow .2s,transform .2s; }
+    .card:hover { box-shadow:0 12px 40px -10px rgba(44,82,52,.13); transform:translateY(-2px); }
+    input[type="checkbox"]:checked ~ span { text-decoration:line-through; opacity:.4; }
+    #toast { position:fixed;bottom:1.5rem;right:1.5rem;z-index:999;background:#2c5234;color:#fff;padding:.75rem 1.25rem;border-radius:.85rem;font-size:.8rem;font-weight:600;box-shadow:0 8px 28px rgba(0,0,0,.18);transform:translateY(70px);opacity:0;transition:all .35s cubic-bezier(.34,1.56,.64,1);pointer-events:none; }
+    #toast.show { transform:translateY(0);opacity:1; }
+    .step-num { min-width:2.25rem;height:2.25rem;border-radius:.75rem;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.85rem; }
+  </style>
+</head>
+<body class="font-sans antialiased text-charcoal-900">
+
+  <div id="toast"></div>
+
+  <!-- Header -->
+  <header class="bg-olive-900 text-white px-6 md:px-12 py-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+    <div>
+      <div class="flex items-center gap-3">
+        <span class="text-xl font-extrabold tracking-wider">ZEEZENIA</span>
+        <span class="inline-flex items-center gap-1.5 text-[10px] font-extrabold tracking-widest uppercase bg-terracotta-500/25 text-terracotta-300 border border-terracotta-500/30 px-3 py-1 rounded-full">Internal Pitch Doc</span>
+      </div>
+      <p class="text-xs text-white/40 font-light mt-0.5">Not for public distribution &middot; Tech &amp; Publishing Roadmap</p>
+    </div>
+    <a href="./sofra.html" class="text-xs font-bold bg-white/10 hover:bg-white/20 border border-white/20 px-4 py-2 rounded-full transition-all flex items-center gap-2 shrink-0">
+      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      View the Website
+    </a>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-6 md:px-12 py-14 space-y-16">
+
+    <!-- Intro -->
+    <div class="text-center max-w-2xl mx-auto">
+      <h1 class="text-3xl md:text-4xl font-extrabold text-olive-800 leading-tight mb-4">How We Take Zeezenia Live</h1>
+      <p class="text-stone-500 font-light leading-relaxed">Three integration paths with Squarespace, an activation checklist for online payments, and the exact 48-hour publishing roadmap — for internal pitch use only.</p>
+    </div>
+
+    <!-- ── SECTION 1: Three Paths ── -->
+    <div>
+      <div class="flex items-center gap-3 mb-7">
+        <span class="step-num bg-olive-800 text-white">1</span>
+        <h2 class="text-xl font-extrabold text-charcoal-900">Three Integration Paths with Squarespace</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+        <div class="card flex flex-col gap-4 border-t-4 border-olive-600">
+          <div class="w-10 h-10 rounded-xl bg-olive-100 text-olive-800 text-lg font-black flex items-center justify-center">A</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-charcoal-900 mb-1">Campaign Landing Page <span class="text-xs font-semibold text-olive-600 ml-1">Standalone</span></h3>
+            <p class="text-sm text-stone-500 font-light leading-relaxed">Host <code class="bg-cream-100 px-1 rounded text-olive-800 text-xs">sofra.html</code> on <strong class="text-charcoal-800">Netlify</strong> or GitHub Pages — both free. Link it from the existing Squarespace site as a campaign-specific page (e.g. <code class="bg-cream-100 px-1 rounded text-olive-800 text-xs">welcome.zeezenia.com</code>). Zero disruption to the current Squarespace setup.</p>
+          </div>
+          <div class="bg-olive-50 border border-olive-100 rounded-xl p-3 text-xs text-olive-900 font-semibold">&#x2705; Fastest path — live in under 30 minutes.</div>
+        </div>
+
+        <div class="card flex flex-col gap-4 border-t-4 border-terracotta-500">
+          <div class="w-10 h-10 rounded-xl bg-terracotta-100 text-terracotta-600 text-lg font-black flex items-center justify-center">B</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-charcoal-900 mb-1">Embed Widgets Into Squarespace <span class="text-xs font-semibold text-terracotta-600 ml-1">Hybrid</span></h3>
+            <p class="text-sm text-stone-500 font-light leading-relaxed">Use Squarespace's <strong class="text-charcoal-800">Code Block</strong> feature to embed components — the student lead form, the referral widget, the menu tabs — directly into existing Squarespace pages. Requires the <strong class="text-charcoal-800">Business plan</strong> ($23/mo).</p>
+          </div>
+          <div class="bg-terracotta-50 border border-terracotta-100 rounded-xl p-3 text-xs text-terracotta-800 font-semibold">&#x26A1; Recommended — keeps one brand home, adds new features.</div>
+        </div>
+
+        <div class="card flex flex-col gap-4 border-t-4 border-cream-300">
+          <div class="w-10 h-10 rounded-xl bg-cream-200 text-charcoal-800 text-lg font-black flex items-center justify-center">C</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-charcoal-900 mb-1">Full Squarespace Rebuild <span class="text-xs font-semibold text-stone-400 ml-1">Long-term</span></h3>
+            <p class="text-sm text-stone-500 font-light leading-relaxed">Use <code class="bg-cream-100 px-1 rounded text-olive-800 text-xs">sofra.html</code> as the design blueprint for a full Squarespace rebuild. All sections, palette, and copy map directly. A developer can rebuild this in <strong class="text-charcoal-800">1–2 days</strong> — one unified site with full CMS control.</p>
+          </div>
+          <div class="bg-cream-100 border border-cream-200 rounded-xl p-3 text-xs text-charcoal-700 font-semibold">&#x1F4CB; Best long-term investment. Full CMS control.</div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ── SECTION 2: Squarespace Commerce ── -->
+    <div>
+      <div class="flex items-center gap-3 mb-7">
+        <span class="step-num bg-olive-800 text-white">2</span>
+        <h2 class="text-xl font-extrabold text-charcoal-900">Squarespace Commerce Activation</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+        <div class="card space-y-5">
+          <div class="inline-flex items-center gap-2 bg-charcoal-900 text-white text-[10px] font-extrabold tracking-widest uppercase px-3 py-1.5 rounded-full">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+            Squarespace Payments — Already Active
+          </div>
+          <h3 class="text-xl font-extrabold text-charcoal-900">Activate Online Sales</h3>
+          <p class="text-sm text-stone-500 font-light leading-relaxed">Zeezenia is already on Squarespace with payment processing. The next step is activating <strong class="text-charcoal-800">Squarespace Commerce</strong> to sell blueberry pints, baklawa gift boxes, farm tour tickets, and spice bundles.</p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3 text-sm"><span class="mt-0.5 w-5 h-5 rounded-full bg-green-500 text-white text-xs font-bold flex items-center justify-center shrink-0">&#x2713;</span><span class="text-stone-600">PCI-compliant card processing — no separate Stripe setup needed</span></li>
+            <li class="flex items-start gap-3 text-sm"><span class="mt-0.5 w-5 h-5 rounded-full bg-green-500 text-white text-xs font-bold flex items-center justify-center shrink-0">&#x2713;</span><span class="text-stone-600">Add products directly from the Squarespace dashboard</span></li>
+            <li class="flex items-start gap-3 text-sm"><span class="mt-0.5 w-5 h-5 rounded-full bg-green-500 text-white text-xs font-bold flex items-center justify-center shrink-0">&#x2713;</span><span class="text-stone-600">Student discount codes generated on <code class="bg-cream-100 px-1 rounded text-olive-800 text-xs">sofra.html</code> plug directly into Squarespace Promotions</span></li>
+            <li class="flex items-start gap-3 text-sm"><span class="mt-0.5 w-5 h-5 rounded-full bg-green-500 text-white text-xs font-bold flex items-center justify-center shrink-0">&#x2713;</span><span class="text-stone-600">Orders, inventory, and email receipts — all in one dashboard</span></li>
+          </ul>
+          <div class="bg-cream-100 rounded-xl p-4 border border-cream-200">
+            <p class="font-bold text-charcoal-900 text-sm mb-2">Recommended Starter Products</p>
+            <ol class="list-decimal list-inside text-stone-500 space-y-1 font-light text-sm">
+              <li>Fresh Blueberry Pint — $5.00</li>
+              <li>Pistachio Baklawa 2-Pack — $3.50</li>
+              <li>Spice Sampler Bundle — $12.00</li>
+              <li>Farm Tour Ticket (Adult) — $5.00</li>
+              <li>Blueberry Gift Basket — $22.00</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="card space-y-5" style="background:linear-gradient(135deg,#1f3824,#2c5234);border-color:#415b45;color:white;">
+          <p class="text-xs font-bold tracking-widest uppercase text-white/40">Activation Checklist</p>
+          <div class="space-y-4">
+            <label class="flex items-center gap-3 cursor-pointer">
+              <input type="checkbox" id="sq-1" class="w-4 h-4 rounded shrink-0" style="accent-color:#c05621">
+              <span class="text-sm text-white/80">Upgrade to Squarespace Business / Commerce plan</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer">
+              <input type="checkbox" id="sq-2" class="w-4 h-4 rounded shrink-0" style="accent-color:#c05621">
+              <span class="text-sm text-white/80">Connect Squarespace Payments in Settings &#8594; Payments</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer">
+              <input type="checkbox" id="sq-3" class="w-4 h-4 rounded shrink-0" style="accent-color:#c05621">
+              <span class="text-sm text-white/80">Add the 5 starter products with photos &amp; descriptions</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer">
+              <input type="checkbox" id="sq-4" class="w-4 h-4 rounded shrink-0" style="accent-color:#c05621">
+              <span class="text-sm text-white/80">Create discount code <code class="bg-white/10 px-1.5 py-0.5 rounded text-terracotta-300 text-xs font-mono">ZEE-STUDENT-15</code> in Promotions</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer">
+              <input type="checkbox" id="sq-5" class="w-4 h-4 rounded shrink-0" style="accent-color:#c05621">
+              <span class="text-sm text-white/80">Link the campaign page to Squarespace store product pages</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer">
+              <input type="checkbox" id="sq-6" class="w-4 h-4 rounded shrink-0" style="accent-color:#c05621">
+              <span class="text-sm text-white/80">Set up welcome email automation for new student signups</span>
+            </label>
+          </div>
+          <div class="pt-4 border-t border-white/10 space-y-2">
+            <div class="flex justify-between text-xs text-white/40">
+              <span>Setup progress</span><span id="sq-label">0 of 6 done</span>
+            </div>
+            <div class="w-full bg-white/10 rounded-full h-2">
+              <div id="sq-bar" class="h-2 rounded-full transition-all duration-500 bg-terracotta-500" style="width:0%"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ── SECTION 3: Publishing Roadmap ── -->
+    <div>
+      <div class="flex items-center gap-3 mb-7">
+        <span class="step-num bg-olive-800 text-white">3</span>
+        <h2 class="text-xl font-extrabold text-charcoal-900">Publishing Roadmap — Live in 48 Hours</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+        <div class="card flex flex-col gap-3">
+          <div class="step-num bg-olive-800 text-white text-sm font-black">1</div>
+          <h4 class="font-bold text-sm text-charcoal-900">Host the HTML File</h4>
+          <p class="text-xs text-stone-500 font-light flex-1 leading-relaxed">Go to <a href="https://app.netlify.com/drop" target="_blank" rel="noopener" class="text-terracotta-500 font-semibold underline">netlify.com/drop</a>. Drag <code class="bg-cream-100 px-1 rounded text-olive-800">sofra.html</code> + the 4 images into the browser window. Netlify generates a live URL instantly — no account required.</p>
+          <span class="text-xs font-bold text-olive-800 uppercase tracking-widest border-t border-cream-200 pt-3 mt-auto">~15 min &middot; Free</span>
+        </div>
+
+        <div class="card flex flex-col gap-3">
+          <div class="step-num bg-olive-800 text-white text-sm font-black">2</div>
+          <h4 class="font-bold text-sm text-charcoal-900">Connect a Custom Domain</h4>
+          <p class="text-xs text-stone-500 font-light flex-1 leading-relaxed">Create a free Netlify account and add a CNAME DNS record pointing <code class="bg-cream-100 px-1 rounded text-olive-800">welcome.zeezenia.com</code> to Netlify. Your main Squarespace domain stays completely untouched. HTTPS is automatic and free.</p>
+          <span class="text-xs font-bold text-olive-800 uppercase tracking-widest border-t border-cream-200 pt-3 mt-auto">~30 min &middot; Free</span>
+        </div>
+
+        <div class="card flex flex-col gap-3">
+          <div class="step-num bg-terracotta-500 text-white text-sm font-black">3</div>
+          <h4 class="font-bold text-sm text-charcoal-900">Wire the Lead Form</h4>
+          <p class="text-xs text-stone-500 font-light flex-1 leading-relaxed">Sign up at <a href="https://formspree.io" target="_blank" rel="noopener" class="text-terracotta-500 font-semibold underline">formspree.io</a> (free: 50 submissions/mo). Create a form, copy the endpoint URL like <code class="bg-cream-100 px-1 rounded text-olive-800">formspree.io/f/xxxxx</code>, and paste it as the form <code class="bg-cream-100 px-1 rounded text-olive-800">action</code>. Submissions go straight to the Zeezenia inbox.</p>
+          <span class="text-xs font-bold text-terracotta-600 uppercase tracking-widest border-t border-cream-200 pt-3 mt-auto">~10 min &middot; Free</span>
+        </div>
+
+        <div class="card flex flex-col gap-3">
+          <div class="step-num bg-terracotta-500 text-white text-sm font-black">4</div>
+          <h4 class="font-bold text-sm text-charcoal-900">Add Analytics &amp; Go Live</h4>
+          <p class="text-xs text-stone-500 font-light flex-1 leading-relaxed">Create a free <a href="https://analytics.google.com" target="_blank" rel="noopener" class="text-terracotta-500 font-semibold underline">Google Analytics 4</a> property and paste the <code class="bg-cream-100 px-1 rounded text-olive-800">gtag.js</code> snippet into the <code class="bg-cream-100 px-1 rounded text-olive-800">&lt;head&gt;</code>. Share the link on Instagram, Gator1 Central, and Nextdoor Gainesville. Campaign is live.</p>
+          <span class="text-xs font-bold text-terracotta-600 uppercase tracking-widest border-t border-cream-200 pt-3 mt-auto">Same day &middot; Free</span>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ── SECTION 4: Cost Summary ── -->
+    <div>
+      <div class="flex items-center gap-3 mb-7">
+        <span class="step-num bg-olive-800 text-white">4</span>
+        <h2 class="text-xl font-extrabold text-charcoal-900">Cost Summary</h2>
+      </div>
+
+      <div class="card overflow-hidden p-0">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-olive-800 text-white">
+              <th class="text-left px-6 py-4 text-xs font-bold uppercase tracking-widest">Item</th>
+              <th class="text-left px-6 py-4 text-xs font-bold uppercase tracking-widest">Tool</th>
+              <th class="text-left px-6 py-4 text-xs font-bold uppercase tracking-widest">Cost</th>
+              <th class="text-left px-6 py-4 text-xs font-bold uppercase tracking-widest hidden md:table-cell">Notes</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-cream-200">
+            <tr class="hover:bg-cream-50 transition-colors">
+              <td class="px-6 py-3.5 font-semibold">Hosting</td>
+              <td class="px-6 py-3.5 text-stone-500">Netlify</td>
+              <td class="px-6 py-3.5 font-bold text-green-700">Free</td>
+              <td class="px-6 py-3.5 text-stone-400 text-xs hidden md:table-cell">100 GB bandwidth/mo on free tier</td>
+            </tr>
+            <tr class="hover:bg-cream-50 transition-colors">
+              <td class="px-6 py-3.5 font-semibold">Custom Domain</td>
+              <td class="px-6 py-3.5 text-stone-500">Existing registrar</td>
+              <td class="px-6 py-3.5 font-bold text-green-700">Free</td>
+              <td class="px-6 py-3.5 text-stone-400 text-xs hidden md:table-cell">Just a CNAME record, HTTPS included</td>
+            </tr>
+            <tr class="hover:bg-cream-50 transition-colors">
+              <td class="px-6 py-3.5 font-semibold">Lead Form</td>
+              <td class="px-6 py-3.5 text-stone-500">Formspree</td>
+              <td class="px-6 py-3.5 font-bold text-green-700">Free</td>
+              <td class="px-6 py-3.5 text-stone-400 text-xs hidden md:table-cell">Free tier: 50 submissions/mo</td>
+            </tr>
+            <tr class="hover:bg-cream-50 transition-colors">
+              <td class="px-6 py-3.5 font-semibold">Analytics</td>
+              <td class="px-6 py-3.5 text-stone-500">Google Analytics 4</td>
+              <td class="px-6 py-3.5 font-bold text-green-700">Free</td>
+              <td class="px-6 py-3.5 text-stone-400 text-xs hidden md:table-cell">Full traffic + conversion tracking</td>
+            </tr>
+            <tr class="hover:bg-cream-50 transition-colors">
+              <td class="px-6 py-3.5 font-semibold">Squarespace Upgrade</td>
+              <td class="px-6 py-3.5 text-stone-500">Squarespace Business</td>
+              <td class="px-6 py-3.5 font-bold text-terracotta-500">$23/mo</td>
+              <td class="px-6 py-3.5 text-stone-400 text-xs hidden md:table-cell">Only needed for Path B (widget embedding)</td>
+            </tr>
+            <tr class="bg-olive-50">
+              <td class="px-6 py-4 font-extrabold text-olive-800" colspan="2">Phase 1 Total (Path A — Standalone)</td>
+              <td class="px-6 py-4 font-extrabold text-olive-800 text-lg">$0</td>
+              <td class="px-6 py-4 text-olive-600 text-xs font-semibold hidden md:table-cell">Zero upfront cost to go live</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="text-center text-xs text-stone-400 border-t border-cream-200 pt-10 space-y-1">
+      <p>This document is for internal pitch use only.</p>
+      <p>The customer-facing website is <a href="./sofra.html" class="text-terracotta-500 font-semibold underline">sofra.html</a>.</p>
+      <p class="mt-2">Last updated: <span id="last-updated"></span></p>
+    </div>
+
+  </main>
+
+  <script>
+    document.getElementById('last-updated').textContent = new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+
+    function toast(msg) {
+      var t = document.getElementById('toast');
+      t.textContent = msg; t.className = 'show';
+      clearTimeout(t._t); t._t = setTimeout(function(){ t.className = ''; }, 3200);
+    }
+
+    var checks = [1,2,3,4,5,6].map(function(i){ return document.getElementById('sq-'+i); });
+    var bar = document.getElementById('sq-bar'), lbl = document.getElementById('sq-label');
+    var saved = JSON.parse(localStorage.getItem('z_pitch_sq') || '[]');
+    checks.forEach(function(c,i){ if(saved[i]) c.checked = true; });
+
+    function update() {
+      var done = checks.filter(function(c){ return c.checked; }).length;
+      bar.style.width = (done / 6 * 100) + '%';
+      lbl.textContent = done + ' of 6 done';
+      localStorage.setItem('z_pitch_sq', JSON.stringify(checks.map(function(c){ return c.checked; })));
+      if(done === 6) toast('Setup complete! Ready to go live.');
+    }
+    update();
+    checks.forEach(function(c){ c.addEventListener('change', update); });
+  </script>
+
+</body>
+</html>
