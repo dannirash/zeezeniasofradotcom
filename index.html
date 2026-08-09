@@ -146,8 +146,8 @@
         <a href="#menu-section"       class="nav-link hover:text-white transition-colors py-2">Menu</a>
 
         <a href="#hours-location"     class="nav-link hover:text-white transition-colors py-2">Visit</a>
-        <!-- [SQUARE_GIFT_CARD_URL_HERE] - Replace href below with your Square eGift Card URL -->
-        <!-- <a href="#" target="_blank" class="nav-link text-terracotta-300 hover:text-terracotta-400 font-bold transition-colors py-2">Gift Cards</a> -->
+        <!-- Square eGift Card Link -->
+        <a href="https://app.squareup.com/gift/WNPW0RENZV5MA/order" target="_blank" class="nav-link text-terracotta-300 hover:text-terracotta-400 font-bold transition-colors py-2">Gift Cards</a>
       </nav>
 
       <div class="flex items-center gap-3">
@@ -169,8 +169,8 @@
         <a href="#pillars"             class="mobile-nav-link hover:text-terracotta-500 py-2">Market</a>
         <a href="#menu-section"        class="mobile-nav-link hover:text-terracotta-500 py-2">Menu</a>
         <a href="#hours-location"      class="mobile-nav-link hover:text-terracotta-500 py-2">Hours &amp; Visit</a>
-        <!-- [SQUARE_GIFT_CARD_URL_HERE] - Replace href below with your Square eGift Card URL -->
-        <!-- <a href="#" target="_blank" class="mobile-nav-link text-terracotta-500 py-2">Gift Cards</a> -->
+        <!-- Square eGift Card Link -->
+        <a href="https://app.squareup.com/gift/WNPW0RENZV5MA/order" target="_blank" class="mobile-nav-link text-terracotta-500 py-2">Gift Cards</a>
 
         <button onclick="openModal()" class="mt-4 bg-terracotta-500 text-white font-bold py-4 rounded-xl text-base shadow-md">Get Student Discount</button>
       </nav>
@@ -800,10 +800,11 @@
         <h3 class="text-base font-bold text-white">Stay in the Loop</h3>
         <p class="text-sm font-light text-stone-400">Weekend café specials, harvest season alerts &amp; community events.</p>
         
-        <!-- [SQUARE_EMAIL_COLLECTION_EMBED_HERE] - Replace the form below with your Square Email Collection Embed Code -->
-        <form id="newsletter-form" class="space-y-3" novalidate>
-          <input type="email" id="newsletter-email" placeholder="your@email.com" required class="w-full bg-stone-800 border border-stone-700 text-white placeholder-stone-500 text-sm rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-olive-600">
-          <button type="submit" class="w-full bg-olive-800 hover:bg-olive-700 text-white font-bold text-sm py-3 rounded-xl transition-all">Subscribe →</button>
+        <!-- Square Email Collection Embed -->
+        <form action="https://squareup.com/outreach/hVrjTF/subscribe" method="POST" target="_blank" class="space-y-3">
+          <input type="email" name="email_address" placeholder="your@email.com" required class="w-full bg-stone-800 border border-stone-700 text-white placeholder-stone-500 text-sm rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-olive-600">
+          <input type="hidden" name="embed" value="true">
+          <button type="submit" class="w-full bg-olive-800 hover:bg-olive-700 text-white font-bold text-sm py-3 rounded-xl transition-all">Join Now →</button>
         </form>
         
         <div class="pt-2">
