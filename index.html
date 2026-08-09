@@ -428,9 +428,8 @@
               <span class="w-8 h-px bg-terracotta-500"></span>The Lounge
             </span>
             <h3 class="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-charcoal-900 mb-5 leading-snug">Authentic Bedouin Seating</h3>
-            <p class="text-stone-500 leading-relaxed mb-6 font-light">Unwind in our traditional Bedouin lounge. Sip fresh mint tea, share a plate of baklawa, and experience true Egyptian hospitality far away from the hustle of the city.</p>
+            <p class="text-stone-500 leading-relaxed mb-6 font-light">Unwind in our traditional Bedouin lounge. Share a plate of baklawa and experience true Egyptian hospitality far away from the hustle of the city.</p>
             <div class="flex flex-wrap gap-2 mb-7">
-              <span class="px-3 py-1.5 bg-olive-50 text-olive-800 text-xs font-semibold rounded-full border border-olive-100">Fresh Mint Tea</span>
               <span class="px-3 py-1.5 bg-olive-50 text-olive-800 text-xs font-semibold rounded-full border border-olive-100">Relaxed Vibe</span>
             </div>
           </div>
@@ -707,7 +706,7 @@
     <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 pb-16 border-b border-stone-800">
 
       <!-- Brand + map -->
-      <div class="lg:col-span-3 space-y-5">
+      <div class="lg:col-span-4 space-y-5">
         <div>
           <span class="text-2xl font-extrabold tracking-wider text-white">ZEEZENIA</span>
           <span class="block text-[10px] tracking-[0.25em] font-bold text-terracotta-400 uppercase -mt-0.5">Market · Farm · Café</span>
@@ -733,7 +732,7 @@
       </div>
 
       <!-- Hours -->
-      <div class="lg:col-span-3 space-y-5">
+      <div class="lg:col-span-4 space-y-5">
         <h3 class="text-base font-bold text-white">Hours of Operation</h3>
         <div class="space-y-3 text-sm">
           <div class="bg-olive-950/50 p-4 rounded-2xl border border-olive-900/40">
@@ -757,46 +756,8 @@
         </div>
       </div>
 
-      <!-- Referral -->
-      <div class="lg:col-span-3 space-y-4">
-        <h3 class="text-base font-bold text-white">Earn Free Mint Tea 🎉</h3>
-        <p class="text-sm font-light text-stone-400">Share your link. When a friend visits, <strong class="text-terracotta-400">you both get free fresh mint tea</strong>.</p>
-
-        <div class="bg-stone-800/80 p-5 rounded-2xl border border-stone-700/60 space-y-3">
-          <div>
-            <label for="referral-email-input" class="block text-[10px] font-bold text-terracotta-400 uppercase tracking-wider mb-1.5">Your Email → Get Link</label>
-            <div class="flex gap-2">
-              <input type="email" id="referral-email-input" placeholder="your@email.com" class="flex-1 bg-stone-900 border border-stone-700 text-white placeholder-stone-500 text-xs rounded-xl px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-terracotta-500">
-              <button id="generate-ref-btn" class="bg-terracotta-500 hover:bg-terracotta-400 text-white text-xs font-bold px-4 rounded-xl transition active:scale-95">Get Link</button>
-            </div>
-            <span id="referral-error" class="hidden text-[11px] text-terracotta-400 font-medium mt-1 block"></span>
-          </div>
-          <div id="referral-result-box" class="hidden pt-2 border-t border-stone-700/50 space-y-2">
-            <span class="block text-[9px] font-semibold text-stone-400 uppercase">Your Referral URL</span>
-            <div class="flex gap-1.5 bg-stone-900 border border-stone-700 rounded-xl p-1.5">
-              <input type="text" id="referral-link-field" readonly class="bg-transparent text-stone-200 text-xs px-2 py-1 w-full focus:outline-none font-mono select-all">
-              <button id="copy-ref-btn" class="bg-olive-800 hover:bg-olive-700 text-white text-[10px] font-bold uppercase px-3 py-1.5 rounded-lg transition">Copy</button>
-            </div>
-            <div class="flex gap-2 pt-1">
-              <button id="share-wa-btn" class="flex-1 bg-green-700/50 hover:bg-green-700/70 text-white text-[10px] font-bold py-2 rounded-xl transition">📱 WhatsApp</button>
-              <button id="share-sms-btn" class="flex-1 bg-blue-700/50 hover:bg-blue-700/70 text-white text-[10px] font-bold py-2 rounded-xl transition">💬 Text</button>
-            </div>
-            <div class="flex justify-between text-[10px] text-stone-400 pt-0.5">
-              <span>Referrals: <strong id="referral-count" class="text-terracotta-400">0</strong></span>
-              <span id="copy-feedback-msg" class="text-olive-400 hidden font-bold">Copied!</span>
-            </div>
-          </div>
-        </div>
-        <ol class="space-y-1.5 text-xs text-stone-400">
-          <li class="flex items-start gap-2"><span class="shrink-0 w-5 h-5 rounded-full bg-terracotta-500/20 text-terracotta-400 font-black text-[10px] flex items-center justify-center mt-0.5">1</span>Generate &amp; copy your link</li>
-          <li class="flex items-start gap-2"><span class="shrink-0 w-5 h-5 rounded-full bg-terracotta-500/20 text-terracotta-400 font-black text-[10px] flex items-center justify-center mt-0.5">2</span>Send via WhatsApp or text</li>
-          <li class="flex items-start gap-2"><span class="shrink-0 w-5 h-5 rounded-full bg-terracotta-500/20 text-terracotta-400 font-black text-[10px] flex items-center justify-center mt-0.5">3</span>Friend visits &amp; mentions your name at register</li>
-          <li class="flex items-start gap-2"><span class="shrink-0 w-5 h-5 rounded-full bg-terracotta-500/20 text-terracotta-400 font-black text-[10px] flex items-center justify-center mt-0.5">4</span><strong class="text-white">You both get free mint tea on your next visit</strong></li>
-        </ol>
-      </div>
-
       <!-- Newsletter + social -->
-      <div class="lg:col-span-3 space-y-5">
+      <div class="lg:col-span-4 space-y-5">
         <h3 class="text-base font-bold text-white">Stay in the Loop</h3>
         <p class="text-sm font-light text-stone-400">Weekend café specials, harvest season alerts &amp; community events.</p>
         
@@ -886,7 +847,7 @@
             <div><span class="text-[9px] text-white/50 uppercase tracking-wider block">Pass Holder</span><span id="card-holder-name" class="text-sm font-semibold"></span></div>
             <div class="grid grid-cols-2 gap-4">
               <div><span class="text-[9px] text-white/50 uppercase tracking-wider block">Email</span><span id="card-holder-email" class="text-xs font-mono truncate block"></span></div>
-              <div><span class="text-[9px] text-white/50 uppercase tracking-wider block">Bonus</span><span class="text-xs font-semibold text-terracotta-300">Free Mint Tea</span></div>
+              <div><span class="text-[9px] text-white/50 uppercase tracking-wider block">Reward</span><span class="text-xs font-semibold text-terracotta-300">100 Points for Free Soda</span></div>
             </div>
           </div>
           <div class="bg-white p-3 rounded-xl mt-4">
@@ -1081,58 +1042,7 @@
       else try{await navigator.clipboard.writeText(txt);toast('Pass copied to clipboard!');}catch(err){toast('Code: '+code);}
     });
 
-    // ── REFERRAL TOOL ──────────────────────────────────
-    var refIn=document.getElementById('referral-email-input'), genBtn=document.getElementById('generate-ref-btn');
-    var refErr=document.getElementById('referral-error'), refBox=document.getElementById('referral-result-box');
-    var refField=document.getElementById('referral-link-field'), copyBtn=document.getElementById('copy-ref-btn');
-    var refCount=parseInt(localStorage.getItem('z_refcount')||'0',10);
-    document.getElementById('referral-count').textContent=refCount;
-    var cachedRef=localStorage.getItem('z_refurl');
-    if(cachedRef){refBox.classList.remove('hidden');refField.value=cachedRef;}
-    genBtn.addEventListener('click',function(){
-      var val=refIn.value.trim(); refErr.classList.add('hidden');
-      if(!val||!emailRx.test(val)){refErr.textContent='Valid email required.';refErr.classList.remove('hidden');return;}
-      var seed=btoa(val).replace(/=/g,'').substring(0,10).toLowerCase();
-      var url=location.origin+location.pathname+'?ref='+seed;
-      localStorage.setItem('z_refemail',val); localStorage.setItem('z_refurl',url);
-      refBox.classList.remove('hidden'); refField.value=url;
-      toast('Your referral link is ready! Share it to earn free mint tea 🎉');
-    });
-    async function copyToClipboard(txt){
-      if(navigator.clipboard&&window.isSecureContext) await navigator.clipboard.writeText(txt);
-      else{var ta=document.createElement('textarea');ta.value=txt;ta.style.position='absolute';ta.style.left='-9999px';document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);}
-    }
-    copyBtn.addEventListener('click',async function(){
-      try{
-        await copyToClipboard(refField.value);
-        var fb=document.getElementById('copy-feedback-msg'); fb.classList.remove('hidden'); copyBtn.textContent='Copied!';
-        copyBtn.classList.replace('bg-olive-800','bg-terracotta-500');
-        if(refCount===0){refCount=1;localStorage.setItem('z_refcount','1');document.getElementById('referral-count').textContent='1';}
-        setTimeout(function(){fb.classList.add('hidden');copyBtn.textContent='Copy';copyBtn.classList.replace('bg-terracotta-500','bg-olive-800');},2800);
-        toast('Copied! Share it to earn free mint tea 🌿');
-      }catch(err){toast('Select and copy the link manually.','err');}
-    });
-    document.getElementById('share-wa-btn').addEventListener('click',function(){
-      var msg=encodeURIComponent('Hey! Check out Zeezenia Farm & Sofra in Newberry — amazing Egyptian food, blueberry farm & Bedouin lounge, just 30 min from campus. We both get free mint tea! '+refField.value);
-      window.open('https://wa.me/?text='+msg,'_blank','noopener,noreferrer');
-    });
-    document.getElementById('share-sms-btn').addEventListener('click',function(){
-      window.open('sms:?body='+encodeURIComponent('Use my Zeezenia link — we both get free mint tea! '+refField.value),'_self');
-    });
 
-
-
-
-    // ── NEWSLETTER ─────────────────────────────────────
-    document.getElementById('newsletter-form').addEventListener('submit',function(e){
-      e.preventDefault(); var val=document.getElementById('newsletter-email').value.trim();
-      if(!val||!emailRx.test(val)){toast('Enter a valid email.','err');return;}
-      toast('Subscribed! Café specials & harvest events coming your way 🌿');
-      document.getElementById('newsletter-form').reset();
-    });
-
-    // ── INCOMING REFERRAL ──────────────────────────────
-    (function(){ var ref=new URLSearchParams(location.search).get('ref'); if(ref) setTimeout(function(){toast('👋 A friend sent you here! Sign up for your student discount .',null,5000);},1200); })();
 
   })();
   </script>
