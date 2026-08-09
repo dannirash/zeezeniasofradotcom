@@ -8,7 +8,7 @@
   <meta name="author" content="Zeezenia Farm & Sofra">
   <meta property="og:title" content="Zeezenia Farm & Sofra | Farm-to-Table Café">
   <meta property="og:description" content="Authentic Egyptian flavors. Fresh local ingredients. Your perfect weekend escape — 30 minutes from campus.">
-  <meta property="og:image" content="./DSC_0023.JPG">
+  <meta property="og:image" content="./assets/images/web/DSC_0023.jpg">
   <meta property="og:type" content="website">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☕</text></svg>">
 
@@ -146,13 +146,15 @@
         <a href="#menu-section"       class="nav-link hover:text-white transition-colors py-2">Menu</a>
 
         <a href="#hours-location"     class="nav-link hover:text-white transition-colors py-2">Visit</a>
+        <!-- [SQUARE_GIFT_CARD_URL_HERE] - Replace href below with your Square eGift Card URL -->
+        <!-- <a href="#" target="_blank" class="nav-link text-terracotta-300 hover:text-terracotta-400 font-bold transition-colors py-2">Gift Cards</a> -->
       </nav>
 
       <div class="flex items-center gap-3">
         <button id="header-cta" class="bg-terracotta-500 text-white font-bold text-xs md:text-sm px-5 py-2.5 rounded-full hover:bg-terracotta-400 active:scale-95 transition-all duration-200 cta-pulse focus:outline-none focus:ring-2 focus:ring-terracotta-400 focus:ring-offset-2">
           Student Discount
         </button>
-        <button id="mobile-menu-btn" class="lg:hidden text-white hover:text-terracotta-300 p-2 focus:outline-none" aria-label="Menu">
+        <button id="mobile-menu-btn" class="lg:hidden text-white hover:text-terracotta-300 p-2 focus:outline-none transition-colors" aria-label="Menu">
           <svg class="h-6 w-6 stroke-current" fill="none" viewBox="0 0 24 24">
             <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
@@ -160,15 +162,17 @@
       </div>
     </div>
 
-    <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-cream-50/97 backdrop-blur-lg border-b border-olive-800/10 px-6 py-6">
-      <nav class="flex flex-col space-y-3 font-semibold text-charcoal-800">
-        <a href="#story"               class="mobile-nav-link hover:text-terracotta-500 py-1">About</a>
-        <a href="#expansion"           class="mobile-nav-link hover:text-terracotta-500 py-1">Experience</a>
-        <a href="#pillars"             class="mobile-nav-link hover:text-terracotta-500 py-1">Market</a>
-        <a href="#menu-section"        class="mobile-nav-link hover:text-terracotta-500 py-1">Menu</a>
+    <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-white shadow-2xl border-b border-olive-800/10 px-6 py-6">
+      <nav class="flex flex-col space-y-4 text-lg font-bold text-charcoal-900">
+        <a href="#story"               class="mobile-nav-link hover:text-terracotta-500 py-2">About</a>
+        <a href="#expansion"           class="mobile-nav-link hover:text-terracotta-500 py-2">Experience</a>
+        <a href="#pillars"             class="mobile-nav-link hover:text-terracotta-500 py-2">Market</a>
+        <a href="#menu-section"        class="mobile-nav-link hover:text-terracotta-500 py-2">Menu</a>
+        <a href="#hours-location"      class="mobile-nav-link hover:text-terracotta-500 py-2">Hours &amp; Visit</a>
+        <!-- [SQUARE_GIFT_CARD_URL_HERE] - Replace href below with your Square eGift Card URL -->
+        <!-- <a href="#" target="_blank" class="mobile-nav-link text-terracotta-500 py-2">Gift Cards</a> -->
 
-        <a href="#hours-location"      class="mobile-nav-link hover:text-terracotta-500 py-1">Hours &amp; Visit</a>
-        <button onclick="openModal()" class="mt-2 bg-terracotta-500 text-white font-bold py-3 rounded-xl text-sm">Get Student Discount</button>
+        <button onclick="openModal()" class="mt-4 bg-terracotta-500 text-white font-bold py-4 rounded-xl text-base shadow-md">Get Student Discount</button>
       </nav>
     </div>
   </header>
@@ -181,7 +185,7 @@
 
     <!-- Background image -->
     <div class="hero-img-wrap">
-      <img src="./DSC_0023.JPG" alt="Zeezenia Market entrance" fetchpriority="high" loading="eager" decoding="async">
+      <img src="./assets/images/web/DSC_0023.jpg" alt="Zeezenia Market entrance" fetchpriority="high" loading="eager" decoding="async">
     </div>
 
     <!-- Layered overlays for depth -->
@@ -417,7 +421,7 @@
         <!-- Card 1: Lounge -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden shadow-[0_20px_60px_-15px_rgba(44,82,52,.15)] bg-white">
           <div class="img-zoom aspect-video lg:aspect-auto lg:min-h-[480px] reveal-left">
-            <img src="./DSC_0019.JPG" alt="Authentic Bedouin Lounge Seating" class="w-full h-full object-cover" loading="lazy" decoding="async">
+            <img src="./assets/images/web/DSC_0019.jpg" alt="Authentic Bedouin Lounge Seating" class="w-full h-full object-cover" loading="lazy" decoding="async">
           </div>
           <div class="flex flex-col justify-center p-10 lg:p-14 reveal-right">
             <span class="inline-flex items-center gap-2 text-xs font-bold text-terracotta-500 uppercase tracking-widest mb-5">
@@ -446,14 +450,14 @@
             </div>
           </div>
           <div class="img-zoom aspect-video lg:aspect-auto lg:min-h-[480px] order-1 lg:order-2 reveal-right">
-            <img src="./DSC_0025.JPG" alt="Potted Blueberry Field" class="w-full h-full object-cover" loading="lazy" decoding="async">
+            <img src="./assets/images/web/DSC_0025.jpg" alt="Potted Blueberry Field" class="w-full h-full object-cover" loading="lazy" decoding="async">
           </div>
         </div>
 
         <!-- Card 3: Recreation -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden shadow-[0_20px_60px_-15px_rgba(44,82,52,.15)] bg-white">
           <div class="img-zoom aspect-video lg:aspect-auto lg:min-h-[480px] reveal-left">
-            <img src="./DSC_0026.JPG" alt="Outdoor Basketball Court" class="w-full h-full object-cover" loading="lazy" decoding="async">
+            <img src="./assets/images/web/DSC_0026.jpg" alt="Outdoor Basketball Court" class="w-full h-full object-cover" loading="lazy" decoding="async">
           </div>
           <div class="flex flex-col justify-center p-10 lg:p-14 reveal-right">
             <span class="inline-flex items-center gap-2 text-xs font-bold text-terracotta-500 uppercase tracking-widest mb-5">
@@ -495,9 +499,6 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
 
         <div class="pillar-card reveal bg-white/8 border border-white/12 rounded-3xl p-8 flex flex-col gap-6">
-          <div class="w-full h-48 rounded-2xl bg-white/5 flex items-center justify-center border border-white/10 border-dashed">
-            <span class="text-white/30 text-sm font-medium">Image Placeholder</span>
-          </div>
           <div class="flex-1">
             <h3 class="text-xl font-extrabold text-white mb-3">What We Grow</h3>
             <p class="text-sm text-white/60 font-light leading-relaxed">Fresh produce, organic vegetables, and our signature blueberries straight from the farm.</p>
@@ -505,9 +506,6 @@
         </div>
 
         <div class="pillar-card reveal reveal-delay-1 bg-white/8 border border-white/12 rounded-3xl p-8 flex flex-col gap-6">
-          <div class="w-full h-48 rounded-2xl bg-white/5 flex items-center justify-center border border-white/10 border-dashed">
-            <span class="text-white/30 text-sm font-medium">Image Placeholder</span>
-          </div>
           <div class="flex-1">
             <h3 class="text-xl font-extrabold text-white mb-3">What We Raise</h3>
             <p class="text-sm text-white/60 font-light leading-relaxed">Pasture-raised animals cared for with respect and traditional farming methods.</p>
@@ -801,11 +799,14 @@
       <div class="lg:col-span-3 space-y-5">
         <h3 class="text-base font-bold text-white">Stay in the Loop</h3>
         <p class="text-sm font-light text-stone-400">Weekend café specials, harvest season alerts &amp; community events.</p>
+        
+        <!-- [SQUARE_EMAIL_COLLECTION_EMBED_HERE] - Replace the form below with your Square Email Collection Embed Code -->
         <form id="newsletter-form" class="space-y-3" novalidate>
           <input type="email" id="newsletter-email" placeholder="your@email.com" required class="w-full bg-stone-800 border border-stone-700 text-white placeholder-stone-500 text-sm rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-olive-600">
           <button type="submit" class="w-full bg-olive-800 hover:bg-olive-700 text-white font-bold text-sm py-3 rounded-xl transition-all">Subscribe →</button>
         </form>
-        <div>
+        
+        <div class="pt-2">
           <p class="text-xs font-bold text-stone-500 uppercase tracking-widest mb-3">Follow Us</p>
           <div class="flex gap-3">
             <a href="https://www.instagram.com/zeezeniasofra/" target="_blank" rel="noopener" class="w-10 h-10 rounded-xl bg-stone-800 hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-500 flex items-center justify-center text-white transition-all" aria-label="Instagram"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
@@ -946,11 +947,13 @@
         logoText.className='text-xl md:text-2xl font-extrabold tracking-wider text-olive-800 group-hover:text-terracotta-500 transition-colors duration-300';
         logoSub.className='text-[9px] tracking-[0.25em] font-bold text-olive-600 uppercase -mt-1';
         navLinks.forEach(function(l){l.className='nav-link text-sm font-semibold text-charcoal-800 hover:text-terracotta-500 transition-colors py-2';});
+        document.getElementById('mobile-menu-btn').classList.replace('text-white', 'text-charcoal-800');
       } else {
         hdr.classList.remove('scrolled');
         logoText.className='text-xl md:text-2xl font-extrabold tracking-wider text-white group-hover:text-terracotta-300 transition-colors duration-300';
         logoSub.className='text-[9px] tracking-[0.25em] font-bold text-white/60 uppercase -mt-1';
         navLinks.forEach(function(l){l.className='nav-link text-sm font-semibold text-white/80 hover:text-white transition-colors py-2';});
+        document.getElementById('mobile-menu-btn').classList.replace('text-charcoal-800', 'text-white');
       }
     },{passive:true});
 
