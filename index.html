@@ -37,6 +37,9 @@
     .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;background:#2c5234;color:#fff;padding:12px 20px;border-radius:0 0 8px 0;font-weight:700;font-size:.9rem;text-decoration:none}
     .skip-link:focus{position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;outline:3px solid #c05621;outline-offset:2px}
 
+    /* ── screen reader only (ADA) ── */
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
     /* ── focus ring (ADA) ── */
     :focus-visible{outline:3px solid #c05621;outline-offset:3px;border-radius:4px}
     a:focus-visible,button:focus-visible{outline:3px solid #c05621;outline-offset:3px}
@@ -248,7 +251,7 @@
 
     <!-- Scroll cue (decorative) -->
     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-white/40 animate-bounce" aria-hidden="true">
-      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
     </div>
   </section>
 
@@ -294,24 +297,24 @@
     <div class="max-w-7xl mx-auto px-6 md:px-12">
 
       <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-        <p class="text-xs font-extrabold text-terracotta-500 tracking-[0.22em] uppercase" aria-hidden="true">Who We Are</p>
+        <p class="text-xs font-extrabold text-terracotta-600 tracking-[0.22em] uppercase" aria-hidden="true">Who We Are</p>
         <h2 id="story-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-olive-800 mt-3 leading-tight">Rooted in Tradition.<br><em class="grad-olive not-italic">Grown in Newberry.</em></h2>
-        <p class="text-stone-500 mt-4 font-light text-sm">A Farm-to-Table Café serving authentic Egyptian cuisine — crafted with love and local ingredients, every weekend.</p>
+        <p class="text-stone-600 mt-4 font-light text-sm">A Farm-to-Table Café serving authentic Egyptian cuisine — crafted with love and local ingredients, every weekend.</p>
       </div>
 
       <!-- Stats row -->
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-16" role="list" aria-label="Key facts about Zeezenia">
         <div class="stat-card rounded-2xl p-6 text-center reveal" role="listitem">
           <div class="text-3xl md:text-4xl font-extrabold text-olive-800 mb-1" data-count="30" data-suffix=" min" aria-label="30 minutes from campus">0</div>
-          <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider">From Campus to Calm</p>
+          <p class="text-xs font-semibold text-stone-600 uppercase tracking-wider">From Campus to Calm</p>
         </div>
         <div class="stat-card rounded-2xl p-6 text-center reveal reveal-delay-1" role="listitem">
           <div class="text-3xl md:text-4xl font-extrabold text-terracotta-500 mb-1" data-count="100" data-suffix="%" aria-label="100% Zabiha Halal Menu">0</div>
-          <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Zabiha Halal Menu</p>
+          <p class="text-xs font-semibold text-stone-600 uppercase tracking-wider">Zabiha Halal Menu</p>
         </div>
         <div class="stat-card rounded-2xl p-6 text-center reveal reveal-delay-2" role="listitem">
           <div class="text-3xl md:text-4xl font-extrabold text-olive-800 mb-1" data-count="14" data-suffix="+" aria-label="14 or more years serving Gainesville">0</div>
-          <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Years Serving Gainesville</p>
+          <p class="text-xs font-semibold text-stone-600 uppercase tracking-wider">Years Serving Gainesville</p>
         </div>
       </div>
 
@@ -358,7 +361,7 @@
         <blockquote class="font-serif text-xl md:text-2xl italic text-olive-800 leading-relaxed">
           <p>"Welcome to our Farm-to-Table Café in Newberry, FL. Join us every weekend to indulge in authentic Egyptian cuisine, crafted with love and local ingredients."</p>
         </blockquote>
-        <figcaption class="mt-4 text-sm font-bold text-stone-500 uppercase tracking-widest">— Fawzy &amp; Zaineb, Founders</figcaption>
+        <figcaption class="mt-4 text-sm font-bold text-stone-600 uppercase tracking-widest">— Fawzy &amp; Zaineb, Founders</figcaption>
       </figure>
     </div>
   </section>
@@ -481,7 +484,7 @@
       <!-- Directions CTA -->
       <div class="mt-14 bg-white/6 border border-white/10 rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 reveal">
         <div class="text-center md:text-left">
-          <h4 class="font-bold text-white mb-1.5">Ready to visit?</h4>
+          <h3 class="font-bold text-white mb-1.5">Ready to visit?</h3>
           <p class="text-xs text-white/70">28143 SW 46th Ave North Entrance · Newberry, FL 32669</p>
         </div>
         <a href="https://maps.google.com/?q=28143+SW+46th+Ave+North+Entrance,+Newberry,+FL+32669" target="_blank" rel="noopener noreferrer"
@@ -501,74 +504,74 @@
   ══════════════════════════════════════ -->
   <section id="menu-section" class="py-24 px-6 md:px-12 max-w-7xl mx-auto" aria-labelledby="menu-heading">
     <div class="text-center max-w-xl mx-auto mb-12 reveal">
-      <p class="text-xs font-extrabold text-terracotta-500 tracking-[0.22em] uppercase" aria-hidden="true">Zeezenia Sofra Menu</p>
+      <p class="text-xs font-extrabold text-terracotta-600 tracking-[0.22em] uppercase" aria-hidden="true">Zeezenia Sofra Menu</p>
       <h2 id="menu-heading" class="font-serif text-3xl md:text-4xl font-bold text-olive-800 mt-3">A Flavorful Journey<br><em class="grad-olive not-italic">in Egyptian Cuisine</em></h2>
       <p class="text-stone-600 mt-3 text-sm font-light">Open every weekend &middot; Sat &amp; Sun 11 AM &ndash; 8 PM &middot; Newberry, FL</p>
     </div>
 
     <div class="flex justify-center border-b border-cream-300 mb-8 gap-2 md:gap-6 overflow-x-auto reveal" role="tablist" aria-label="Menu categories">
-      <button class="tab-btn active text-sm font-semibold text-charcoal-800 pb-3 px-2 md:px-4 whitespace-nowrap" data-tab="meals" role="tab" aria-selected="true" aria-controls="tab-meals" id="tab-btn-meals"><span aria-hidden="true">🍽️ </span>Meals</button>
-      <button class="tab-btn text-sm font-semibold text-charcoal-800 pb-3 px-2 md:px-4 whitespace-nowrap" data-tab="appetizers" role="tab" aria-selected="false" aria-controls="tab-appetizers" id="tab-btn-appetizers"><span aria-hidden="true">🫓 </span>Appetizers</button>
-      <button class="tab-btn text-sm font-semibold text-charcoal-800 pb-3 px-2 md:px-4 whitespace-nowrap" data-tab="sides" role="tab" aria-selected="false" aria-controls="tab-sides" id="tab-btn-sides"><span aria-hidden="true">🥗 </span>Sides</button>
-      <button class="tab-btn text-sm font-semibold text-charcoal-800 pb-3 px-2 md:px-4 whitespace-nowrap" data-tab="beverages" role="tab" aria-selected="false" aria-controls="tab-beverages" id="tab-btn-beverages"><span aria-hidden="true">🥤 </span>Beverages</button>
+      <button class="tab-btn active text-sm font-semibold text-charcoal-800 pb-3 px-2 md:px-4 whitespace-nowrap" data-tab="meals" role="tab" aria-selected="true" tabindex="0" aria-controls="tab-meals" id="tab-btn-meals"><span aria-hidden="true">🍽️ </span>Meals</button>
+      <button class="tab-btn text-sm font-semibold text-charcoal-800 pb-3 px-2 md:px-4 whitespace-nowrap" data-tab="appetizers" role="tab" aria-selected="false" tabindex="-1" aria-controls="tab-appetizers" id="tab-btn-appetizers"><span aria-hidden="true">🫓 </span>Appetizers</button>
+      <button class="tab-btn text-sm font-semibold text-charcoal-800 pb-3 px-2 md:px-4 whitespace-nowrap" data-tab="sides" role="tab" aria-selected="false" tabindex="-1" aria-controls="tab-sides" id="tab-btn-sides"><span aria-hidden="true">🥗 </span>Sides</button>
+      <button class="tab-btn text-sm font-semibold text-charcoal-800 pb-3 px-2 md:px-4 whitespace-nowrap" data-tab="beverages" role="tab" aria-selected="false" tabindex="-1" aria-controls="tab-beverages" id="tab-btn-beverages"><span aria-hidden="true">🥤 </span>Beverages</button>
     </div>
 
     <div class="reveal">
 
       <!-- MEALS -->
-      <div id="tab-meals" class="tab-panel grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3" role="tabpanel" aria-labelledby="tab-btn-meals">
+      <div id="tab-meals" class="tab-panel grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3" role="tabpanel" tabindex="0" aria-labelledby="tab-btn-meals">
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-start gap-4">
-          <div><p class="font-semibold text-sm text-charcoal-900">Beef Moza (Shank)</p><p class="text-xs text-stone-400 mt-0.5">Egyptian-style beef shank · basmati rice · house salad or white beans</p></div>
+          <div><p class="font-semibold text-sm text-charcoal-900">Beef Moza (Shank)</p><p class="text-xs text-stone-600 mt-0.5">Egyptian-style beef shank · basmati rice · house salad or white beans</p></div>
           <span class="font-bold text-sm text-olive-800 shrink-0">$19.99</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-start gap-4">
-          <div><p class="font-semibold text-sm text-charcoal-900">Beef and Lamb Gyro</p><p class="text-xs text-stone-400 mt-0.5">Over yellow basmati rice · white sauce</p></div>
+          <div><p class="font-semibold text-sm text-charcoal-900">Beef and Lamb Gyro</p><p class="text-xs text-stone-600 mt-0.5">Over yellow basmati rice · white sauce</p></div>
           <span class="font-bold text-sm text-olive-800 shrink-0">$19.99</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-start gap-4">
-          <div><p class="font-semibold text-sm text-charcoal-900">Lamb Plate</p><p class="text-xs text-stone-400 mt-0.5">Slow-cooked · yellow basmati rice · white sauce · house salad or white beans</p></div>
+          <div><p class="font-semibold text-sm text-charcoal-900">Lamb Plate</p><p class="text-xs text-stone-600 mt-0.5">Slow-cooked · yellow basmati rice · white sauce · house salad or white beans</p></div>
           <span class="font-bold text-sm text-olive-800 shrink-0">$19.99</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-start gap-4">
-          <div><p class="font-semibold text-sm text-charcoal-900">Goat Plate</p><p class="text-xs text-stone-400 mt-0.5">Slow-cooked goat stew · yellow basmati rice · white sauce · house salad or white beans</p></div>
+          <div><p class="font-semibold text-sm text-charcoal-900">Goat Plate</p><p class="text-xs text-stone-600 mt-0.5">Slow-cooked goat stew · yellow basmati rice · white sauce · house salad or white beans</p></div>
           <span class="font-bold text-sm text-olive-800 shrink-0">$19.99</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-start gap-4">
-          <div><p class="font-semibold text-sm text-charcoal-900">Grilled Chicken Plate</p><p class="text-xs text-stone-400 mt-0.5">Half smoked chicken · basmati rice · white sauce · house salad or white beans</p></div>
+          <div><p class="font-semibold text-sm text-charcoal-900">Grilled Chicken Plate</p><p class="text-xs text-stone-600 mt-0.5">Half smoked chicken · basmati rice · white sauce · house salad or white beans</p></div>
           <span class="font-bold text-sm text-olive-800 shrink-0">$18.99</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-start gap-4">
-          <div><p class="font-semibold text-sm text-charcoal-900">Chicken Shawarma Plate</p><p class="text-xs text-stone-400 mt-0.5">Boneless breast & thigh · basmati rice · white sauce · house-made special sauce</p></div>
+          <div><p class="font-semibold text-sm text-charcoal-900">Chicken Shawarma Plate</p><p class="text-xs text-stone-600 mt-0.5">Boneless breast & thigh · basmati rice · white sauce · house-made special sauce</p></div>
           <span class="font-bold text-sm text-olive-800 shrink-0">$17.99</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-start gap-4">
-          <div><p class="font-semibold text-sm text-charcoal-900">Crispy Chicken Tender Salad</p><p class="text-xs text-stone-400 mt-0.5">Fried to perfection · served over house salad</p></div>
+          <div><p class="font-semibold text-sm text-charcoal-900">Crispy Chicken Tender Salad</p><p class="text-xs text-stone-600 mt-0.5">Fried to perfection · served over house salad</p></div>
           <span class="font-bold text-sm text-olive-800 shrink-0">$12.99</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-start gap-4">
-          <div><p class="font-semibold text-sm text-charcoal-900">Falafel Plate w/ Salad</p><p class="text-xs text-stone-400 mt-0.5">6 crispy falafel patties · house salad or fava beans · tahini · warm pita</p></div>
+          <div><p class="font-semibold text-sm text-charcoal-900">Falafel Plate w/ Salad</p><p class="text-xs text-stone-600 mt-0.5">6 crispy falafel patties · house salad or fava beans · tahini · warm pita</p></div>
           <span class="font-bold text-sm text-olive-800 shrink-0">$11.99</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-start gap-4">
-          <div><p class="font-semibold text-sm text-charcoal-900">Falafel Plate w/ Fava Beans</p><p class="text-xs text-stone-400 mt-0.5">6 crispy falafel patties · fava beans or house salad · tahini · warm pita</p></div>
+          <div><p class="font-semibold text-sm text-charcoal-900">Falafel Plate w/ Fava Beans</p><p class="text-xs text-stone-600 mt-0.5">6 crispy falafel patties · fava beans or house salad · tahini · warm pita</p></div>
           <span class="font-bold text-sm text-olive-800 shrink-0">$11.99</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-start gap-4">
-          <div><p class="font-semibold text-sm text-charcoal-900">Zeezenia Royal Salad</p><p class="text-xs text-stone-400 mt-0.5">Cucumbers, tomatoes, bell peppers · fried eggplant or baba ghanoug · feta · fava beans</p></div>
+          <div><p class="font-semibold text-sm text-charcoal-900">Zeezenia Royal Salad</p><p class="text-xs text-stone-600 mt-0.5">Cucumbers, tomatoes, bell peppers · fried eggplant or baba ghanoug · feta · fava beans</p></div>
           <span class="font-bold text-sm text-olive-800 shrink-0">$11.99</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-start gap-4">
-          <div><p class="font-semibold text-sm text-charcoal-900">Mini Falafel Salad</p><p class="text-xs text-stone-400 mt-0.5">Chopped fresh vegetables · mini falafel balls · tahini sauce</p></div>
+          <div><p class="font-semibold text-sm text-charcoal-900">Mini Falafel Salad</p><p class="text-xs text-stone-600 mt-0.5">Chopped fresh vegetables · mini falafel balls · tahini sauce</p></div>
           <span class="font-bold text-sm text-olive-800 shrink-0">$12.99</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-start gap-4">
-          <div><p class="font-semibold text-sm text-charcoal-900">Kids Meal</p><p class="text-xs text-stone-400 mt-0.5">Chicken tender and fries</p></div>
+          <div><p class="font-semibold text-sm text-charcoal-900">Kids Meal</p><p class="text-xs text-stone-600 mt-0.5">Chicken tender and fries</p></div>
           <span class="font-bold text-sm text-olive-800 shrink-0">$10.99</span>
         </div>
       </div>
 
       <!-- APPETIZERS -->
-      <div id="tab-appetizers" class="tab-panel hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3" role="tabpanel" aria-labelledby="tab-btn-appetizers" hidden>
+      <div id="tab-appetizers" class="tab-panel hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3" role="tabpanel" tabindex="0" aria-labelledby="tab-btn-appetizers" hidden>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
           <p class="font-semibold text-sm text-charcoal-900">Hummus &amp; Pita Bread</p><span class="font-bold text-sm text-olive-800 shrink-0">$8.00</span>
         </div>
@@ -592,13 +595,13 @@
         </div>
         <!-- Dessert grouped here -->
         <div class="menu-item bg-terracotta-50 border border-terracotta-200 rounded-2xl px-5 py-4 flex justify-between items-start gap-4">
-          <div><p class="font-semibold text-sm text-charcoal-900">Baklava 🍯</p><p class="text-xs text-stone-400 mt-0.5">House dessert · served fresh</p></div>
+          <div><p class="font-semibold text-sm text-charcoal-900">Baklava 🍯</p><p class="text-xs text-stone-600 mt-0.5">House dessert · served fresh</p></div>
           <span class="font-bold text-sm text-terracotta-600 shrink-0">$7.00</span>
         </div>
       </div>
 
       <!-- SIDES -->
-      <div id="tab-sides" class="tab-panel hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3" role="tabpanel" aria-labelledby="tab-btn-sides" hidden>
+      <div id="tab-sides" class="tab-panel hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3" role="tabpanel" tabindex="0" aria-labelledby="tab-btn-sides" hidden>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
           <p class="font-semibold text-sm text-charcoal-900">Fries (Regular Size)</p><span class="font-bold text-sm text-olive-800 shrink-0">$4.00</span>
         </div>
@@ -620,12 +623,12 @@
       </div>
 
       <!-- BEVERAGES -->
-      <div id="tab-beverages" class="tab-panel hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3" role="tabpanel" aria-labelledby="tab-btn-beverages" hidden>
+      <div id="tab-beverages" class="tab-panel hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3" role="tabpanel" tabindex="0" aria-labelledby="tab-btn-beverages" hidden>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
           <p class="font-semibold text-sm text-charcoal-900">Hibiscus Tea</p><span class="font-bold text-sm text-olive-800 shrink-0">$5.00</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
-          <div><p class="font-semibold text-sm text-charcoal-900">Hibiscus Tea &amp; Whole Blueberry</p><p class="text-xs text-stone-400 mt-0.5">Farm blueberry infusion</p></div>
+          <div><p class="font-semibold text-sm text-charcoal-900">Hibiscus Tea &amp; Whole Blueberry</p><p class="text-xs text-stone-600 mt-0.5">Farm blueberry infusion</p></div>
           <span class="font-bold text-sm text-olive-800 shrink-0">$6.00</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
@@ -638,7 +641,7 @@
           <p class="font-semibold text-sm text-charcoal-900">Cyprus Freez Soda</p><span class="font-bold text-sm text-olive-800 shrink-0">$3.00</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
-          <div><p class="font-semibold text-sm text-charcoal-900">Laziza</p><p class="text-xs text-stone-400 mt-0.5">Malt, non-alcoholic</p></div>
+          <div><p class="font-semibold text-sm text-charcoal-900">Laziza</p><p class="text-xs text-stone-600 mt-0.5">Malt, non-alcoholic</p></div>
           <span class="font-bold text-sm text-olive-800 shrink-0">$4.00</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
@@ -659,7 +662,7 @@
       </div>
 
     </div>
-    <p class="text-center text-xs text-stone-500 mt-8 reveal">Prices subject to change · Menu subject to seasonal availability · Dine-in &amp; Takeout</p>
+    <p class="text-center text-xs text-stone-600 mt-8 reveal">Prices subject to change · Menu subject to seasonal availability · Dine-in &amp; Takeout</p>
   </section>
 
   </main><!-- end #main-content -->
@@ -670,8 +673,9 @@
   <!-- ══════════════════════════════════════
        HOURS + MAP + REFERRAL
   ══════════════════════════════════════ -->
-  <footer id="hours-location" class="bg-charcoal-900 text-stone-300 pt-20 pb-8 border-t border-stone-800">
+  <footer id="hours-location" class="bg-charcoal-900 text-stone-300 pt-20 pb-8 border-t border-stone-800" role="contentinfo">
     <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 pb-16 border-b border-stone-800">
+      <h2 class="sr-only">Hours, Location, and Contact Information</h2>
 
       <!-- Brand + map -->
       <div class="lg:col-span-4 space-y-5">
@@ -689,10 +693,11 @@
             <svg class="w-4 h-4 text-terracotta-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
             (954) 593-6376
           </a>
-            <svg class="w-4 h-4 text-terracotta-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <a href="mailto:fawzy.ebrahim@gmail.com" class="flex items-center gap-3 hover:text-white transition-colors font-light" aria-label="Send email to fawzy.ebrahim@gmail.com">
+            <svg class="w-4 h-4 text-terracotta-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             fawzy.ebrahim@gmail.com
           </a>
-        </div>
+        </address>
         <div class="rounded-2xl overflow-hidden border border-stone-700">
           <iframe src="https://maps.google.com/maps?q=28143+SW+46th+Ave+North+Entrance,+Newberry,+FL+32669&output=embed&z=15" width="100%" height="150" style="border:0;filter:grayscale(15%) contrast(1.05)" allowfullscreen="" loading="lazy" title="Interactive map: Zeezenia Farm and Sofra, 28143 SW 46th Ave, Newberry FL 32669"></iframe>
         </div>
@@ -707,7 +712,7 @@
             <div class="space-y-1.5 text-xs">
               <div class="flex justify-between text-stone-300 font-medium"><span>Saturday</span><span class="font-bold text-olive-300">11 AM – 8 PM</span></div>
               <div class="flex justify-between text-stone-300 font-medium"><span>Sunday</span><span class="font-bold text-olive-300">11 AM – 8 PM</span></div>
-              <p class="text-stone-500 text-[10px] italic mt-1">Open every weekend · Kitchen closes 30 min early</p>
+              <p class="text-stone-300 text-[10px] italic mt-1">Open every weekend · Kitchen closes 30 min early</p>
             </div>
           </div>
           <div class="bg-stone-800/50 p-4 rounded-2xl border border-stone-800">
@@ -717,8 +722,8 @@
             </div>
           </div>
           <div class="bg-stone-800/30 p-4 rounded-2xl border border-stone-800/50">
-            <span class="block text-[10px] font-bold text-stone-400 uppercase tracking-widest mb-1">📍 Location</span>
-            <p class="text-xs text-stone-400 font-light">28143 SW 46th Ave North Entrance, Newberry, FL 32669<br>~30 min west of UF campus</p>
+            <span class="block text-[10px] font-bold text-stone-300 uppercase tracking-widest mb-1">📍 Location</span>
+            <p class="text-xs text-stone-300 font-light">28143 SW 46th Ave North Entrance, Newberry, FL 32669<br>~30 min west of UF campus</p>
           </div>
         </div>
       </div>
@@ -733,7 +738,7 @@
           <label for="newsletter-email" class="sr-only">Your email address</label>
           <input type="email" id="newsletter-email" name="email_address" placeholder="your@email.com" required autocomplete="email" class="w-full bg-stone-800 border border-stone-700 text-white placeholder-stone-500 text-sm rounded-xl px-4 py-3 focus:ring-2 focus:ring-olive-500 focus:border-olive-500" aria-required="true">
           <input type="hidden" name="embed" value="true">
-          <button type="submit" class="w-full bg-olive-800 hover:bg-olive-700 text-white font-bold text-sm py-3 rounded-xl transition-all">Join Now</button>
+          <button type="submit" class="w-full bg-olive-800 hover:bg-olive-700 text-white font-bold text-sm py-3 rounded-xl transition-all" aria-label="Join Now (opens subscription page in new tab)">Join Now</button>
         </form>
         
         <div class="pt-2">
@@ -754,10 +759,41 @@
       <nav aria-label="Legal links" class="flex flex-wrap gap-5 justify-center">
         <a href="#home" class="hover:text-stone-300 transition-colors underline-offset-2 hover:underline">Privacy Policy</a>
         <a href="#home" class="hover:text-stone-300 transition-colors underline-offset-2 hover:underline">Terms of Service</a>
+        <button type="button" id="a11y-btn" class="hover:text-stone-300 transition-colors underline-offset-2 hover:underline text-xs bg-transparent border-0 p-0 text-stone-400 cursor-pointer">Accessibility Statement</button>
         <a href="#hours-location" class="hover:text-stone-300 transition-colors underline-offset-2 hover:underline">Contact</a>
       </nav>
     </div>
   </footer>
+
+
+
+
+  <!-- ══════════════════════════════════════
+       ACCESSIBILITY STATEMENT MODAL (ADA / WCAG 2.1 AA)
+  ══════════════════════════════════════ -->
+  <div id="a11y-modal" class="fixed inset-0 z-[9999] bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="a11y-modal-title" aria-describedby="a11y-modal-desc">
+    <div class="bg-white rounded-3xl p-6 md:p-8 max-w-lg w-full shadow-2xl border border-stone-200 relative text-charcoal-900">
+      <div class="flex justify-between items-start mb-4">
+        <h2 id="a11y-modal-title" class="text-xl font-bold text-olive-800">Accessibility Statement</h2>
+        <button id="close-a11y-modal" class="p-1.5 rounded-lg text-stone-500 hover:text-charcoal-900 hover:bg-stone-100 transition-colors" aria-label="Close accessibility statement">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div id="a11y-modal-desc" class="space-y-3 text-sm text-stone-600 leading-relaxed max-h-[60vh] overflow-y-auto pr-1">
+        <p>Zeezenia Farm &amp; Sofra is dedicated to ensuring digital accessibility for people with disabilities. We continually improve the user experience for everyone and apply the relevant accessibility standards to achieve conformance with the <strong>Web Content Accessibility Guidelines (WCAG) 2.1 Level AA</strong>.</p>
+        <p>Our website incorporates keyboard-friendly navigation, semantic HTML landmarks, screen reader descriptions, high contrast color palettes, and motion safety preferences.</p>
+        <div class="bg-olive-50 p-4 rounded-2xl border border-olive-200 text-olive-900 mt-3">
+          <p class="font-bold text-sm mb-1 text-olive-800">Accessibility Assistance &amp; Feedback</p>
+          <p class="text-xs text-stone-600">If you experience difficulty accessing any content on this website or require assistance, please reach out to us directly:</p>
+          <p class="text-xs font-bold mt-2">📞 Phone: <a href="tel:+19545936376" class="text-olive-800 underline hover:text-terracotta-600">(954) 593-6376</a></p>
+          <p class="text-xs font-bold mt-1">✉️ Email: <a href="mailto:fawzy.ebrahim@gmail.com" class="text-olive-800 underline hover:text-terracotta-600">fawzy.ebrahim@gmail.com</a></p>
+        </div>
+      </div>
+      <div class="mt-6 flex justify-end">
+        <button id="close-a11y-btn-bottom" class="bg-olive-800 hover:bg-olive-700 text-white font-semibold text-sm px-6 py-2.5 rounded-xl transition-colors">Close</button>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -801,13 +837,25 @@
         hdr.classList.add('scrolled');
         logoText.className='text-xl md:text-2xl font-extrabold tracking-wider text-olive-800 group-hover:text-terracotta-500 transition-colors duration-300';
         logoSub.className='text-[9px] tracking-[0.25em] font-bold text-olive-600 uppercase -mt-1';
-        navLinks.forEach(function(l){l.className='nav-link text-sm font-semibold text-charcoal-800 hover:text-terracotta-500 transition-colors py-2';});
+        navLinks.forEach(function(l){
+          if(l.getAttribute('href') && l.getAttribute('href').includes('squareup.com')){
+            l.className='nav-link text-sm font-bold text-terracotta-600 hover:text-terracotta-700 transition-colors py-2';
+          } else {
+            l.className='nav-link text-sm font-semibold text-charcoal-800 hover:text-terracotta-500 transition-colors py-2';
+          }
+        });
         document.getElementById('mobile-menu-btn').classList.replace('text-white', 'text-charcoal-800');
       } else {
         hdr.classList.remove('scrolled');
         logoText.className='text-xl md:text-2xl font-extrabold tracking-wider text-white group-hover:text-terracotta-300 transition-colors duration-300';
         logoSub.className='text-[9px] tracking-[0.25em] font-bold text-white/60 uppercase -mt-1';
-        navLinks.forEach(function(l){l.className='nav-link text-sm font-semibold text-white/80 hover:text-white transition-colors py-2';});
+        navLinks.forEach(function(l){
+          if(l.getAttribute('href') && l.getAttribute('href').includes('squareup.com')){
+            l.className='nav-link text-sm font-bold text-terracotta-300 hover:text-terracotta-400 transition-colors py-2';
+          } else {
+            l.className='nav-link text-sm font-semibold text-white/80 hover:text-white transition-colors py-2';
+          }
+        });
         document.getElementById('mobile-menu-btn').classList.replace('text-charcoal-800', 'text-white');
       }
     },{passive:true});
@@ -829,6 +877,16 @@
         mIcon.setAttribute('d','M4 6h16M4 12h16M4 18h16');
       });
     });
+    // Escape key closes mobile menu (WCAG 2.1.2)
+    window.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && !mMenu.classList.contains('hidden')){
+        mMenu.classList.add('hidden');
+        mBtn.setAttribute('aria-expanded', 'false');
+        mBtn.setAttribute('aria-label', 'Open navigation menu');
+        mIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+        mBtn.focus();
+      }
+    });
 
     // ── SCROLL REVEAL ──────────────────────────────────
     var obs=new IntersectionObserver(function(entries){
@@ -847,12 +905,13 @@
     },{threshold:0.4});
     document.querySelectorAll('[data-count]').forEach(function(el){ statObs.observe(el); });
 
-    // ── MENU TABS (with full ARIA tab semantics) ───────
+    // ── MENU TABS (with full ARIA tab semantics & roving tabindex) ───────
     document.querySelectorAll('.tab-btn').forEach(function(btn){
       btn.addEventListener('click',function(){
         document.querySelectorAll('.tab-btn').forEach(function(b){
           b.classList.remove('active');
           b.setAttribute('aria-selected','false');
+          b.setAttribute('tabindex','-1');
         });
         document.querySelectorAll('.tab-panel').forEach(function(p){
           p.classList.add('hidden');
@@ -860,11 +919,12 @@
         });
         btn.classList.add('active');
         btn.setAttribute('aria-selected','true');
+        btn.setAttribute('tabindex','0');
         var panel=document.getElementById('tab-'+btn.dataset.tab);
         panel.classList.remove('hidden');
         panel.removeAttribute('hidden');
       });
-      // Keyboard arrow navigation for tab list (WCAG)
+      // Keyboard arrow navigation for tab list (WCAG roving tabindex)
       btn.addEventListener('keydown',function(e){
         var tabs=Array.from(document.querySelectorAll('.tab-btn'));
         var idx=tabs.indexOf(btn);
@@ -875,9 +935,36 @@
       });
     });
 
+    // ── ACCESSIBILITY MODAL ────────────────────────────
+    var a11yBtn = document.getElementById('a11y-btn');
+    var a11yModal = document.getElementById('a11y-modal');
+    var closeA11yBtn = document.getElementById('close-a11y-modal');
+    var closeA11yBottom = document.getElementById('close-a11y-btn-bottom');
 
+    function openA11yModal(){
+      if(!a11yModal) return;
+      a11yModal.classList.remove('hidden');
+      closeA11yBtn.focus();
+    }
+    function closeA11yModal(){
+      if(!a11yModal) return;
+      a11yModal.classList.add('hidden');
+      if(a11yBtn) a11yBtn.focus();
+    }
 
-
+    if(a11yBtn) a11yBtn.addEventListener('click', openA11yModal);
+    if(closeA11yBtn) closeA11yBtn.addEventListener('click', closeA11yModal);
+    if(closeA11yBottom) closeA11yBottom.addEventListener('click', closeA11yModal);
+    if(a11yModal){
+      a11yModal.addEventListener('click', function(e){
+        if(e.target === a11yModal) closeA11yModal();
+      });
+    }
+    window.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && a11yModal && !a11yModal.classList.contains('hidden')){
+        closeA11yModal();
+      }
+    });
 
   })();
   </script>
