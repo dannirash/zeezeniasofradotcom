@@ -35,17 +35,17 @@
   <style>
     /* ── skip link (ADA) ── */
     .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;background:#2c5234;color:#fff;padding:12px 20px;border-radius:0 0 8px 0;font-weight:700;font-size:.9rem;text-decoration:none}
-    .skip-link:focus{position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;outline:3px solid #c05621;outline-offset:2px}
+    .skip-link:focus{position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;outline:3px solid #a74618;outline-offset:2px}
 
     /* ── screen reader only (ADA) ── */
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
     /* ── focus ring (ADA) ── */
-    :focus-visible{outline:3px solid #c05621;outline-offset:3px;border-radius:4px}
-    a:focus-visible,button:focus-visible{outline:3px solid #c05621;outline-offset:3px}
+    :focus-visible{outline:3px solid #a74618;outline-offset:3px;border-radius:4px}
+    a:focus-visible,button:focus-visible{outline:3px solid #a74618;outline-offset:3px}
 
     /* ── scrollbar ── */
-    ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#fdfbf7}::-webkit-scrollbar-thumb{background:#2c5234;border-radius:9999px;border:2px solid #fdfbf7}::-webkit-scrollbar-thumb:hover{background:#c05621}
+    ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#fdfbf7}::-webkit-scrollbar-thumb{background:#2c5234;border-radius:9999px;border:2px solid #fdfbf7}::-webkit-scrollbar-thumb:hover{background:#a74618}
 
     /* ── scroll reveal ── */
     .reveal{opacity:0;transform:translateY(36px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1)}
@@ -90,7 +90,7 @@
     .marquee-wrap{overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,black 10%,black 90%,transparent);mask:linear-gradient(90deg,transparent,black 10%,black 90%,transparent)}
 
     /* ── gradient text (ADA: color fallback for high-contrast) ── */
-    .grad-text{color:#c05621;background:linear-gradient(135deg,#c05621,#d4aa7d);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .grad-text{color:#a74618;background:linear-gradient(135deg,#a74618,#d4aa7d);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
     .grad-olive{color:#2c5234;background:linear-gradient(135deg,#2c5234,#698e6d);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
     @media (forced-colors: active){.grad-text,.grad-olive{-webkit-text-fill-color:unset;background:none;color:inherit}}
 
@@ -111,8 +111,8 @@
 
     /* ── tab ── */
     .tab-btn{position:relative;transition:color .2s}
-    .tab-btn::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:2px;background:#c05621;transform:scaleX(0);transition:transform .25s;border-radius:9999px}
-    .tab-btn.active{color:#c05621;font-weight:700}.tab-btn.active::after{transform:scaleX(1)}
+    .tab-btn::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:2px;background:#a74618;transform:scaleX(0);transition:transform .25s;border-radius:9999px}
+    .tab-btn.active{color:#a74618;font-weight:700}.tab-btn.active::after{transform:scaleX(1)}
 
     /* ── menu item ── */
     .menu-item{transition:background .2s,transform .15s;cursor:default}
@@ -128,7 +128,7 @@
     /* ── toast ── */
     #toast{position:fixed;bottom:24px;right:24px;z-index:9999;background:#2c5234;color:#fff;padding:13px 20px;border-radius:14px;font-size:.82rem;font-weight:600;box-shadow:0 8px 32px rgba(0,0,0,.22);transform:translateY(80px);opacity:0;transition:all .4s cubic-bezier(.34,1.56,.64,1);pointer-events:none;max-width:320px}
     #toast.show{transform:translateY(0);opacity:1}
-    #toast.err{background:#c05621}
+    #toast.err{background:#a74618}
 
     /* ── bg texture ── */
     .grid-bg{background-image:linear-gradient(rgba(44,82,52,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(44,82,52,.025) 1px,transparent 1px);background-size:32px 32px}
@@ -156,9 +156,9 @@
   <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-transparent py-4 transition-all" role="banner">
     <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
 
-      <a href="#home" class="flex flex-col group" aria-label="Zeezenia Farm &amp; Sofra — go to homepage">
-        <span class="text-xl md:text-2xl font-extrabold tracking-wider text-white group-hover:text-terracotta-300 transition-colors duration-300" id="logo-text" aria-hidden="true">ZEEZENIA</span>
-        <span class="text-[9px] tracking-[0.25em] font-bold text-white/60 uppercase -mt-1" id="logo-sub" aria-hidden="true">Farm &amp; Sofra · Newberry, FL</span>
+      <a href="#home" class="flex flex-col group">
+        <span class="text-xl md:text-2xl font-extrabold tracking-wider text-white group-hover:text-terracotta-300 transition-colors duration-300" id="logo-text">ZEEZENIA</span>
+        <span class="text-[9px] tracking-[0.25em] font-bold text-white/60 uppercase -mt-1" id="logo-sub">Farm &amp; Sofra · Newberry, FL</span>
       </a>
 
       <nav class="hidden lg:flex items-center space-x-7 text-sm font-semibold text-white/80" aria-label="Main navigation">
@@ -168,7 +168,7 @@
         <a href="#menu-section"       class="nav-link hover:text-white transition-colors py-2">Menu</a>
         <a href="#hours-location"     class="nav-link hover:text-white transition-colors py-2">Visit</a>
         <!-- Square eGift Card Link -->
-        <a href="https://app.squareup.com/gift/WNPW0RENZV5MA/order" target="_blank" rel="noopener noreferrer" class="nav-link text-terracotta-300 hover:text-terracotta-400 font-bold transition-colors py-2" aria-label="Gift Cards (opens in new tab)">Gift Cards</a>
+        <a href="https://app.squareup.com/gift/WNPW0RENZV5MA/order" target="_blank" rel="noopener noreferrer" class="nav-link text-terracotta-300 hover:text-terracotta-400 font-bold transition-colors py-2">Gift Cards<span class="sr-only"> (opens in new tab)</span></a>
       </nav>
 
       <div class="flex items-center gap-3">
@@ -182,12 +182,12 @@
 
     <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-white shadow-2xl border-b border-olive-800/10 px-6 py-6">
       <nav class="flex flex-col space-y-4 text-lg font-bold text-charcoal-900" aria-label="Mobile navigation">
-        <a href="#story"               class="mobile-nav-link hover:text-terracotta-500 py-2">About</a>
-        <a href="#expansion"           class="mobile-nav-link hover:text-terracotta-500 py-2">Experience</a>
-        <a href="#pillars"             class="mobile-nav-link hover:text-terracotta-500 py-2">Market</a>
-        <a href="#menu-section"        class="mobile-nav-link hover:text-terracotta-500 py-2">Menu</a>
+        <a href="#story"               class="mobile-nav-link hover:text-terracotta-600 py-2">About</a>
+        <a href="#expansion"           class="mobile-nav-link hover:text-terracotta-600 py-2">Experience</a>
+        <a href="#pillars"             class="mobile-nav-link hover:text-terracotta-600 py-2">Market</a>
+        <a href="#menu-section"        class="mobile-nav-link hover:text-terracotta-600 py-2">Menu</a>
         <!-- Square eGift Card Link -->
-        <a href="https://app.squareup.com/gift/WNPW0RENZV5MA/order" target="_blank" rel="noopener noreferrer" class="mobile-nav-link text-terracotta-500 py-2" aria-label="Gift Cards (opens in new tab)">Gift Cards</a>
+        <a href="https://app.squareup.com/gift/WNPW0RENZV5MA/order" target="_blank" rel="noopener noreferrer" class="mobile-nav-link text-terracotta-600 font-bold py-2">Gift Cards<span class="sr-only"> (opens in new tab)</span></a>
       </nav>
     </div>
   </header>
@@ -309,7 +309,7 @@
           <p class="text-xs font-semibold text-stone-600 uppercase tracking-wider">From Campus to Calm</p>
         </div>
         <div class="stat-card rounded-2xl p-6 text-center reveal reveal-delay-1" role="listitem">
-          <div class="text-3xl md:text-4xl font-extrabold text-terracotta-500 mb-1" data-count="100" data-suffix="%" aria-label="100% Zabiha Halal Menu">0</div>
+          <div class="text-3xl md:text-4xl font-extrabold text-terracotta-600 mb-1" data-count="100" data-suffix="%" aria-label="100% Zabiha Halal Menu">0</div>
           <p class="text-xs font-semibold text-stone-600 uppercase tracking-wider">Zabiha Halal Menu</p>
         </div>
         <div class="stat-card rounded-2xl p-6 text-center reveal reveal-delay-2" role="listitem">
@@ -322,14 +322,14 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
         <div class="reveal bg-white rounded-3xl p-8 border border-cream-200/60 hover:shadow-[0_20px_50px_-12px_rgba(44,82,52,.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col gap-5">
-          <div class="w-12 h-12 rounded-2xl bg-terracotta-50 text-terracotta-500 flex items-center justify-center" aria-hidden="true">
+          <div class="w-12 h-12 rounded-2xl bg-terracotta-50 text-terracotta-600 flex items-center justify-center" aria-hidden="true">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
           </div>
           <div>
             <h3 class="text-lg font-extrabold text-charcoal-900 mb-2">Family-Run Warmth</h3>
             <p class="text-sm text-stone-600 font-light leading-relaxed">Fawzy &amp; Zaineb treat every visitor like a guest in their own home. Genuine Egyptian hospitality — every single time.</p>
           </div>
-          <span class="text-xs font-bold text-terracotta-500 uppercase tracking-widest mt-auto" aria-hidden="true">Fawzy &amp; Zaineb's Promise</span>
+          <span class="text-xs font-bold text-terracotta-600 uppercase tracking-widest mt-auto" aria-hidden="true">Fawzy &amp; Zaineb's Promise</span>
         </div>
 
         <div class="reveal reveal-delay-1 bg-white rounded-3xl p-8 border border-cream-200/60 hover:shadow-[0_20px_50px_-12px_rgba(44,82,52,.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col gap-5">
@@ -392,8 +392,8 @@
             <img src="./assets/images/raw/DSC_0019.JPG" alt="Traditional Bedouin floor seating with cushions and low tables at Zeezenia Farm" class="w-full h-full object-cover" loading="lazy" decoding="async">
           </div>
           <div class="flex flex-col justify-center p-10 lg:p-14 reveal-right">
-            <p class="inline-flex items-center gap-2 text-xs font-bold text-terracotta-500 uppercase tracking-widest mb-5" aria-hidden="true">
-              <span class="w-8 h-px bg-terracotta-500" aria-hidden="true"></span>The Lounge
+            <p class="inline-flex items-center gap-2 text-xs font-bold text-terracotta-600 uppercase tracking-widest mb-5" aria-hidden="true">
+              <span class="w-8 h-px bg-terracotta-600" aria-hidden="true"></span>The Lounge
             </p>
             <h3 id="lounge-heading" class="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-charcoal-900 mb-5 leading-snug">Authentic Bedouin Seating</h3>
             <p class="text-stone-600 leading-relaxed mb-6 font-light">Unwind in our traditional Bedouin lounge. Share a plate of baklawa and experience true Egyptian hospitality far away from the hustle of the city.</p>
@@ -406,8 +406,8 @@
         <!-- Card 2: Farm -->
         <article class="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden shadow-[0_20px_60px_-15px_rgba(44,82,52,.15)] bg-white" aria-labelledby="farm-heading">
           <div class="flex flex-col justify-center p-10 lg:p-14 order-2 lg:order-1 reveal-left">
-            <p class="inline-flex items-center gap-2 text-xs font-bold text-terracotta-500 uppercase tracking-widest mb-5" aria-hidden="true">
-              <span class="w-8 h-px bg-terracotta-500" aria-hidden="true"></span>The Farm
+            <p class="inline-flex items-center gap-2 text-xs font-bold text-terracotta-600 uppercase tracking-widest mb-5" aria-hidden="true">
+              <span class="w-8 h-px bg-terracotta-600" aria-hidden="true"></span>The Farm
             </p>
             <h3 id="farm-heading" class="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-charcoal-900 mb-5 leading-snug">Potted Blueberry Cultivation</h3>
             <p class="text-stone-600 leading-relaxed mb-6 font-light">Take a stroll through our potted blueberry fields. Reconnect with nature, breathe in the fresh country air, and enjoy seasonal harvests straight from the source.</p>
@@ -427,8 +427,8 @@
             <img src="./assets/images/raw/DSC_0026.JPG" alt="Outdoor basketball court at Zeezenia Farm surrounded by farmland" class="w-full h-full object-cover" loading="lazy" decoding="async">
           </div>
           <div class="flex flex-col justify-center p-10 lg:p-14 reveal-right">
-            <p class="inline-flex items-center gap-2 text-xs font-bold text-terracotta-500 uppercase tracking-widest mb-5" aria-hidden="true">
-              <span class="w-8 h-px bg-terracotta-500" aria-hidden="true"></span>Recreation
+            <p class="inline-flex items-center gap-2 text-xs font-bold text-terracotta-600 uppercase tracking-widest mb-5" aria-hidden="true">
+              <span class="w-8 h-px bg-terracotta-600" aria-hidden="true"></span>Recreation
             </p>
             <h3 id="recreation-heading" class="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-charcoal-900 mb-5 leading-snug">Outdoor Basketball Court</h3>
             <p class="text-stone-600 leading-relaxed mb-6 font-light">A space for everyone. Shoot some hoops with friends on our outdoor court while taking in the beautiful Florida farm scenery.</p>
@@ -488,9 +488,8 @@
           <p class="text-xs text-white/70">28143 SW 46th Ave North Entrance · Newberry, FL 32669</p>
         </div>
         <a href="https://maps.google.com/?q=28143+SW+46th+Ave+North+Entrance,+Newberry,+FL+32669" target="_blank" rel="noopener noreferrer"
-          class="bg-terracotta-500 hover:bg-terracotta-400 text-white font-bold text-sm px-7 py-3.5 rounded-full flex items-center gap-2 shadow transition-all active:scale-95 shrink-0"
-          aria-label="Get directions to Zeezenia Farm (opens Google Maps in new tab)">
-          Get Directions
+          class="bg-terracotta-600 hover:bg-terracotta-700 text-white font-bold text-sm px-7 py-3.5 rounded-full flex items-center gap-2 shadow transition-all active:scale-95 shrink-0">
+          Get Directions<span class="sr-only"> to Zeezenia Farm (opens Google Maps in new tab)</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
         </a>
       </div>
@@ -521,51 +520,51 @@
       <!-- MEALS -->
       <div id="tab-meals" class="tab-panel grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3" role="tabpanel" tabindex="0" aria-labelledby="tab-btn-meals">
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-start gap-4">
-          <div><p class="font-semibold text-sm text-charcoal-900">Beef Moza (Shank)</p><p class="text-xs text-stone-600 mt-0.5">Egyptian-style beef shank · basmati rice · house salad or white beans</p></div>
+          <div><h3 class="font-semibold text-sm text-charcoal-900">Beef Moza (Shank)</h3><p class="text-xs text-stone-600 mt-0.5">Egyptian-style beef shank · basmati rice · house salad or white beans</p></div>
           <span class="font-bold text-sm text-olive-800 shrink-0">$19.99</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-start gap-4">
-          <div><p class="font-semibold text-sm text-charcoal-900">Beef and Lamb Gyro</p><p class="text-xs text-stone-600 mt-0.5">Over yellow basmati rice · white sauce</p></div>
+          <div><h3 class="font-semibold text-sm text-charcoal-900">Beef and Lamb Gyro</h3><p class="text-xs text-stone-600 mt-0.5">Over yellow basmati rice · white sauce</p></div>
           <span class="font-bold text-sm text-olive-800 shrink-0">$19.99</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-start gap-4">
-          <div><p class="font-semibold text-sm text-charcoal-900">Lamb Plate</p><p class="text-xs text-stone-600 mt-0.5">Slow-cooked · yellow basmati rice · white sauce · house salad or white beans</p></div>
+          <div><h3 class="font-semibold text-sm text-charcoal-900">Lamb Plate</h3><p class="text-xs text-stone-600 mt-0.5">Slow-cooked · yellow basmati rice · white sauce · house salad or white beans</p></div>
           <span class="font-bold text-sm text-olive-800 shrink-0">$19.99</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-start gap-4">
-          <div><p class="font-semibold text-sm text-charcoal-900">Goat Plate</p><p class="text-xs text-stone-600 mt-0.5">Slow-cooked goat stew · yellow basmati rice · white sauce · house salad or white beans</p></div>
+          <div><h3 class="font-semibold text-sm text-charcoal-900">Goat Plate</h3><p class="text-xs text-stone-600 mt-0.5">Slow-cooked goat stew · yellow basmati rice · white sauce · house salad or white beans</p></div>
           <span class="font-bold text-sm text-olive-800 shrink-0">$19.99</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-start gap-4">
-          <div><p class="font-semibold text-sm text-charcoal-900">Grilled Chicken Plate</p><p class="text-xs text-stone-600 mt-0.5">Half smoked chicken · basmati rice · white sauce · house salad or white beans</p></div>
+          <div><h3 class="font-semibold text-sm text-charcoal-900">Grilled Chicken Plate</h3><p class="text-xs text-stone-600 mt-0.5">Half smoked chicken · basmati rice · white sauce · house salad or white beans</p></div>
           <span class="font-bold text-sm text-olive-800 shrink-0">$18.99</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-start gap-4">
-          <div><p class="font-semibold text-sm text-charcoal-900">Chicken Shawarma Plate</p><p class="text-xs text-stone-600 mt-0.5">Boneless breast & thigh · basmati rice · white sauce · house-made special sauce</p></div>
+          <div><h3 class="font-semibold text-sm text-charcoal-900">Chicken Shawarma Plate</h3><p class="text-xs text-stone-600 mt-0.5">Boneless breast &amp; thigh · basmati rice · white sauce · house-made special sauce</p></div>
           <span class="font-bold text-sm text-olive-800 shrink-0">$17.99</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-start gap-4">
-          <div><p class="font-semibold text-sm text-charcoal-900">Crispy Chicken Tender Salad</p><p class="text-xs text-stone-600 mt-0.5">Fried to perfection · served over house salad</p></div>
+          <div><h3 class="font-semibold text-sm text-charcoal-900">Crispy Chicken Tender Salad</h3><p class="text-xs text-stone-600 mt-0.5">Fried to perfection · served over house salad</p></div>
           <span class="font-bold text-sm text-olive-800 shrink-0">$12.99</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-start gap-4">
-          <div><p class="font-semibold text-sm text-charcoal-900">Falafel Plate w/ Salad</p><p class="text-xs text-stone-600 mt-0.5">6 crispy falafel patties · house salad or fava beans · tahini · warm pita</p></div>
+          <div><h3 class="font-semibold text-sm text-charcoal-900">Falafel Plate w/ Salad</h3><p class="text-xs text-stone-600 mt-0.5">6 crispy falafel patties · house salad or fava beans · tahini · warm pita</p></div>
           <span class="font-bold text-sm text-olive-800 shrink-0">$11.99</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-start gap-4">
-          <div><p class="font-semibold text-sm text-charcoal-900">Falafel Plate w/ Fava Beans</p><p class="text-xs text-stone-600 mt-0.5">6 crispy falafel patties · fava beans or house salad · tahini · warm pita</p></div>
+          <div><h3 class="font-semibold text-sm text-charcoal-900">Falafel Plate w/ Fava Beans</h3><p class="text-xs text-stone-600 mt-0.5">6 crispy falafel patties · fava beans or house salad · tahini · warm pita</p></div>
           <span class="font-bold text-sm text-olive-800 shrink-0">$11.99</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-start gap-4">
-          <div><p class="font-semibold text-sm text-charcoal-900">Zeezenia Royal Salad</p><p class="text-xs text-stone-600 mt-0.5">Cucumbers, tomatoes, bell peppers · fried eggplant or baba ghanoug · feta · fava beans</p></div>
+          <div><h3 class="font-semibold text-sm text-charcoal-900">Zeezenia Royal Salad</h3><p class="text-xs text-stone-600 mt-0.5">Cucumbers, tomatoes, bell peppers · fried eggplant or baba ghanoug · feta · fava beans</p></div>
           <span class="font-bold text-sm text-olive-800 shrink-0">$11.99</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-start gap-4">
-          <div><p class="font-semibold text-sm text-charcoal-900">Mini Falafel Salad</p><p class="text-xs text-stone-600 mt-0.5">Chopped fresh vegetables · mini falafel balls · tahini sauce</p></div>
+          <div><h3 class="font-semibold text-sm text-charcoal-900">Mini Falafel Salad</h3><p class="text-xs text-stone-600 mt-0.5">Chopped fresh vegetables · mini falafel balls · tahini sauce</p></div>
           <span class="font-bold text-sm text-olive-800 shrink-0">$12.99</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-start gap-4">
-          <div><p class="font-semibold text-sm text-charcoal-900">Kids Meal</p><p class="text-xs text-stone-600 mt-0.5">Chicken tender and fries</p></div>
+          <div><h3 class="font-semibold text-sm text-charcoal-900">Kids Meal</h3><p class="text-xs text-stone-600 mt-0.5">Chicken tender and fries</p></div>
           <span class="font-bold text-sm text-olive-800 shrink-0">$10.99</span>
         </div>
       </div>
@@ -573,29 +572,29 @@
       <!-- APPETIZERS -->
       <div id="tab-appetizers" class="tab-panel hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3" role="tabpanel" tabindex="0" aria-labelledby="tab-btn-appetizers" hidden>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
-          <p class="font-semibold text-sm text-charcoal-900">Hummus &amp; Pita Bread</p><span class="font-bold text-sm text-olive-800 shrink-0">$8.00</span>
+          <h3 class="font-semibold text-sm text-charcoal-900">Hummus &amp; Pita Bread</h3><span class="font-bold text-sm text-olive-800 shrink-0">$8.00</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
-          <p class="font-semibold text-sm text-charcoal-900">Baba Ghanoug &amp; Pita Bread</p><span class="font-bold text-sm text-olive-800 shrink-0">$8.00</span>
+          <h3 class="font-semibold text-sm text-charcoal-900">Baba Ghanoug &amp; Pita Bread</h3><span class="font-bold text-sm text-olive-800 shrink-0">$8.00</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
-          <p class="font-semibold text-sm text-charcoal-900">Feta Cheese &amp; Pita Bread</p><span class="font-bold text-sm text-olive-800 shrink-0">$8.00</span>
+          <h3 class="font-semibold text-sm text-charcoal-900">Feta Cheese &amp; Pita Bread</h3><span class="font-bold text-sm text-olive-800 shrink-0">$8.00</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
-          <p class="font-semibold text-sm text-charcoal-900">Makdous &amp; Pita Bread</p><span class="font-bold text-sm text-olive-800 shrink-0">$8.00</span>
+          <h3 class="font-semibold text-sm text-charcoal-900">Makdous &amp; Pita Bread</h3><span class="font-bold text-sm text-olive-800 shrink-0">$8.00</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
-          <p class="font-semibold text-sm text-charcoal-900">Garlic Sauce (3.5 oz)</p><span class="font-bold text-sm text-olive-800 shrink-0">$2.00</span>
+          <h3 class="font-semibold text-sm text-charcoal-900">Garlic Sauce (3.5 oz)</h3><span class="font-bold text-sm text-olive-800 shrink-0">$2.00</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
-          <p class="font-semibold text-sm text-charcoal-900">Falafel (6 pcs)</p><span class="font-bold text-sm text-olive-800 shrink-0">$5.00</span>
+          <h3 class="font-semibold text-sm text-charcoal-900">Falafel (6 pcs)</h3><span class="font-bold text-sm text-olive-800 shrink-0">$5.00</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
-          <p class="font-semibold text-sm text-charcoal-900">Vegetable Samosa</p><span class="font-bold text-sm text-olive-800 shrink-0">$2.00</span>
+          <h3 class="font-semibold text-sm text-charcoal-900">Vegetable Samosa</h3><span class="font-bold text-sm text-olive-800 shrink-0">$2.00</span>
         </div>
         <!-- Dessert grouped here -->
         <div class="menu-item bg-terracotta-50 border border-terracotta-200 rounded-2xl px-5 py-4 flex justify-between items-start gap-4">
-          <div><p class="font-semibold text-sm text-charcoal-900">Baklava 🍯</p><p class="text-xs text-stone-600 mt-0.5">House dessert · served fresh</p></div>
+          <div><h3 class="font-semibold text-sm text-charcoal-900">Baklava 🍯</h3><p class="text-xs text-stone-600 mt-0.5">House dessert · served fresh</p></div>
           <span class="font-bold text-sm text-terracotta-600 shrink-0">$7.00</span>
         </div>
       </div>
@@ -603,61 +602,61 @@
       <!-- SIDES -->
       <div id="tab-sides" class="tab-panel hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3" role="tabpanel" tabindex="0" aria-labelledby="tab-btn-sides" hidden>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
-          <p class="font-semibold text-sm text-charcoal-900">Fries (Regular Size)</p><span class="font-bold text-sm text-olive-800 shrink-0">$4.00</span>
+          <h3 class="font-semibold text-sm text-charcoal-900">Fries (Regular Size)</h3><span class="font-bold text-sm text-olive-800 shrink-0">$4.00</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
-          <p class="font-semibold text-sm text-charcoal-900">Fries (Jumbo Size)</p><span class="font-bold text-sm text-olive-800 shrink-0">$6.99</span>
+          <h3 class="font-semibold text-sm text-charcoal-900">Fries (Jumbo Size)</h3><span class="font-bold text-sm text-olive-800 shrink-0">$6.99</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
-          <p class="font-semibold text-sm text-charcoal-900">Potato Casserole</p><span class="font-bold text-sm text-olive-800 shrink-0">$6.00</span>
+          <h3 class="font-semibold text-sm text-charcoal-900">Potato Casserole</h3><span class="font-bold text-sm text-olive-800 shrink-0">$6.00</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
-          <p class="font-semibold text-sm text-charcoal-900">Okra Casserole</p><span class="font-bold text-sm text-olive-800 shrink-0">$6.00</span>
+          <h3 class="font-semibold text-sm text-charcoal-900">Okra Casserole</h3><span class="font-bold text-sm text-olive-800 shrink-0">$6.00</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
-          <p class="font-semibold text-sm text-charcoal-900">Fava Beans</p><span class="font-bold text-sm text-olive-800 shrink-0">$6.00</span>
+          <h3 class="font-semibold text-sm text-charcoal-900">Fava Beans</h3><span class="font-bold text-sm text-olive-800 shrink-0">$6.00</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
-          <p class="font-semibold text-sm text-charcoal-900">Rice (8 oz)</p><span class="font-bold text-sm text-olive-800 shrink-0">$5.00</span>
+          <h3 class="font-semibold text-sm text-charcoal-900">Rice (8 oz)</h3><span class="font-bold text-sm text-olive-800 shrink-0">$5.00</span>
         </div>
       </div>
 
       <!-- BEVERAGES -->
       <div id="tab-beverages" class="tab-panel hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3" role="tabpanel" tabindex="0" aria-labelledby="tab-btn-beverages" hidden>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
-          <p class="font-semibold text-sm text-charcoal-900">Hibiscus Tea</p><span class="font-bold text-sm text-olive-800 shrink-0">$5.00</span>
+          <h3 class="font-semibold text-sm text-charcoal-900">Hibiscus Tea</h3><span class="font-bold text-sm text-olive-800 shrink-0">$5.00</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
-          <div><p class="font-semibold text-sm text-charcoal-900">Hibiscus Tea &amp; Whole Blueberry</p><p class="text-xs text-stone-600 mt-0.5">Farm blueberry infusion</p></div>
+          <div><h3 class="font-semibold text-sm text-charcoal-900">Hibiscus Tea &amp; Whole Blueberry</h3><p class="text-xs text-stone-600 mt-0.5">Farm blueberry infusion</p></div>
           <span class="font-bold text-sm text-olive-800 shrink-0">$6.00</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
-          <p class="font-semibold text-sm text-charcoal-900">Mango Juice</p><span class="font-bold text-sm text-olive-800 shrink-0">$3.00</span>
+          <h3 class="font-semibold text-sm text-charcoal-900">Mango Juice</h3><span class="font-bold text-sm text-olive-800 shrink-0">$3.00</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
-          <p class="font-semibold text-sm text-charcoal-900">Fresh Mango Lassi</p><span class="font-bold text-sm text-olive-800 shrink-0">$7.00</span>
+          <h3 class="font-semibold text-sm text-charcoal-900">Fresh Mango Lassi</h3><span class="font-bold text-sm text-olive-800 shrink-0">$7.00</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
-          <p class="font-semibold text-sm text-charcoal-900">Cyprus Freez Soda</p><span class="font-bold text-sm text-olive-800 shrink-0">$3.00</span>
+          <h3 class="font-semibold text-sm text-charcoal-900">Cyprus Freez Soda</h3><span class="font-bold text-sm text-olive-800 shrink-0">$3.00</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
-          <div><p class="font-semibold text-sm text-charcoal-900">Laziza</p><p class="text-xs text-stone-600 mt-0.5">Malt, non-alcoholic</p></div>
+          <div><h3 class="font-semibold text-sm text-charcoal-900">Laziza</h3><p class="text-xs text-stone-600 mt-0.5">Malt, non-alcoholic</p></div>
           <span class="font-bold text-sm text-olive-800 shrink-0">$4.00</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
-          <p class="font-semibold text-sm text-charcoal-900">Ayran (Yoghurt Drink)</p><span class="font-bold text-sm text-olive-800 shrink-0">$4.00</span>
+          <h3 class="font-semibold text-sm text-charcoal-900">Ayran (Yoghurt Drink)</h3><span class="font-bold text-sm text-olive-800 shrink-0">$4.00</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
-          <p class="font-semibold text-sm text-charcoal-900">Meera Tetra Pack Juice</p><span class="font-bold text-sm text-olive-800 shrink-0">$1.75</span>
+          <h3 class="font-semibold text-sm text-charcoal-900">Meera Tetra Pack Juice</h3><span class="font-bold text-sm text-olive-800 shrink-0">$1.75</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
-          <p class="font-semibold text-sm text-charcoal-900">Meera Guava Juice Glass</p><span class="font-bold text-sm text-olive-800 shrink-0">$3.00</span>
+          <h3 class="font-semibold text-sm text-charcoal-900">Meera Guava Juice Glass</h3><span class="font-bold text-sm text-olive-800 shrink-0">$3.00</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
-          <p class="font-semibold text-sm text-charcoal-900">Water (Bottle)</p><span class="font-bold text-sm text-olive-800 shrink-0">$1.00</span>
+          <h3 class="font-semibold text-sm text-charcoal-900">Water (Bottle)</h3><span class="font-bold text-sm text-olive-800 shrink-0">$1.00</span>
         </div>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
-          <p class="font-semibold text-sm text-charcoal-900">Hot Tea with Mint</p><span class="font-bold text-sm text-olive-800 shrink-0">$2.00</span>
+          <h3 class="font-semibold text-sm text-charcoal-900">Hot Tea with Mint</h3><span class="font-bold text-sm text-olive-800 shrink-0">$2.00</span>
         </div>
       </div>
 
@@ -680,21 +679,21 @@
       <!-- Brand + map -->
       <div class="lg:col-span-4 space-y-5">
         <div>
-          <p class="text-2xl font-extrabold tracking-wider text-white">ZEEZENIA</p>
+          <h3 class="text-2xl font-extrabold tracking-wider text-white">ZEEZENIA</h3>
           <p class="text-[10px] tracking-[0.25em] font-bold text-terracotta-400 uppercase -mt-0.5">Market &middot; Farm &middot; Caf&eacute;</p>
         </div>
         <p class="text-sm font-light text-stone-300 leading-relaxed">Farm-to-Table Egyptian caf&eacute; in Newberry, FL &mdash; 30 minutes from campus. Open every weekend.</p>
         <address class="space-y-2.5 text-sm not-italic">
-          <a href="https://maps.google.com/?q=28143+SW+46th+Ave+North+Entrance,+Newberry,+FL+32669" target="_blank" rel="noopener noreferrer" class="flex items-start gap-3 hover:text-white transition-colors" aria-label="28143 SW 46th Ave, Newberry FL 32669 (opens Google Maps in new tab)">
-            <svg class="w-4 h-4 text-terracotta-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-            <span class="font-light">28143 SW 46th Ave (North Entrance),<br>Newberry, FL 32669</span>
+          <a href="https://maps.google.com/?q=28143+SW+46th+Ave+North+Entrance,+Newberry,+FL+32669" target="_blank" rel="noopener noreferrer" class="flex items-start gap-3 hover:text-white transition-colors">
+            <svg class="w-4 h-4 text-terracotta-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <span class="font-light">28143 SW 46th Ave (North Entrance),<br>Newberry, FL 32669<span class="sr-only"> (opens Google Maps in new tab)</span></span>
           </a>
-          <a href="tel:+19545936376" class="flex items-center gap-3 hover:text-white transition-colors font-light" aria-label="Call us at (954) 593-6376">
-            <svg class="w-4 h-4 text-terracotta-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          <a href="tel:+19545936376" class="flex items-center gap-3 hover:text-white transition-colors font-light">
+            <svg class="w-4 h-4 text-terracotta-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
             (954) 593-6376
           </a>
-          <a href="mailto:fawzy.ebrahim@gmail.com" class="flex items-center gap-3 hover:text-white transition-colors font-light" aria-label="Send email to fawzy.ebrahim@gmail.com">
-            <svg class="w-4 h-4 text-terracotta-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <a href="mailto:fawzy.ebrahim@gmail.com" class="flex items-center gap-3 hover:text-white transition-colors font-light">
+            <svg class="w-4 h-4 text-terracotta-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             fawzy.ebrahim@gmail.com
           </a>
         </address>
@@ -738,11 +737,11 @@
           <label for="newsletter-email" class="sr-only">Your email address</label>
           <input type="email" id="newsletter-email" name="email_address" placeholder="your@email.com" required autocomplete="email" class="w-full bg-stone-800 border border-stone-700 text-white placeholder-stone-500 text-sm rounded-xl px-4 py-3 focus:ring-2 focus:ring-olive-500 focus:border-olive-500" aria-required="true">
           <input type="hidden" name="embed" value="true">
-          <button type="submit" class="w-full bg-olive-800 hover:bg-olive-700 text-white font-bold text-sm py-3 rounded-xl transition-all" aria-label="Join Now (opens subscription page in new tab)">Join Now</button>
+          <button type="submit" class="w-full bg-olive-800 hover:bg-olive-700 text-white font-bold text-sm py-3 rounded-xl transition-all">Join Now</button>
         </form>
         
         <div class="pt-2">
-          <p class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-3">Follow Us</p>
+          <h4 class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-3">Follow Us</h4>
           <div class="flex gap-3">
             <a href="https://www.instagram.com/zeezeniasofra/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-stone-800 hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-500 flex items-center justify-center text-white transition-all" aria-label="Follow Zeezenia on Instagram (opens in new tab)"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
             <a href="https://www.facebook.com/ZeezeniaInternationalMarket/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-stone-800 hover:bg-blue-700 flex items-center justify-center text-white transition-all" aria-label="Follow Zeezenia on Facebook (opens in new tab)"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
@@ -790,7 +789,7 @@
         <h3 class="font-bold text-charcoal-900 text-sm mt-3">4. Unsubscribing</h3>
         <p>You may opt out of our email updates at any time by following the unsubscribe link contained in any message or by contacting us directly.</p>
         <div class="bg-olive-50 p-4 rounded-2xl border border-olive-200 text-olive-900 mt-4">
-          <p class="font-bold text-sm mb-1 text-olive-800">Privacy Questions</p>
+          <h3 class="font-bold text-sm mb-1 text-olive-800">Privacy Questions</h3>
           <p class="text-xs text-stone-600">For any questions regarding our privacy practices, contact us at <a href="mailto:fawzy.ebrahim@gmail.com" class="text-olive-800 underline hover:text-terracotta-600">fawzy.ebrahim@gmail.com</a> or <a href="tel:+19545936376" class="text-olive-800 underline hover:text-terracotta-600">(954) 593-6376</a>.</p>
         </div>
       </div>
@@ -820,7 +819,7 @@
         <h3 class="font-bold text-charcoal-900 text-sm mt-3">3. Intellectual Property</h3>
         <p>All photographs, branding, text, and logos on this website are the property of Zeezenia Farm &amp; Sofra. Unauthorized duplication or commercial reuse without written permission is prohibited.</p>
         <div class="bg-olive-50 p-4 rounded-2xl border border-olive-200 text-olive-900 mt-4">
-          <p class="font-bold text-sm mb-1 text-olive-800">Contact Us</p>
+          <h3 class="font-bold text-sm mb-1 text-olive-800">Contact Us</h3>
           <p class="text-xs text-stone-600">If you have inquiries about these terms, please contact us at <a href="mailto:fawzy.ebrahim@gmail.com" class="text-olive-800 underline hover:text-terracotta-600">fawzy.ebrahim@gmail.com</a> or <a href="tel:+19545936376" class="text-olive-800 underline hover:text-terracotta-600">(954) 593-6376</a>.</p>
         </div>
       </div>
@@ -845,7 +844,7 @@
         <p>Zeezenia Farm &amp; Sofra is dedicated to ensuring digital accessibility for people with disabilities. We continually improve the user experience for everyone and apply the relevant accessibility standards to achieve conformance with the <strong>Web Content Accessibility Guidelines (WCAG) 2.1 Level AA</strong>.</p>
         <p>Our website incorporates keyboard-friendly navigation, semantic HTML landmarks, screen reader descriptions, high contrast color palettes, and motion safety preferences.</p>
         <div class="bg-olive-50 p-4 rounded-2xl border border-olive-200 text-olive-900 mt-3">
-          <p class="font-bold text-sm mb-1 text-olive-800">Accessibility Assistance &amp; Feedback</p>
+          <h3 class="font-bold text-sm mb-1 text-olive-800">Accessibility Assistance &amp; Feedback</h3>
           <p class="text-xs text-stone-600">If you experience difficulty accessing any content on this website or require assistance, please reach out to us directly:</p>
           <p class="text-xs font-bold mt-2">📞 Phone: <a href="tel:+19545936376" class="text-olive-800 underline hover:text-terracotta-600">(954) 593-6376</a></p>
           <p class="text-xs font-bold mt-1">✉️ Email: <a href="mailto:fawzy.ebrahim@gmail.com" class="text-olive-800 underline hover:text-terracotta-600">fawzy.ebrahim@gmail.com</a></p>
@@ -897,13 +896,13 @@
     window.addEventListener('scroll', function(){
       if(window.scrollY>60){
         hdr.classList.add('scrolled');
-        logoText.className='text-xl md:text-2xl font-extrabold tracking-wider text-olive-800 group-hover:text-terracotta-500 transition-colors duration-300';
+        logoText.className='text-xl md:text-2xl font-extrabold tracking-wider text-olive-800 group-hover:text-terracotta-600 transition-colors duration-300';
         logoSub.className='text-[9px] tracking-[0.25em] font-bold text-olive-600 uppercase -mt-1';
         navLinks.forEach(function(l){
           if(l.getAttribute('href') && l.getAttribute('href').includes('squareup.com')){
             l.className='nav-link text-sm font-bold text-terracotta-600 hover:text-terracotta-700 transition-colors py-2';
           } else {
-            l.className='nav-link text-sm font-semibold text-charcoal-800 hover:text-terracotta-500 transition-colors py-2';
+            l.className='nav-link text-sm font-semibold text-charcoal-800 hover:text-terracotta-600 transition-colors py-2';
           }
         });
         document.getElementById('mobile-menu-btn').classList.replace('text-white', 'text-charcoal-800');
