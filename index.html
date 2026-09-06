@@ -33,6 +33,14 @@
   </script>
 
   <style>
+    /* ── skip link (ADA) ── */
+    .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;background:#2c5234;color:#fff;padding:12px 20px;border-radius:0 0 8px 0;font-weight:700;font-size:.9rem;text-decoration:none}
+    .skip-link:focus{position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;outline:3px solid #c05621;outline-offset:2px}
+
+    /* ── focus ring (ADA) ── */
+    :focus-visible{outline:3px solid #c05621;outline-offset:3px;border-radius:4px}
+    a:focus-visible,button:focus-visible{outline:3px solid #c05621;outline-offset:3px}
+
     /* ── scrollbar ── */
     ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#fdfbf7}::-webkit-scrollbar-thumb{background:#2c5234;border-radius:9999px;border:2px solid #fdfbf7}::-webkit-scrollbar-thumb:hover{background:#c05621}
 
@@ -67,13 +75,21 @@
     .hero-text-5{animation:heroFadeUp .7s .72s ease both}
     .cta-pulse{animation:pulseSoft 2.2s ease-in-out infinite}
 
+    /* ── prefers-reduced-motion (ADA) ── */
+    @media (prefers-reduced-motion: reduce) {
+      *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+      .marquee-track{animation:none;overflow:hidden}
+      .reveal,.reveal-left,.reveal-right{opacity:1!important;transform:none!important;transition:none!important}
+    }
+
     /* ── marquee ── */
     .marquee-track{display:flex;width:max-content;animation:marquee 28s linear infinite}
     .marquee-wrap{overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,black 10%,black 90%,transparent);mask:linear-gradient(90deg,transparent,black 10%,black 90%,transparent)}
 
-    /* ── gradient text ── */
-    .grad-text{background:linear-gradient(135deg,#c05621,#d4aa7d);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-    .grad-olive{background:linear-gradient(135deg,#2c5234,#698e6d);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    /* ── gradient text (ADA: color fallback for high-contrast) ── */
+    .grad-text{color:#c05621;background:linear-gradient(135deg,#c05621,#d4aa7d);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .grad-olive{color:#2c5234;background:linear-gradient(135deg,#2c5234,#698e6d);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    @media (forced-colors: active){.grad-text,.grad-olive{-webkit-text-fill-color:unset;background:none;color:inherit}}
 
     /* ── sticky header ── */
     #main-header{transition:background .35s,box-shadow .35s,padding .35s}
@@ -125,34 +141,36 @@
 
 <body class="bg-cream-50 text-charcoal-900 font-sans antialiased overflow-x-hidden selection:bg-terracotta-200 selection:text-terracotta-900">
 
+  <!-- SKIP TO MAIN CONTENT (ADA) -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- TOAST -->
   <div id="toast" role="alert" aria-live="polite"></div>
 
   <!-- ══════════════════════════════════════
        HEADER
   ══════════════════════════════════════ -->
-  <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-transparent py-4 transition-all">
+  <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-transparent py-4 transition-all" role="banner">
     <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
 
-      <a href="#home" class="flex flex-col group focus:outline-none">
-        <span class="text-xl md:text-2xl font-extrabold tracking-wider text-white group-hover:text-terracotta-300 transition-colors duration-300" id="logo-text">ZEEZENIA</span>
-        <span class="text-[9px] tracking-[0.25em] font-bold text-white/60 uppercase -mt-1" id="logo-sub">Farm &amp; Sofra · Newberry, FL</span>
+      <a href="#home" class="flex flex-col group" aria-label="Zeezenia Farm &amp; Sofra — go to homepage">
+        <span class="text-xl md:text-2xl font-extrabold tracking-wider text-white group-hover:text-terracotta-300 transition-colors duration-300" id="logo-text" aria-hidden="true">ZEEZENIA</span>
+        <span class="text-[9px] tracking-[0.25em] font-bold text-white/60 uppercase -mt-1" id="logo-sub" aria-hidden="true">Farm &amp; Sofra · Newberry, FL</span>
       </a>
 
-      <nav class="hidden lg:flex items-center space-x-7 text-sm font-semibold text-white/80">
+      <nav class="hidden lg:flex items-center space-x-7 text-sm font-semibold text-white/80" aria-label="Main navigation">
         <a href="#story"              class="nav-link hover:text-white transition-colors py-2">About</a>
         <a href="#expansion"          class="nav-link hover:text-white transition-colors py-2">Experience</a>
         <a href="#pillars"            class="nav-link hover:text-white transition-colors py-2">Market</a>
         <a href="#menu-section"       class="nav-link hover:text-white transition-colors py-2">Menu</a>
-
         <a href="#hours-location"     class="nav-link hover:text-white transition-colors py-2">Visit</a>
         <!-- Square eGift Card Link -->
-        <a href="https://app.squareup.com/gift/WNPW0RENZV5MA/order" target="_blank" class="nav-link text-terracotta-300 hover:text-terracotta-400 font-bold transition-colors py-2">Gift Cards</a>
+        <a href="https://app.squareup.com/gift/WNPW0RENZV5MA/order" target="_blank" rel="noopener noreferrer" class="nav-link text-terracotta-300 hover:text-terracotta-400 font-bold transition-colors py-2" aria-label="Gift Cards (opens in new tab)">Gift Cards</a>
       </nav>
 
       <div class="flex items-center gap-3">
-        <button id="mobile-menu-btn" class="lg:hidden text-white hover:text-terracotta-300 p-2 focus:outline-none transition-colors" aria-label="Menu">
-          <svg class="h-6 w-6 stroke-current" fill="none" viewBox="0 0 24 24">
+        <button id="mobile-menu-btn" class="lg:hidden text-white hover:text-terracotta-300 p-2 transition-colors" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="h-6 w-6 stroke-current" fill="none" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
         </button>
@@ -160,13 +178,13 @@
     </div>
 
     <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-white shadow-2xl border-b border-olive-800/10 px-6 py-6">
-      <nav class="flex flex-col space-y-4 text-lg font-bold text-charcoal-900">
+      <nav class="flex flex-col space-y-4 text-lg font-bold text-charcoal-900" aria-label="Mobile navigation">
         <a href="#story"               class="mobile-nav-link hover:text-terracotta-500 py-2">About</a>
         <a href="#expansion"           class="mobile-nav-link hover:text-terracotta-500 py-2">Experience</a>
         <a href="#pillars"             class="mobile-nav-link hover:text-terracotta-500 py-2">Market</a>
         <a href="#menu-section"        class="mobile-nav-link hover:text-terracotta-500 py-2">Menu</a>
         <!-- Square eGift Card Link -->
-        <a href="https://app.squareup.com/gift/WNPW0RENZV5MA/order" target="_blank" class="mobile-nav-link text-terracotta-500 py-2">Gift Cards</a>
+        <a href="https://app.squareup.com/gift/WNPW0RENZV5MA/order" target="_blank" rel="noopener noreferrer" class="mobile-nav-link text-terracotta-500 py-2" aria-label="Gift Cards (opens in new tab)">Gift Cards</a>
       </nav>
     </div>
   </header>
@@ -175,36 +193,39 @@
   <!-- ══════════════════════════════════════
        HERO
   ══════════════════════════════════════ -->
-  <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- MAIN CONTENT LANDMARK -->
+  <main id="main-content">
 
-    <!-- Background image -->
-    <div class="hero-img-wrap">
-      <img src="./assets/images/raw/DSC_0023.JPG" alt="Zeezenia Market entrance" fetchpriority="high" loading="eager" decoding="async">
+  <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden" aria-label="Welcome to Zeezenia Farm and Sofra">
+
+    <!-- Background image (decorative) -->
+    <div class="hero-img-wrap" aria-hidden="true">
+      <img src="./assets/images/raw/DSC_0023.JPG" alt="" role="presentation" fetchpriority="high" loading="eager" decoding="async">
     </div>
 
     <!-- Layered overlays for depth -->
-    <div class="absolute inset-0 bg-gradient-to-br from-black/70 via-black/45 to-olive-950/65 z-10"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-black/70 via-black/45 to-olive-950/65 z-10" aria-hidden="true"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10" aria-hidden="true"></div>
 
     <!-- Floating ambient orbs -->
-    <div class="absolute top-1/4 left-1/4 w-80 h-80 bg-terracotta-500/10 rounded-full blur-3xl z-10 float-a pointer-events-none"></div>
-    <div class="absolute bottom-1/3 right-1/4 w-64 h-64 bg-olive-500/10 rounded-full blur-3xl z-10 float-b pointer-events-none"></div>
-    <div class="absolute top-1/2 right-1/3 w-48 h-48 bg-cream-300/8 rounded-full blur-2xl z-10 float-c pointer-events-none"></div>
+    <div class="absolute top-1/4 left-1/4 w-80 h-80 bg-terracotta-500/10 rounded-full blur-3xl z-10 float-a pointer-events-none" aria-hidden="true"></div>
+    <div class="absolute bottom-1/3 right-1/4 w-64 h-64 bg-olive-500/10 rounded-full blur-3xl z-10 float-b pointer-events-none" aria-hidden="true"></div>
+    <div class="absolute top-1/2 right-1/3 w-48 h-48 bg-cream-300/8 rounded-full blur-2xl z-10 float-c pointer-events-none" aria-hidden="true"></div>
 
     <!-- Content -->
     <div class="relative z-20 max-w-7xl mx-auto px-6 md:px-12 py-20 flex flex-col items-center justify-center w-full min-h-[50vh]">
 
       <div class="max-w-3xl text-white text-center flex flex-col items-center">
         <div class="hero-text-1">
-          <span class="inline-flex items-center gap-2 bg-white/12 border border-white/20 text-terracotta-300 text-xs tracking-[0.22em] font-extrabold uppercase px-4 py-2 rounded-full mb-7 backdrop-blur-sm">
-            <span class="w-1.5 h-1.5 rounded-full bg-terracotta-400 animate-pulse"></span>
+          <p class="inline-flex items-center gap-2 bg-white/12 border border-white/20 text-terracotta-300 text-xs tracking-[0.22em] font-extrabold uppercase px-4 py-2 rounded-full mb-7 backdrop-blur-sm">
+            <span class="w-1.5 h-1.5 rounded-full bg-terracotta-400 animate-pulse" aria-hidden="true"></span>
             Newberry, FL · Weekend Escape · Authentic Egyptian Sofra
-          </span>
+          </p>
         </div>
 
         <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.05] mb-6 hero-text-2" style="text-shadow:0 2px 20px rgba(0,0,0,.4)">
           Escape the Noise.<br>
-          <em class="grad-text not-italic" style="-webkit-text-fill-color:unset;background:linear-gradient(135deg,#f1bda6,#d5bd91);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Find Your Retreat.</em>
+          <em class="not-italic" style="color:#f1bda6;background:linear-gradient(135deg,#f1bda6,#d5bd91);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Find Your Retreat.</em>
         </h1>
 
         <p class="text-base md:text-lg text-white/80 font-light max-w-lg mx-auto leading-relaxed mb-9 hero-text-3">
@@ -216,18 +237,18 @@
         </div>
 
         <!-- Live status -->
-        <div class="mt-9 hero-text-5">
+        <div class="mt-9 hero-text-5" role="status" aria-live="polite">
           <div class="inline-flex items-center gap-2.5 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full px-4 py-2">
-            <span id="open-dot" class="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse"></span>
+            <span id="open-dot" class="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse" aria-hidden="true"></span>
             <span id="open-text" class="text-xs font-semibold text-white">Checking hours…</span>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Scroll cue -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-white/40 animate-bounce">
-      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+    <!-- Scroll cue (decorative) -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-white/40 animate-bounce" aria-hidden="true">
+      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
     </div>
   </section>
 
@@ -235,7 +256,8 @@
   <!-- ══════════════════════════════════════
        MARQUEE TICKER
   ══════════════════════════════════════ -->
-  <div class="bg-olive-800 py-3.5 overflow-hidden border-y border-olive-700">
+  <!-- Marquee ticker: hidden from screen readers, text duplicated for animation only -->
+  <div class="bg-olive-800 py-3.5 overflow-hidden border-y border-olive-700" aria-hidden="true">
     <div class="marquee-wrap">
       <div class="marquee-track select-none">
         <!-- Duplicated for infinite scroll -->
@@ -268,27 +290,27 @@
   <!-- ══════════════════════════════════════
        ABOUT / STATS
   ══════════════════════════════════════ -->
-  <section id="story" class="py-24 grid-bg">
+  <section id="story" class="py-24 grid-bg" aria-labelledby="story-heading">
     <div class="max-w-7xl mx-auto px-6 md:px-12">
 
       <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-        <span class="text-xs font-extrabold text-terracotta-500 tracking-[0.22em] uppercase">Who We Are</span>
-        <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-olive-800 mt-3 leading-tight">Rooted in Tradition.<br><em class="grad-olive not-italic">Grown in Newberry.</em></h2>
+        <p class="text-xs font-extrabold text-terracotta-500 tracking-[0.22em] uppercase" aria-hidden="true">Who We Are</p>
+        <h2 id="story-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-olive-800 mt-3 leading-tight">Rooted in Tradition.<br><em class="grad-olive not-italic">Grown in Newberry.</em></h2>
         <p class="text-stone-500 mt-4 font-light text-sm">A Farm-to-Table Café serving authentic Egyptian cuisine — crafted with love and local ingredients, every weekend.</p>
       </div>
 
       <!-- Stats row -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-16">
-        <div class="stat-card rounded-2xl p-6 text-center reveal">
-          <div class="text-3xl md:text-4xl font-extrabold text-olive-800 mb-1" data-count="30" data-suffix=" min">0</div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-16" role="list" aria-label="Key facts about Zeezenia">
+        <div class="stat-card rounded-2xl p-6 text-center reveal" role="listitem">
+          <div class="text-3xl md:text-4xl font-extrabold text-olive-800 mb-1" data-count="30" data-suffix=" min" aria-label="30 minutes from campus">0</div>
           <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider">From Campus to Calm</p>
         </div>
-        <div class="stat-card rounded-2xl p-6 text-center reveal reveal-delay-1">
-          <div class="text-3xl md:text-4xl font-extrabold text-terracotta-500 mb-1" data-count="100" data-suffix="%">0</div>
+        <div class="stat-card rounded-2xl p-6 text-center reveal reveal-delay-1" role="listitem">
+          <div class="text-3xl md:text-4xl font-extrabold text-terracotta-500 mb-1" data-count="100" data-suffix="%" aria-label="100% Zabiha Halal Menu">0</div>
           <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Zabiha Halal Menu</p>
         </div>
-        <div class="stat-card rounded-2xl p-6 text-center reveal reveal-delay-2">
-          <div class="text-3xl md:text-4xl font-extrabold text-olive-800 mb-1" data-count="14" data-suffix="+">0</div>
+        <div class="stat-card rounded-2xl p-6 text-center reveal reveal-delay-2" role="listitem">
+          <div class="text-3xl md:text-4xl font-extrabold text-olive-800 mb-1" data-count="14" data-suffix="+" aria-label="14 or more years serving Gainesville">0</div>
           <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Years Serving Gainesville</p>
         </div>
       </div>
@@ -297,47 +319,47 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
         <div class="reveal bg-white rounded-3xl p-8 border border-cream-200/60 hover:shadow-[0_20px_50px_-12px_rgba(44,82,52,.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col gap-5">
-          <div class="w-12 h-12 rounded-2xl bg-terracotta-50 text-terracotta-500 flex items-center justify-center">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+          <div class="w-12 h-12 rounded-2xl bg-terracotta-50 text-terracotta-500 flex items-center justify-center" aria-hidden="true">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
           </div>
           <div>
             <h3 class="text-lg font-extrabold text-charcoal-900 mb-2">Family-Run Warmth</h3>
-            <p class="text-sm text-stone-500 font-light leading-relaxed">Fawzy &amp; Zaineb treat every visitor like a guest in their own home. Genuine Egyptian hospitality — every single time.</p>
+            <p class="text-sm text-stone-600 font-light leading-relaxed">Fawzy &amp; Zaineb treat every visitor like a guest in their own home. Genuine Egyptian hospitality — every single time.</p>
           </div>
-          <span class="text-xs font-bold text-terracotta-500 uppercase tracking-widest mt-auto">Fawzy &amp; Zaineb's Promise</span>
+          <span class="text-xs font-bold text-terracotta-500 uppercase tracking-widest mt-auto" aria-hidden="true">Fawzy &amp; Zaineb's Promise</span>
         </div>
 
         <div class="reveal reveal-delay-1 bg-white rounded-3xl p-8 border border-cream-200/60 hover:shadow-[0_20px_50px_-12px_rgba(44,82,52,.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col gap-5">
-          <div class="w-12 h-12 rounded-2xl bg-olive-50 text-olive-800 flex items-center justify-center">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+          <div class="w-12 h-12 rounded-2xl bg-olive-50 text-olive-800 flex items-center justify-center" aria-hidden="true">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
           </div>
           <div>
             <h3 class="text-lg font-extrabold text-charcoal-900 mb-2">Organic &amp; Local Produce</h3>
-            <p class="text-sm text-stone-500 font-light leading-relaxed">From organic bell peppers to farm-grown blueberries — everything is sourced with love and local ingredients. What's in season is on your plate.</p>
+            <p class="text-sm text-stone-600 font-light leading-relaxed">From organic bell peppers to farm-grown blueberries — everything is sourced with love and local ingredients. What's in season is on your plate.</p>
           </div>
-          <span class="text-xs font-bold text-olive-800 uppercase tracking-widest mt-auto">Organic · Local · Seasonal</span>
+          <span class="text-xs font-bold text-olive-800 uppercase tracking-widest mt-auto" aria-hidden="true">Organic · Local · Seasonal</span>
         </div>
 
         <div class="reveal reveal-delay-2 bg-white rounded-3xl p-8 border border-cream-200/60 hover:shadow-[0_20px_50px_-12px_rgba(44,82,52,.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col gap-5">
-          <div class="w-12 h-12 rounded-2xl bg-cream-100 text-olive-900 flex items-center justify-center">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          <div class="w-12 h-12 rounded-2xl bg-cream-100 text-olive-900 flex items-center justify-center" aria-hidden="true">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
           </div>
           <div>
             <h3 class="text-lg font-extrabold text-charcoal-900 mb-2">Zaineb's Vision</h3>
-            <p class="text-sm text-stone-500 font-light leading-relaxed">Zaineb brought authentic Egyptian farm-to-table dining to Newberry — a farm, a Bedouin lounge, and a café that bridges tradition with a brand new destination.</p>
+            <p class="text-sm text-stone-600 font-light leading-relaxed">Zaineb brought authentic Egyptian farm-to-table dining to Newberry — a farm, a Bedouin lounge, and a café that bridges tradition with a brand new destination.</p>
           </div>
-          <span class="text-xs font-bold text-olive-900 uppercase tracking-widest mt-auto">A Weekend Destination</span>
+          <span class="text-xs font-bold text-olive-900 uppercase tracking-widest mt-auto" aria-hidden="true">A Weekend Destination</span>
         </div>
 
       </div>
 
       <!-- Quote -->
-      <div class="mt-14 max-w-3xl mx-auto text-center reveal">
+      <figure class="mt-14 max-w-3xl mx-auto text-center reveal">
         <blockquote class="font-serif text-xl md:text-2xl italic text-olive-800 leading-relaxed">
-          "Welcome to our Farm-to-Table Café in Newberry, FL. Join us every weekend to indulge in authentic Egyptian cuisine, crafted with love and local ingredients."
+          <p>"Welcome to our Farm-to-Table Café in Newberry, FL. Join us every weekend to indulge in authentic Egyptian cuisine, crafted with love and local ingredients."</p>
         </blockquote>
-        <figcaption class="mt-4 text-sm font-bold text-stone-400 uppercase tracking-widest">— Fawzy &amp; Zaineb, Founders</figcaption>
-      </div>
+        <figcaption class="mt-4 text-sm font-bold text-stone-500 uppercase tracking-widest">— Fawzy &amp; Zaineb, Founders</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -345,74 +367,74 @@
   <!-- ══════════════════════════════════════
        EXPERIENCE GRID
   ══════════════════════════════════════ -->
-  <section id="expansion" class="py-28 bg-cream-100/50 border-t border-cream-200/70 relative overflow-hidden">
+  <section id="expansion" class="py-28 bg-cream-100/50 border-t border-cream-200/70 relative overflow-hidden" aria-labelledby="expansion-heading">
 
-    <!-- Decorative blob -->
-    <div class="absolute -top-32 -right-32 w-96 h-96 bg-terracotta-100/40 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-olive-100/40 rounded-full blur-3xl pointer-events-none"></div>
+    <!-- Decorative blobs -->
+    <div class="absolute -top-32 -right-32 w-96 h-96 bg-terracotta-100/40 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+    <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-olive-100/40 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
 
     <div class="max-w-7xl mx-auto px-6 md:px-12 relative">
 
       <div class="text-center max-w-2xl mx-auto mb-20 reveal">
-        <span class="text-xs font-extrabold text-olive-800 tracking-[0.22em] uppercase">The Destination</span>
-        <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-charcoal-900 mt-3 leading-tight">Escape the Noise.<br><em class="grad-olive not-italic">Enjoy the Drive.</em></h2>
-        <p class="text-stone-500 mt-4 font-light">Just 30 minutes from the city — a perfect weekend location to wind down, sip fresh tea, and reconnect with nature.</p>
+        <p class="text-xs font-extrabold text-olive-800 tracking-[0.22em] uppercase" aria-hidden="true">The Destination</p>
+        <h2 id="expansion-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-charcoal-900 mt-3 leading-tight">Escape the Noise.<br><em class="grad-olive not-italic">Enjoy the Drive.</em></h2>
+        <p class="text-stone-600 mt-4 font-light">Just 30 minutes from the city — a perfect weekend location to wind down, sip fresh tea, and reconnect with nature.</p>
       </div>
 
       <div class="space-y-20">
 
         <!-- Card 1: Lounge -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden shadow-[0_20px_60px_-15px_rgba(44,82,52,.15)] bg-white">
+        <article class="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden shadow-[0_20px_60px_-15px_rgba(44,82,52,.15)] bg-white" aria-labelledby="lounge-heading">
           <div class="img-zoom aspect-video lg:aspect-auto lg:min-h-[480px] reveal-left">
-            <img src="./assets/images/raw/DSC_0019.JPG" alt="Authentic Bedouin Lounge Seating" class="w-full h-full object-cover" loading="lazy" decoding="async">
+            <img src="./assets/images/raw/DSC_0019.JPG" alt="Traditional Bedouin floor seating with cushions and low tables at Zeezenia Farm" class="w-full h-full object-cover" loading="lazy" decoding="async">
           </div>
           <div class="flex flex-col justify-center p-10 lg:p-14 reveal-right">
-            <span class="inline-flex items-center gap-2 text-xs font-bold text-terracotta-500 uppercase tracking-widest mb-5">
-              <span class="w-8 h-px bg-terracotta-500"></span>The Lounge
-            </span>
-            <h3 class="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-charcoal-900 mb-5 leading-snug">Authentic Bedouin Seating</h3>
-            <p class="text-stone-500 leading-relaxed mb-6 font-light">Unwind in our traditional Bedouin lounge. Share a plate of baklawa and experience true Egyptian hospitality far away from the hustle of the city.</p>
+            <p class="inline-flex items-center gap-2 text-xs font-bold text-terracotta-500 uppercase tracking-widest mb-5" aria-hidden="true">
+              <span class="w-8 h-px bg-terracotta-500" aria-hidden="true"></span>The Lounge
+            </p>
+            <h3 id="lounge-heading" class="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-charcoal-900 mb-5 leading-snug">Authentic Bedouin Seating</h3>
+            <p class="text-stone-600 leading-relaxed mb-6 font-light">Unwind in our traditional Bedouin lounge. Share a plate of baklawa and experience true Egyptian hospitality far away from the hustle of the city.</p>
             <div class="flex flex-wrap gap-2 mb-7">
               <span class="px-3 py-1.5 bg-olive-50 text-olive-800 text-xs font-semibold rounded-full border border-olive-100">Relaxed Vibe</span>
             </div>
           </div>
-        </div>
+        </article>
 
         <!-- Card 2: Farm -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden shadow-[0_20px_60px_-15px_rgba(44,82,52,.15)] bg-white">
+        <article class="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden shadow-[0_20px_60px_-15px_rgba(44,82,52,.15)] bg-white" aria-labelledby="farm-heading">
           <div class="flex flex-col justify-center p-10 lg:p-14 order-2 lg:order-1 reveal-left">
-            <span class="inline-flex items-center gap-2 text-xs font-bold text-terracotta-500 uppercase tracking-widest mb-5">
-              <span class="w-8 h-px bg-terracotta-500"></span>The Farm
-            </span>
-            <h3 class="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-charcoal-900 mb-5 leading-snug">Potted Blueberry Cultivation</h3>
-            <p class="text-stone-500 leading-relaxed mb-6 font-light">Take a stroll through our potted blueberry fields. Reconnect with nature, breathe in the fresh country air, and enjoy seasonal harvests straight from the source.</p>
+            <p class="inline-flex items-center gap-2 text-xs font-bold text-terracotta-500 uppercase tracking-widest mb-5" aria-hidden="true">
+              <span class="w-8 h-px bg-terracotta-500" aria-hidden="true"></span>The Farm
+            </p>
+            <h3 id="farm-heading" class="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-charcoal-900 mb-5 leading-snug">Potted Blueberry Cultivation</h3>
+            <p class="text-stone-600 leading-relaxed mb-6 font-light">Take a stroll through our potted blueberry fields. Reconnect with nature, breathe in the fresh country air, and enjoy seasonal harvests straight from the source.</p>
             <div class="flex flex-wrap gap-2 mb-7">
               <span class="px-3 py-1.5 bg-terracotta-50 text-terracotta-700 text-xs font-semibold rounded-full border border-terracotta-100">U-Pick</span>
               <span class="px-3 py-1.5 bg-terracotta-50 text-terracotta-700 text-xs font-semibold rounded-full border border-terracotta-100">Nature Walk</span>
             </div>
           </div>
           <div class="img-zoom aspect-video lg:aspect-auto lg:min-h-[480px] order-1 lg:order-2 reveal-right">
-            <img src="./assets/images/raw/DSC_0025.JPG" alt="Potted Blueberry Field" class="w-full h-full object-cover" loading="lazy" decoding="async">
+            <img src="./assets/images/raw/DSC_0025.JPG" alt="Rows of blueberry plants in pots at Zeezenia Farm ready for U-Pick" class="w-full h-full object-cover" loading="lazy" decoding="async">
           </div>
-        </div>
+        </article>
 
         <!-- Card 3: Recreation -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden shadow-[0_20px_60px_-15px_rgba(44,82,52,.15)] bg-white">
+        <article class="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden shadow-[0_20px_60px_-15px_rgba(44,82,52,.15)] bg-white" aria-labelledby="recreation-heading">
           <div class="img-zoom aspect-video lg:aspect-auto lg:min-h-[480px] reveal-left">
-            <img src="./assets/images/raw/DSC_0026.JPG" alt="Outdoor Basketball Court" class="w-full h-full object-cover" loading="lazy" decoding="async">
+            <img src="./assets/images/raw/DSC_0026.JPG" alt="Outdoor basketball court at Zeezenia Farm surrounded by farmland" class="w-full h-full object-cover" loading="lazy" decoding="async">
           </div>
           <div class="flex flex-col justify-center p-10 lg:p-14 reveal-right">
-            <span class="inline-flex items-center gap-2 text-xs font-bold text-terracotta-500 uppercase tracking-widest mb-5">
-              <span class="w-8 h-px bg-terracotta-500"></span>Recreation
-            </span>
-            <h3 class="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-charcoal-900 mb-5 leading-snug">Outdoor Basketball Court</h3>
-            <p class="text-stone-500 leading-relaxed mb-6 font-light">A space for everyone. Shoot some hoops with friends on our outdoor court while taking in the beautiful Florida farm scenery.</p>
+            <p class="inline-flex items-center gap-2 text-xs font-bold text-terracotta-500 uppercase tracking-widest mb-5" aria-hidden="true">
+              <span class="w-8 h-px bg-terracotta-500" aria-hidden="true"></span>Recreation
+            </p>
+            <h3 id="recreation-heading" class="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-charcoal-900 mb-5 leading-snug">Outdoor Basketball Court</h3>
+            <p class="text-stone-600 leading-relaxed mb-6 font-light">A space for everyone. Shoot some hoops with friends on our outdoor court while taking in the beautiful Florida farm scenery.</p>
             <div class="flex flex-wrap gap-2 mb-7">
               <span class="px-3 py-1.5 bg-olive-50 text-olive-800 text-xs font-semibold rounded-full border border-olive-100">Family Friendly</span>
               <span class="px-3 py-1.5 bg-olive-50 text-olive-800 text-xs font-semibold rounded-full border border-olive-100">Outdoor Play</span>
             </div>
           </div>
-        </div>
+        </article>
 
       </div>
     </div>
@@ -422,10 +444,10 @@
   <!-- ══════════════════════════════════════
        MARKET PILLARS (dark)
   ══════════════════════════════════════ -->
-  <section id="pillars" class="py-28 relative overflow-hidden" style="background:linear-gradient(135deg,#1f3824 0%,#2c5234 50%,#1f3824 100%)">
+  <section id="pillars" class="py-28 relative overflow-hidden" style="background:linear-gradient(135deg,#1f3824 0%,#2c5234 50%,#1f3824 100%)" aria-labelledby="pillars-heading">
 
-    <!-- Animated subtle ring decoration -->
-    <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-10">
+    <!-- Animated subtle ring decoration (decorative) -->
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-10" aria-hidden="true">
       <div class="w-[600px] h-[600px] rounded-full border border-white" style="animation:spinSlow 40s linear infinite"></div>
       <div class="absolute w-[400px] h-[400px] rounded-full border border-white" style="animation:spinSlow 28s linear infinite reverse"></div>
     </div>
@@ -433,9 +455,9 @@
     <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
 
       <div class="text-center max-w-2xl mx-auto mb-20 reveal">
-        <span class="text-xs font-extrabold text-terracotta-300 tracking-[0.22em] uppercase">The Farm</span>
-        <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-3 leading-tight">What We Grow &<br>What We Raise</h2>
-        <p class="text-white/50 mt-4 font-light">Fresh produce and pasture-raised animals straight from our farm.</p>
+        <p class="text-xs font-extrabold text-terracotta-300 tracking-[0.22em] uppercase" aria-hidden="true">The Farm</p>
+        <h2 id="pillars-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-3 leading-tight">What We Grow &amp;<br>What We Raise</h2>
+        <p class="text-white/70 mt-4 font-light">Fresh produce and pasture-raised animals straight from our farm.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
@@ -443,14 +465,14 @@
         <div class="pillar-card reveal bg-white/8 border border-white/12 rounded-3xl p-8 flex flex-col gap-6">
           <div class="flex-1">
             <h3 class="text-xl font-extrabold text-white mb-3">What We Grow</h3>
-            <p class="text-sm text-white/60 font-light leading-relaxed">Fresh produce, organic vegetables, and our signature blueberries straight from the farm.</p>
+            <p class="text-sm text-white/80 font-light leading-relaxed">Fresh produce, organic vegetables, and our signature blueberries straight from the farm.</p>
           </div>
         </div>
 
         <div class="pillar-card reveal reveal-delay-1 bg-white/8 border border-white/12 rounded-3xl p-8 flex flex-col gap-6">
           <div class="flex-1">
             <h3 class="text-xl font-extrabold text-white mb-3">What We Raise</h3>
-            <p class="text-sm text-white/60 font-light leading-relaxed">Pasture-raised animals cared for with respect and traditional farming methods.</p>
+            <p class="text-sm text-white/80 font-light leading-relaxed">Pasture-raised animals cared for with respect and traditional farming methods.</p>
           </div>
         </div>
 
@@ -460,12 +482,13 @@
       <div class="mt-14 bg-white/6 border border-white/10 rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 reveal">
         <div class="text-center md:text-left">
           <h4 class="font-bold text-white mb-1.5">Ready to visit?</h4>
-          <p class="text-xs text-white/50">28143 SW 46th Ave North Entrance · Newberry, FL 32669</p>
+          <p class="text-xs text-white/70">28143 SW 46th Ave North Entrance · Newberry, FL 32669</p>
         </div>
         <a href="https://maps.google.com/?q=28143+SW+46th+Ave+North+Entrance,+Newberry,+FL+32669" target="_blank" rel="noopener noreferrer"
-          class="bg-terracotta-500 hover:bg-terracotta-400 text-white font-bold text-sm px-7 py-3.5 rounded-full flex items-center gap-2 shadow transition-all active:scale-95 shrink-0">
+          class="bg-terracotta-500 hover:bg-terracotta-400 text-white font-bold text-sm px-7 py-3.5 rounded-full flex items-center gap-2 shadow transition-all active:scale-95 shrink-0"
+          aria-label="Get directions to Zeezenia Farm (opens Google Maps in new tab)">
           Get Directions
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
         </a>
       </div>
 
@@ -476,24 +499,24 @@
   <!-- ══════════════════════════════════════
        MENU TABS
   ══════════════════════════════════════ -->
-  <section id="menu-section" class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+  <section id="menu-section" class="py-24 px-6 md:px-12 max-w-7xl mx-auto" aria-labelledby="menu-heading">
     <div class="text-center max-w-xl mx-auto mb-12 reveal">
-      <span class="text-xs font-extrabold text-terracotta-500 tracking-[0.22em] uppercase">Zeezenia Sofra Menu</span>
-      <h2 class="font-serif text-3xl md:text-4xl font-bold text-olive-800 mt-3">A Flavorful Journey<br><em class="grad-olive not-italic">in Egyptian Cuisine</em></h2>
-      <p class="text-stone-400 mt-3 text-sm font-light">Open every weekend · Sat & Sun 11 AM – 8 PM · Newberry, FL</p>
+      <p class="text-xs font-extrabold text-terracotta-500 tracking-[0.22em] uppercase" aria-hidden="true">Zeezenia Sofra Menu</p>
+      <h2 id="menu-heading" class="font-serif text-3xl md:text-4xl font-bold text-olive-800 mt-3">A Flavorful Journey<br><em class="grad-olive not-italic">in Egyptian Cuisine</em></h2>
+      <p class="text-stone-600 mt-3 text-sm font-light">Open every weekend &middot; Sat &amp; Sun 11 AM &ndash; 8 PM &middot; Newberry, FL</p>
     </div>
 
-    <div class="flex justify-center border-b border-cream-300 mb-8 gap-2 md:gap-6 overflow-x-auto reveal">
-      <button class="tab-btn active text-sm font-semibold text-charcoal-800 pb-3 px-2 md:px-4 whitespace-nowrap" data-tab="meals">🍽️ Meals</button>
-      <button class="tab-btn text-sm font-semibold text-charcoal-800 pb-3 px-2 md:px-4 whitespace-nowrap" data-tab="appetizers">🫓 Appetizers</button>
-      <button class="tab-btn text-sm font-semibold text-charcoal-800 pb-3 px-2 md:px-4 whitespace-nowrap" data-tab="sides">🥗 Sides</button>
-      <button class="tab-btn text-sm font-semibold text-charcoal-800 pb-3 px-2 md:px-4 whitespace-nowrap" data-tab="beverages">🥤 Beverages</button>
+    <div class="flex justify-center border-b border-cream-300 mb-8 gap-2 md:gap-6 overflow-x-auto reveal" role="tablist" aria-label="Menu categories">
+      <button class="tab-btn active text-sm font-semibold text-charcoal-800 pb-3 px-2 md:px-4 whitespace-nowrap" data-tab="meals" role="tab" aria-selected="true" aria-controls="tab-meals" id="tab-btn-meals"><span aria-hidden="true">🍽️ </span>Meals</button>
+      <button class="tab-btn text-sm font-semibold text-charcoal-800 pb-3 px-2 md:px-4 whitespace-nowrap" data-tab="appetizers" role="tab" aria-selected="false" aria-controls="tab-appetizers" id="tab-btn-appetizers"><span aria-hidden="true">🫓 </span>Appetizers</button>
+      <button class="tab-btn text-sm font-semibold text-charcoal-800 pb-3 px-2 md:px-4 whitespace-nowrap" data-tab="sides" role="tab" aria-selected="false" aria-controls="tab-sides" id="tab-btn-sides"><span aria-hidden="true">🥗 </span>Sides</button>
+      <button class="tab-btn text-sm font-semibold text-charcoal-800 pb-3 px-2 md:px-4 whitespace-nowrap" data-tab="beverages" role="tab" aria-selected="false" aria-controls="tab-beverages" id="tab-btn-beverages"><span aria-hidden="true">🥤 </span>Beverages</button>
     </div>
 
     <div class="reveal">
 
       <!-- MEALS -->
-      <div id="tab-meals" class="tab-panel grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      <div id="tab-meals" class="tab-panel grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3" role="tabpanel" aria-labelledby="tab-btn-meals">
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-start gap-4">
           <div><p class="font-semibold text-sm text-charcoal-900">Beef Moza (Shank)</p><p class="text-xs text-stone-400 mt-0.5">Egyptian-style beef shank · basmati rice · house salad or white beans</p></div>
           <span class="font-bold text-sm text-olive-800 shrink-0">$19.99</span>
@@ -545,7 +568,7 @@
       </div>
 
       <!-- APPETIZERS -->
-      <div id="tab-appetizers" class="tab-panel hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      <div id="tab-appetizers" class="tab-panel hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3" role="tabpanel" aria-labelledby="tab-btn-appetizers" hidden>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
           <p class="font-semibold text-sm text-charcoal-900">Hummus &amp; Pita Bread</p><span class="font-bold text-sm text-olive-800 shrink-0">$8.00</span>
         </div>
@@ -575,7 +598,7 @@
       </div>
 
       <!-- SIDES -->
-      <div id="tab-sides" class="tab-panel hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      <div id="tab-sides" class="tab-panel hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3" role="tabpanel" aria-labelledby="tab-btn-sides" hidden>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
           <p class="font-semibold text-sm text-charcoal-900">Fries (Regular Size)</p><span class="font-bold text-sm text-olive-800 shrink-0">$4.00</span>
         </div>
@@ -597,7 +620,7 @@
       </div>
 
       <!-- BEVERAGES -->
-      <div id="tab-beverages" class="tab-panel hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      <div id="tab-beverages" class="tab-panel hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3" role="tabpanel" aria-labelledby="tab-btn-beverages" hidden>
         <div class="menu-item bg-white border border-cream-200 rounded-2xl px-5 py-4 flex justify-between items-center gap-4">
           <p class="font-semibold text-sm text-charcoal-900">Hibiscus Tea</p><span class="font-bold text-sm text-olive-800 shrink-0">$5.00</span>
         </div>
@@ -636,8 +659,10 @@
       </div>
 
     </div>
-    <p class="text-center text-xs text-stone-400 mt-8 reveal">Prices subject to change · Menu subject to seasonal availability · Dine-in &amp; Takeout</p>
+    <p class="text-center text-xs text-stone-500 mt-8 reveal">Prices subject to change · Menu subject to seasonal availability · Dine-in &amp; Takeout</p>
   </section>
+
+  </main><!-- end #main-content -->
 
 
 
@@ -651,26 +676,25 @@
       <!-- Brand + map -->
       <div class="lg:col-span-4 space-y-5">
         <div>
-          <span class="text-2xl font-extrabold tracking-wider text-white">ZEEZENIA</span>
-          <span class="block text-[10px] tracking-[0.25em] font-bold text-terracotta-400 uppercase -mt-0.5">Market · Farm · Café</span>
+          <p class="text-2xl font-extrabold tracking-wider text-white">ZEEZENIA</p>
+          <p class="text-[10px] tracking-[0.25em] font-bold text-terracotta-400 uppercase -mt-0.5">Market &middot; Farm &middot; Caf&eacute;</p>
         </div>
-        <p class="text-sm font-light text-stone-400 leading-relaxed">Farm-to-Table Egyptian café in Newberry, FL — 30 minutes from campus. Open every weekend.</p>
-        <div class="space-y-2.5 text-sm">
-          <a href="https://maps.google.com/?q=28143+SW+46th+Ave+North+Entrance,+Newberry,+FL+32669" target="_blank" rel="noopener noreferrer" class="flex items-start gap-3 hover:text-white transition-colors">
-            <svg class="w-4 h-4 text-terracotta-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        <p class="text-sm font-light text-stone-300 leading-relaxed">Farm-to-Table Egyptian caf&eacute; in Newberry, FL &mdash; 30 minutes from campus. Open every weekend.</p>
+        <address class="space-y-2.5 text-sm not-italic">
+          <a href="https://maps.google.com/?q=28143+SW+46th+Ave+North+Entrance,+Newberry,+FL+32669" target="_blank" rel="noopener noreferrer" class="flex items-start gap-3 hover:text-white transition-colors" aria-label="28143 SW 46th Ave, Newberry FL 32669 (opens Google Maps in new tab)">
+            <svg class="w-4 h-4 text-terracotta-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
             <span class="font-light">28143 SW 46th Ave (North Entrance),<br>Newberry, FL 32669</span>
           </a>
-          <a href="tel:+19545936376" class="flex items-center gap-3 hover:text-white transition-colors font-light">
-            <svg class="w-4 h-4 text-terracotta-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          <a href="tel:+19545936376" class="flex items-center gap-3 hover:text-white transition-colors font-light" aria-label="Call us at (954) 593-6376">
+            <svg class="w-4 h-4 text-terracotta-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
             (954) 593-6376
           </a>
-          <a href="mailto:fawzy.ebrahim@gmail.com" class="flex items-center gap-3 hover:text-white transition-colors font-light">
             <svg class="w-4 h-4 text-terracotta-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             fawzy.ebrahim@gmail.com
           </a>
         </div>
         <div class="rounded-2xl overflow-hidden border border-stone-700">
-          <iframe src="https://maps.google.com/maps?q=28143+SW+46th+Ave+North+Entrance,+Newberry,+FL+32669&output=embed&z=15" width="100%" height="150" style="border:0;filter:grayscale(15%) contrast(1.05)" allowfullscreen="" loading="lazy" title="Zeezenia Farm & Sofra location"></iframe>
+          <iframe src="https://maps.google.com/maps?q=28143+SW+46th+Ave+North+Entrance,+Newberry,+FL+32669&output=embed&z=15" width="100%" height="150" style="border:0;filter:grayscale(15%) contrast(1.05)" allowfullscreen="" loading="lazy" title="Interactive map: Zeezenia Farm and Sofra, 28143 SW 46th Ave, Newberry FL 32669"></iframe>
         </div>
       </div>
 
@@ -702,21 +726,22 @@
       <!-- Newsletter + social -->
       <div class="lg:col-span-4 space-y-5">
         <h3 class="text-base font-bold text-white">Stay in the Loop</h3>
-        <p class="text-sm font-light text-stone-400">Weekend café specials, harvest season alerts &amp; community events.</p>
+        <p class="text-sm font-light text-stone-300" id="newsletter-desc">Weekend café specials, harvest season alerts &amp; community events.</p>
         
         <!-- Square Email Collection Embed -->
-        <form action="https://squareup.com/outreach/hVrjTF/subscribe" method="POST" target="_blank" class="space-y-3">
-          <input type="email" name="email_address" placeholder="your@email.com" required class="w-full bg-stone-800 border border-stone-700 text-white placeholder-stone-500 text-sm rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-olive-600">
+        <form action="https://squareup.com/outreach/hVrjTF/subscribe" method="POST" target="_blank" class="space-y-3" aria-label="Subscribe to Zeezenia newsletter" aria-describedby="newsletter-desc">
+          <label for="newsletter-email" class="sr-only">Your email address</label>
+          <input type="email" id="newsletter-email" name="email_address" placeholder="your@email.com" required autocomplete="email" class="w-full bg-stone-800 border border-stone-700 text-white placeholder-stone-500 text-sm rounded-xl px-4 py-3 focus:ring-2 focus:ring-olive-500 focus:border-olive-500" aria-required="true">
           <input type="hidden" name="embed" value="true">
-          <button type="submit" class="w-full bg-olive-800 hover:bg-olive-700 text-white font-bold text-sm py-3 rounded-xl transition-all">Join Now →</button>
+          <button type="submit" class="w-full bg-olive-800 hover:bg-olive-700 text-white font-bold text-sm py-3 rounded-xl transition-all">Join Now</button>
         </form>
         
         <div class="pt-2">
-          <p class="text-xs font-bold text-stone-500 uppercase tracking-widest mb-3">Follow Us</p>
+          <p class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-3">Follow Us</p>
           <div class="flex gap-3">
-            <a href="https://www.instagram.com/zeezeniasofra/" target="_blank" rel="noopener" class="w-10 h-10 rounded-xl bg-stone-800 hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-500 flex items-center justify-center text-white transition-all" aria-label="Instagram"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-            <a href="https://www.facebook.com/ZeezeniaInternationalMarket/" target="_blank" rel="noopener" class="w-10 h-10 rounded-xl bg-stone-800 hover:bg-blue-700 flex items-center justify-center text-white transition-all" aria-label="Facebook"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-            <a href="https://wa.me/19545936376" target="_blank" rel="noopener" class="w-10 h-10 rounded-xl bg-stone-800 hover:bg-green-700 flex items-center justify-center text-white transition-all" aria-label="WhatsApp"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+            <a href="https://www.instagram.com/zeezeniasofra/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-stone-800 hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-500 flex items-center justify-center text-white transition-all" aria-label="Follow Zeezenia on Instagram (opens in new tab)"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+            <a href="https://www.facebook.com/ZeezeniaInternationalMarket/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-stone-800 hover:bg-blue-700 flex items-center justify-center text-white transition-all" aria-label="Follow Zeezenia on Facebook (opens in new tab)"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="https://wa.me/19545936376" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-stone-800 hover:bg-green-700 flex items-center justify-center text-white transition-all" aria-label="Contact Zeezenia on WhatsApp (opens in new tab)"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
           </div>
         </div>
       </div>
@@ -724,13 +749,13 @@
     </div>
 
     <!-- Bottom bar -->
-    <div class="max-w-7xl mx-auto px-6 md:px-12 pt-7 flex flex-col md:flex-row justify-between items-center text-xs text-stone-500 gap-4">
-      <p>&copy; <span id="footer-year"></span> Zeezenia Farm &amp; Sofra. All rights reserved.</p>
-      <div class="flex flex-wrap gap-5 justify-center">
-        <a href="#home" class="hover:text-stone-300 transition-colors">Privacy Policy</a>
-        <a href="#home" class="hover:text-stone-300 transition-colors">Terms of Service</a>
-        <a href="#hours-location" class="hover:text-stone-300 transition-colors">Contact</a>
-      </div>
+    <div class="max-w-7xl mx-auto px-6 md:px-12 pt-7 flex flex-col md:flex-row justify-between items-center text-xs text-stone-400 gap-4">
+      <p><small>&copy; <span id="footer-year"></span> Zeezenia Farm &amp; Sofra. All rights reserved.</small></p>
+      <nav aria-label="Legal links" class="flex flex-wrap gap-5 justify-center">
+        <a href="#home" class="hover:text-stone-300 transition-colors underline-offset-2 hover:underline">Privacy Policy</a>
+        <a href="#home" class="hover:text-stone-300 transition-colors underline-offset-2 hover:underline">Terms of Service</a>
+        <a href="#hours-location" class="hover:text-stone-300 transition-colors underline-offset-2 hover:underline">Contact</a>
+      </nav>
     </div>
   </footer>
 
@@ -791,11 +816,18 @@
     var mBtn=document.getElementById('mobile-menu-btn'), mMenu=document.getElementById('mobile-menu'), mIcon=document.getElementById('menu-icon');
     mBtn.addEventListener('click',function(){
       var open=mMenu.classList.toggle('hidden');
-      mBtn.setAttribute('aria-expanded', (!open).toString());
+      var isExpanded = !open;
+      mBtn.setAttribute('aria-expanded', isExpanded.toString());
+      mBtn.setAttribute('aria-label', isExpanded ? 'Close navigation menu' : 'Open navigation menu');
       mIcon.setAttribute('d', open ? 'M4 6h16M4 12h16M4 18h16' : 'M6 18L18 6M6 6l12 12');
     });
     document.querySelectorAll('.mobile-nav-link').forEach(function(l){
-      l.addEventListener('click',function(){ mMenu.classList.add('hidden'); mIcon.setAttribute('d','M4 6h16M4 12h16M4 18h16'); });
+      l.addEventListener('click',function(){
+        mMenu.classList.add('hidden');
+        mBtn.setAttribute('aria-expanded','false');
+        mBtn.setAttribute('aria-label','Open navigation menu');
+        mIcon.setAttribute('d','M4 6h16M4 12h16M4 18h16');
+      });
     });
 
     // ── SCROLL REVEAL ──────────────────────────────────
@@ -815,13 +847,31 @@
     },{threshold:0.4});
     document.querySelectorAll('[data-count]').forEach(function(el){ statObs.observe(el); });
 
-    // ── MENU TABS ──────────────────────────────────────
+    // ── MENU TABS (with full ARIA tab semantics) ───────
     document.querySelectorAll('.tab-btn').forEach(function(btn){
       btn.addEventListener('click',function(){
-        document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
-        document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.add('hidden');});
+        document.querySelectorAll('.tab-btn').forEach(function(b){
+          b.classList.remove('active');
+          b.setAttribute('aria-selected','false');
+        });
+        document.querySelectorAll('.tab-panel').forEach(function(p){
+          p.classList.add('hidden');
+          p.setAttribute('hidden','');
+        });
         btn.classList.add('active');
-        document.getElementById('tab-'+btn.dataset.tab).classList.remove('hidden');
+        btn.setAttribute('aria-selected','true');
+        var panel=document.getElementById('tab-'+btn.dataset.tab);
+        panel.classList.remove('hidden');
+        panel.removeAttribute('hidden');
+      });
+      // Keyboard arrow navigation for tab list (WCAG)
+      btn.addEventListener('keydown',function(e){
+        var tabs=Array.from(document.querySelectorAll('.tab-btn'));
+        var idx=tabs.indexOf(btn);
+        if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();tabs[(idx+1)%tabs.length].click();tabs[(idx+1)%tabs.length].focus();}
+        else if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();tabs[(idx-1+tabs.length)%tabs.length].click();tabs[(idx-1+tabs.length)%tabs.length].focus();}
+        else if(e.key==='Home'){e.preventDefault();tabs[0].click();tabs[0].focus();}
+        else if(e.key==='End'){e.preventDefault();tabs[tabs.length-1].click();tabs[tabs.length-1].focus();}
       });
     });
 
