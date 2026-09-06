@@ -757,8 +757,8 @@
     <div class="max-w-7xl mx-auto px-6 md:px-12 pt-7 flex flex-col md:flex-row justify-between items-center text-xs text-stone-400 gap-4">
       <p><small>&copy; <span id="footer-year"></span> Zeezenia Farm &amp; Sofra. All rights reserved.</small></p>
       <nav aria-label="Legal links" class="flex flex-wrap gap-5 justify-center">
-        <a href="#home" class="hover:text-stone-300 transition-colors underline-offset-2 hover:underline">Privacy Policy</a>
-        <a href="#home" class="hover:text-stone-300 transition-colors underline-offset-2 hover:underline">Terms of Service</a>
+        <button type="button" id="privacy-btn" class="hover:text-stone-300 transition-colors underline-offset-2 hover:underline text-xs bg-transparent border-0 p-0 text-stone-400 cursor-pointer">Privacy Policy</button>
+        <button type="button" id="terms-btn" class="hover:text-stone-300 transition-colors underline-offset-2 hover:underline text-xs bg-transparent border-0 p-0 text-stone-400 cursor-pointer">Terms of Service</button>
         <button type="button" id="a11y-btn" class="hover:text-stone-300 transition-colors underline-offset-2 hover:underline text-xs bg-transparent border-0 p-0 text-stone-400 cursor-pointer">Accessibility Statement</button>
         <a href="#hours-location" class="hover:text-stone-300 transition-colors underline-offset-2 hover:underline">Contact</a>
       </nav>
@@ -767,6 +767,68 @@
 
 
 
+
+  <!-- ══════════════════════════════════════
+       PRIVACY POLICY MODAL
+  ══════════════════════════════════════ -->
+  <div id="privacy-modal" class="fixed inset-0 z-[9999] bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="privacy-modal-title" aria-describedby="privacy-modal-desc">
+    <div class="bg-white rounded-3xl p-6 md:p-8 max-w-lg w-full shadow-2xl border border-stone-200 relative text-charcoal-900">
+      <div class="flex justify-between items-start mb-4">
+        <h2 id="privacy-modal-title" class="text-xl font-bold text-olive-800">Privacy Policy</h2>
+        <button id="close-privacy-modal" class="p-1.5 rounded-lg text-stone-500 hover:text-charcoal-900 hover:bg-stone-100 transition-colors" aria-label="Close privacy policy">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div id="privacy-modal-desc" class="space-y-3 text-sm text-stone-600 leading-relaxed max-h-[60vh] overflow-y-auto pr-1">
+        <p>Zeezenia Farm &amp; Sofra is committed to protecting your privacy. This policy explains what information we collect and how it is used when you interact with our website.</p>
+        <h3 class="font-bold text-charcoal-900 text-sm mt-3">1. Information We Collect</h3>
+        <p>We only collect personal information that you voluntarily submit to us, such as your email address when joining our newsletter or contact details when reaching out by phone or email.</p>
+        <h3 class="font-bold text-charcoal-900 text-sm mt-3">2. How We Use Information</h3>
+        <p>Your details are used solely to communicate weekend café specials, blueberry harvest notifications, community events, and to respond to your inquiries. We never sell, rent, or trade your personal information.</p>
+        <h3 class="font-bold text-charcoal-900 text-sm mt-3">3. Third-Party Integrations</h3>
+        <p>We utilize trusted third-party services including Square (for email subscriptions and e-gift card ordering) and Google Maps (for directions). Their use of data is governed by their respective privacy terms.</p>
+        <h3 class="font-bold text-charcoal-900 text-sm mt-3">4. Unsubscribing</h3>
+        <p>You may opt out of our email updates at any time by following the unsubscribe link contained in any message or by contacting us directly.</p>
+        <div class="bg-olive-50 p-4 rounded-2xl border border-olive-200 text-olive-900 mt-4">
+          <p class="font-bold text-sm mb-1 text-olive-800">Privacy Questions</p>
+          <p class="text-xs text-stone-600">For any questions regarding our privacy practices, contact us at <a href="mailto:fawzy.ebrahim@gmail.com" class="text-olive-800 underline hover:text-terracotta-600">fawzy.ebrahim@gmail.com</a> or <a href="tel:+19545936376" class="text-olive-800 underline hover:text-terracotta-600">(954) 593-6376</a>.</p>
+        </div>
+      </div>
+      <div class="mt-6 flex justify-end">
+        <button id="close-privacy-btn-bottom" class="bg-olive-800 hover:bg-olive-700 text-white font-semibold text-sm px-6 py-2.5 rounded-xl transition-colors">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       TERMS OF SERVICE MODAL
+  ══════════════════════════════════════ -->
+  <div id="terms-modal" class="fixed inset-0 z-[9999] bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="terms-modal-title" aria-describedby="terms-modal-desc">
+    <div class="bg-white rounded-3xl p-6 md:p-8 max-w-lg w-full shadow-2xl border border-stone-200 relative text-charcoal-900">
+      <div class="flex justify-between items-start mb-4">
+        <h2 id="terms-modal-title" class="text-xl font-bold text-olive-800">Terms of Service</h2>
+        <button id="close-terms-modal" class="p-1.5 rounded-lg text-stone-500 hover:text-charcoal-900 hover:bg-stone-100 transition-colors" aria-label="Close terms of service">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div id="terms-modal-desc" class="space-y-3 text-sm text-stone-600 leading-relaxed max-h-[60vh] overflow-y-auto pr-1">
+        <p>By accessing the Zeezenia Farm &amp; Sofra website or visiting our farm and café in Newberry, FL, you agree to these terms.</p>
+        <h3 class="font-bold text-charcoal-900 text-sm mt-3">1. Menu Availability &amp; Pricing</h3>
+        <p>Menu offerings, prices, and operating hours are provided for informational purposes. All items and prices are subject to seasonal ingredient availability and may change without prior notice.</p>
+        <h3 class="font-bold text-charcoal-900 text-sm mt-3">2. Farm Visits &amp; Recreation Guidelines</h3>
+        <p>Guests visiting the farm, blueberry cultivation grounds, Bedouin lounge, and outdoor sports areas agree to follow posted guidelines and staff instructions. Outdoor and agricultural activities carry natural hazards, and visitors participate at their own risk.</p>
+        <h3 class="font-bold text-charcoal-900 text-sm mt-3">3. Intellectual Property</h3>
+        <p>All photographs, branding, text, and logos on this website are the property of Zeezenia Farm &amp; Sofra. Unauthorized duplication or commercial reuse without written permission is prohibited.</p>
+        <div class="bg-olive-50 p-4 rounded-2xl border border-olive-200 text-olive-900 mt-4">
+          <p class="font-bold text-sm mb-1 text-olive-800">Contact Us</p>
+          <p class="text-xs text-stone-600">If you have inquiries about these terms, please contact us at <a href="mailto:fawzy.ebrahim@gmail.com" class="text-olive-800 underline hover:text-terracotta-600">fawzy.ebrahim@gmail.com</a> or <a href="tel:+19545936376" class="text-olive-800 underline hover:text-terracotta-600">(954) 593-6376</a>.</p>
+        </div>
+      </div>
+      <div class="mt-6 flex justify-end">
+        <button id="close-terms-btn-bottom" class="bg-olive-800 hover:bg-olive-700 text-white font-semibold text-sm px-6 py-2.5 rounded-xl transition-colors">Close</button>
+      </div>
+    </div>
+  </div>
 
   <!-- ══════════════════════════════════════
        ACCESSIBILITY STATEMENT MODAL (ADA / WCAG 2.1 AA)
@@ -935,36 +997,42 @@
       });
     });
 
-    // ── ACCESSIBILITY MODAL ────────────────────────────
-    var a11yBtn = document.getElementById('a11y-btn');
-    var a11yModal = document.getElementById('a11y-modal');
-    var closeA11yBtn = document.getElementById('close-a11y-modal');
-    var closeA11yBottom = document.getElementById('close-a11y-btn-bottom');
+    // ── LEGAL & ACCESSIBILITY MODALS ───────────────────
+    function setupModal(triggerId, modalId, closeBtnId, closeBottomId){
+      var trigger = document.getElementById(triggerId);
+      var modal = document.getElementById(modalId);
+      var closeBtn = document.getElementById(closeBtnId);
+      var closeBottom = document.getElementById(closeBottomId);
 
-    function openA11yModal(){
-      if(!a11yModal) return;
-      a11yModal.classList.remove('hidden');
-      closeA11yBtn.focus();
-    }
-    function closeA11yModal(){
-      if(!a11yModal) return;
-      a11yModal.classList.add('hidden');
-      if(a11yBtn) a11yBtn.focus();
-    }
+      function openModal(){
+        if(!modal) return;
+        modal.classList.remove('hidden');
+        if(closeBtn) closeBtn.focus();
+      }
+      function closeModal(){
+        if(!modal) return;
+        modal.classList.add('hidden');
+        if(trigger) trigger.focus();
+      }
 
-    if(a11yBtn) a11yBtn.addEventListener('click', openA11yModal);
-    if(closeA11yBtn) closeA11yBtn.addEventListener('click', closeA11yModal);
-    if(closeA11yBottom) closeA11yBottom.addEventListener('click', closeA11yModal);
-    if(a11yModal){
-      a11yModal.addEventListener('click', function(e){
-        if(e.target === a11yModal) closeA11yModal();
+      if(trigger) trigger.addEventListener('click', openModal);
+      if(closeBtn) closeBtn.addEventListener('click', closeModal);
+      if(closeBottom) closeBottom.addEventListener('click', closeModal);
+      if(modal){
+        modal.addEventListener('click', function(e){
+          if(e.target === modal) closeModal();
+        });
+      }
+      window.addEventListener('keydown', function(e){
+        if(e.key === 'Escape' && modal && !modal.classList.contains('hidden')){
+          closeModal();
+        }
       });
     }
-    window.addEventListener('keydown', function(e){
-      if(e.key === 'Escape' && a11yModal && !a11yModal.classList.contains('hidden')){
-        closeA11yModal();
-      }
-    });
+
+    setupModal('privacy-btn', 'privacy-modal', 'close-privacy-modal', 'close-privacy-btn-bottom');
+    setupModal('terms-btn', 'terms-modal', 'close-terms-modal', 'close-terms-btn-bottom');
+    setupModal('a11y-btn', 'a11y-modal', 'close-a11y-modal', 'close-a11y-btn-bottom');
 
   })();
   </script>
